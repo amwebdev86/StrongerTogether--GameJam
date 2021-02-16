@@ -41,6 +41,7 @@ namespace SPACE.Player
             float inputX = Input.GetAxisRaw("Horizontal");
             float inputY = Input.GetAxisRaw("Vertical");
             Vector2 movement = new Vector2(speed.x * inputX, speed.y * inputY);
+            //TODO: Change to a blend Tree.
             if(inputX < 0)
             {
                 playerAnim.SetBool("walkR", false);
@@ -75,10 +76,30 @@ namespace SPACE.Player
             }
             
             _Rb2d.velocity = movement;
+        
         }
+    
         private void SideScrollingControls()
         {
             float horizontalMovement = Input.GetAxis("Horizontal");
+            if (horizontalMovement < 0)
+            {
+                playerAnim.SetBool("walkR", false);
+
+                playerAnim.SetBool("walkL", true);
+            }
+            else if (horizontalMovement > 0)
+            {
+
+                playerAnim.SetBool("walkL", false);
+                playerAnim.SetBool("walkR", true);
+
+            }
+            else
+            {
+                playerAnim.SetBool("walkL", false);
+                playerAnim.SetBool("walkR", false);
+            }
             Vector2 movement = new Vector2(speed.x * horizontalMovement, 0);
             _Rb2d.velocity = movement;
         }

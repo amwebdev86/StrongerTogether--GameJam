@@ -44,7 +44,7 @@ namespace SPACE.Managers
           
         
                 
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.J))
                 {
                     _playerHealth.TakeDamage(10);
                    
