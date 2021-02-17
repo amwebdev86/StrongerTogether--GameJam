@@ -7,6 +7,7 @@ namespace SPACE.Player
     public class CameraFollow : MonoBehaviour
     {
         public GameObject target;
+        [SerializeField]
         Vector3 offset; //offset distance between the player and camera
 
 
@@ -17,7 +18,7 @@ namespace SPACE.Player
                 Debug.LogWarning("No Camera Target... Setting it to gameobject tagged 'Player'");
                 target = GameObject.FindGameObjectWithTag("Player");
             }
-            offset = transform.position - target.transform.position;
+            //offset = transform.position - target.transform.position *.5f;
         }
 
         // Update is called once per frame

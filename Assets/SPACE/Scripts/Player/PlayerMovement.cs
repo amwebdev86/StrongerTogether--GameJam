@@ -14,6 +14,8 @@ namespace SPACE.Player
         Animator playerAnim;
         public bool isTopDown = false;
         // bool isGrounded = true;
+        [SerializeField]
+        float jumpForce = 5f;
         private void Start()
         {
             playerAnim = GetComponentInChildren<Animator>();
@@ -82,6 +84,7 @@ namespace SPACE.Player
         private void SideScrollingControls()
         {
             float horizontalMovement = Input.GetAxis("Horizontal");
+            
             if (horizontalMovement < 0)
             {
                 playerAnim.SetBool("walkR", false);
@@ -101,6 +104,13 @@ namespace SPACE.Player
                 playerAnim.SetBool("walkR", false);
             }
             Vector2 movement = new Vector2(speed.x * horizontalMovement, 0);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // transform.Translate(Vector3.up * 260 * Time.deltaTime, Space.World);
+                // movement = new Vector2(0, speed.y * 1);
+                //_Rb2d.velocity = new Vector2(0, speed.y *jumpForce);
+
+            }
             _Rb2d.velocity = movement;
         }
     }
