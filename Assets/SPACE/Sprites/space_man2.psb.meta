@@ -32,7 +32,7 @@ ScriptedImporter:
     spriteMode: 1
     spriteExtrude: 1
     spriteMeshType: 1
-    alignment: 9
+    alignment: 0
     spritePivot: {x: 0.45155042, y: 0.15116271}
     spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -69,7 +69,7 @@ ScriptedImporter:
   - name: space_man2_1
     originalName: 
     pivot: {x: 0.45155042, y: 0.15116271}
-    alignment: 9
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
