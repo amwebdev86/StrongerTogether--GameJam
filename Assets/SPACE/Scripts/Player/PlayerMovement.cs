@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using SPACE.Player.Alien;
+using SPACE.Controller;
 namespace SPACE.Player
 {
     public class PlayerMovement : MonoBehaviour

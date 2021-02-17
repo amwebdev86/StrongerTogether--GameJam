@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SPACE.Player
+namespace SPACE.Controller
 {
     public class MainController : MonoBehaviour
     {
@@ -15,7 +15,7 @@ namespace SPACE.Player
         [SerializeField] Transform groundCheck;
         [SerializeField] Transform ceilingCheck;
         [SerializeField] Collider2D crouchDisableCollider;
-
+        //TODO: ADD Animator Controller here.
         const float _GroundedRadius = .2f;
        bool _Grounded;
         float _CeilingRadius = .2f;
