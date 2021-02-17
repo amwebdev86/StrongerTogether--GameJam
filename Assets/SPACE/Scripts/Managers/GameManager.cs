@@ -16,7 +16,7 @@ namespace SPACE.Managers
         private List<GameObject> _instancedSystemPrefabs;
         [SerializeField]
         PlayerHealth _playerHealth;
-       
+        public bool gameRunning = true;
         private void Awake()
         {
             
@@ -44,7 +44,7 @@ namespace SPACE.Managers
           
         
                 
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.J))
                 {
                     _playerHealth.TakeDamage(10);
                    

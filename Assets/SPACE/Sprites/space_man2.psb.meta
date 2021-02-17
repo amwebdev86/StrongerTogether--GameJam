@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 813f48df8e8221040a721936e8fca139
 ScriptedImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2187638948430068395
+    second: space_man2_0
   externalObjects: {}
   serializedVersion: 2
   userData: 
@@ -26,11 +29,11 @@ ScriptedImporter:
     streamingMipmapsPriority: 0
     nPOTScale: 1
     sRGBTexture: 1
-    spriteMode: 2
+    spriteMode: 1
     spriteExtrude: 1
     spriteMeshType: 1
     alignment: 0
-    spritePivot: {x: 0.5, y: 0.5}
+    spritePivot: {x: 0.45155042, y: 0.15116271}
     spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
@@ -45,9 +48,9 @@ ScriptedImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
     normalMap: 0
     textureFormat: 0
     maxTextureSize: 0
@@ -65,7 +68,7 @@ ScriptedImporter:
   spriteImportData:
   - name: space_man2_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.45155042, y: 0.15116271}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -87,7 +90,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Layer 3
+  - name: space_man2_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -98,7 +101,7 @@ ScriptedImporter:
       y: 4
       width: 17
       height: 24
-    spriteID: 220a012120552394bab23567afc2d5ca
+    spriteID: baabbf1780e0c5e10800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -108,8 +111,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -2, y: 0}
-  platformSettings: []
+    uvTransform: {x: 4, y: 4}
+  platformSettings:
+  - name: Default
+    overridden: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7

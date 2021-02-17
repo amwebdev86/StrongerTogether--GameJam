@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 1f2294d55e6c76448b17e747930fbdf5
+guid: fde50c618dc28034bb04284524cc864e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2919367817257133961
-    second: walking_left_animation_ready_for_UNITY_0
+      213: -3959024174582042208
+    second: Green_Squid_0
   - first:
-      213: -4205211396166925886
-    second: walking_left_animation_ready_for_UNITY_1
+      213: 6911111396749254976
+    second: Green_Squid_1
   - first:
-      213: 1366017468711077562
-    second: walking_left_animation_ready_for_UNITY_2
+      213: 8325711812705507699
+    second: Green_Squid_2
   - first:
-      213: 1035867088549505405
-    second: walking_left_animation_ready_for_UNITY_3
-  - first:
-      213: 3165446302287488058
-    second: walking_left_animation_ready_for_UNITY_4
-  - first:
-      213: 3311592798006160712
-    second: walking_left_animation_ready_for_UNITY_5
+      213: 733282047854860339
+    second: Green_Squid_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -117,13 +111,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walking_left_animation_ready_for_UNITY_0
+      name: Green_Squid_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 4
-        width: 17
-        height: 24
+        x: 2
+        y: 0
+        width: 26
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +125,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 987a154ff8da38820800000000000000
-      internalID: 2919367817257133961
+      spriteID: 0a17ad03d78be09c0800000000000000
+      internalID: -3959024174582042208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_left_animation_ready_for_UNITY_1
+      name: Green_Squid_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 4
-        width: 17
-        height: 25
+        x: 32
+        y: 0
+        width: 29
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c1cb0ee38614a5c0800000000000000
-      internalID: -4205211396166925886
+      spriteID: 041a46ed23339ef50800000000000000
+      internalID: 6911111396749254976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_left_animation_ready_for_UNITY_2
+      name: Green_Squid_2
       rect:
         serializedVersion: 2
         x: 65
-        y: 4
-        width: 17
-        height: 23
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab6808b76a115f210800000000000000
-      internalID: 1366017468711077562
+      spriteID: 379d59a38ceda8370800000000000000
+      internalID: 8325711812705507699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_left_animation_ready_for_UNITY_3
+      name: Green_Squid_3
       rect:
         serializedVersion: 2
-        x: 98
-        y: 4
-        width: 17
-        height: 23
+        x: 101
+        y: 0
+        width: 29
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,50 +188,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d79e287f0a3206e00800000000000000
-      internalID: 1035867088549505405
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking_left_animation_ready_for_UNITY_4
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 4
-        width: 17
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a346b6304acedeb20800000000000000
-      internalID: 3165446302287488058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking_left_animation_ready_for_UNITY_5
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 4
-        width: 17
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84d26edaa1425fd20800000000000000
-      internalID: 3311592798006160712
+      spriteID: 3385f8e23242d2a00800000000000000
+      internalID: 733282047854860339
       vertices: []
       indices: 
       edges: []

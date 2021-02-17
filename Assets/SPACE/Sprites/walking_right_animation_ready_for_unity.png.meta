@@ -20,6 +20,21 @@ TextureImporter:
   - first:
       213: 5751077447194330029
     second: walking_right_animation_ready_for_unity_5
+  - first:
+      213: 3913375230224829549
+    second: walking_right_animation_ready_for_unity_6
+  - first:
+      213: 3896389327024713933
+    second: walking_right_animation_ready_for_unity_8
+  - first:
+      213: -1028293737580676994
+    second: walking_right_animation_ready_for_unity_9
+  - first:
+      213: -697033172056164780
+    second: walking_right_animation_ready_for_unity_7
+  - first:
+      213: 4779292668839432017
+    second: walking_right_animation_ready_for_unity_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -82,7 +97,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,7 +109,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +121,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,34 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walking_right_animation_ready_for_unity_0
+      name: walking_right_animation_ready_for_unity_1
       rect:
         serializedVersion: 2
         x: 10
         y: 5
         width: 17
         height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12c11bb781c028de0800000000000000
-      internalID: -1332489240454292447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walking_right_animation_ready_for_unity_1
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 5
-        width: 17
-        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,34 +153,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_right_animation_ready_for_unity_2
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 5
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6562e367dbc2ceaa0800000000000000
-      internalID: -6130475800513862058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: walking_right_animation_ready_for_unity_3
       rect:
         serializedVersion: 2
-        x: 105
-        y: 5
+        x: 39
+        y: 4
         width: 17
-        height: 23
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +177,10 @@ TextureImporter:
       name: walking_right_animation_ready_for_unity_4
       rect:
         serializedVersion: 2
-        x: 139
-        y: 5
+        x: 72
+        y: 4
         width: 17
-        height: 25
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,13 +195,118 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_right_animation_ready_for_unity_5
+      name: walking_right_animation_ready_for_unity_6
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 5
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c0d56b90a1f4630800000000000000
+      internalID: 3913375230224829549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking_right_animation_ready_for_unity_8
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 4
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc07eefe271c21630800000000000000
+      internalID: 3896389327024713933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking_right_animation_ready_for_unity_9
       rect:
         serializedVersion: 2
         x: 169
-        y: 5
+        y: 4
         width: 17
-        height: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78beb63b44cab1f0800000000000000
+      internalID: -1028293737580676994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking_right_animation_ready_for_unity_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c11bb781c028de0800000000000000
+      internalID: -1332489240454292447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking_right_animation_ready_for_unity_2
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 4
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6562e367dbc2ceaa0800000000000000
+      internalID: -6130475800513862058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking_right_animation_ready_for_unity_5
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 4
+        width: 20
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,6 +316,48 @@ TextureImporter:
       bones: []
       spriteID: da347cbb77eefcf40800000000000000
       internalID: 5751077447194330029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking_right_animation_ready_for_unity_7
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 4
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456bde6e504a356f0800000000000000
+      internalID: -697033172056164780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking_right_animation_ready_for_unity_10
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 4
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f8dcb4c55735240800000000000000
+      internalID: 4779292668839432017
       vertices: []
       indices: 
       edges: []

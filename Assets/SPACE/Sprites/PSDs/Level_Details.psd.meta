@@ -1,25 +1,40 @@
 fileFormatVersion: 2
-guid: 1f2294d55e6c76448b17e747930fbdf5
+guid: 28fc0fd1bda0fe741b11bc184f841f85
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2919367817257133961
-    second: walking_left_animation_ready_for_UNITY_0
+      213: 4620776052025296827
+    second: Level_Details_0
   - first:
-      213: -4205211396166925886
-    second: walking_left_animation_ready_for_UNITY_1
+      213: -3864518585737342275
+    second: Level_Details_1
   - first:
-      213: 1366017468711077562
-    second: walking_left_animation_ready_for_UNITY_2
+      213: -6898777259233659896
+    second: Level_Details_2
   - first:
-      213: 1035867088549505405
-    second: walking_left_animation_ready_for_UNITY_3
+      213: -2366161171724517123
+    second: Level_Details_3
   - first:
-      213: 3165446302287488058
-    second: walking_left_animation_ready_for_UNITY_4
+      213: -1162150664575393612
+    second: Level_Details_4
   - first:
-      213: 3311592798006160712
-    second: walking_left_animation_ready_for_UNITY_5
+      213: -6496799534788187362
+    second: Level_Details_6
+  - first:
+      213: 2174858014248167711
+    second: Level_Details_7
+  - first:
+      213: -3924938303468774315
+    second: Level_Details_8
+  - first:
+      213: 2061843653393956256
+    second: Level_Details_9
+  - first:
+      213: 2536504898042498384
+    second: Level_Details_10
+  - first:
+      213: 605151091890372019
+    second: Level_Details_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -63,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,12 +132,75 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walking_left_animation_ready_for_UNITY_0
+      name: Level_Details_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 4
-        width: 17
+        x: 96
+        y: 192
+        width: 76
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7899f565b402040800000000000000
+      internalID: 4620776052025296827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_Details_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 153
+        width: 57
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db21b3542d87e5ac0800000000000000
+      internalID: -3864518585737342275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_Details_2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 143
+        width: 43
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804b5de42ae9240a0800000000000000
+      internalID: -6898777259233659896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_Details_3
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 138
+        width: 36
         height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 987a154ff8da38820800000000000000
-      internalID: 2919367817257133961
+      spriteID: df0c90663f4b92fd0800000000000000
+      internalID: -2366161171724517123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_left_animation_ready_for_UNITY_1
+      name: Level_Details_4
       rect:
         serializedVersion: 2
-        x: 36
-        y: 4
-        width: 17
-        height: 25
+        x: 175
+        y: 132
+        width: 47
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +230,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c1cb0ee38614a5c0800000000000000
-      internalID: -4205211396166925886
+      spriteID: 4b0ef7eb0263fdfe0800000000000000
+      internalID: -1162150664575393612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_left_animation_ready_for_UNITY_2
+      name: Level_Details_6
       rect:
         serializedVersion: 2
-        x: 65
-        y: 4
-        width: 17
-        height: 23
+        x: 32
+        y: 67
+        width: 58
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +251,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab6808b76a115f210800000000000000
-      internalID: 1366017468711077562
+      spriteID: e1be600ae3bb6d5a0800000000000000
+      internalID: -6496799534788187362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_left_animation_ready_for_UNITY_3
+      name: Level_Details_7
       rect:
         serializedVersion: 2
-        x: 98
-        y: 4
-        width: 17
-        height: 23
+        x: 148
+        y: 116
+        width: 20
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +272,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d79e287f0a3206e00800000000000000
-      internalID: 1035867088549505405
+      spriteID: f196c2057d5ae2e10800000000000000
+      internalID: 2174858014248167711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_left_animation_ready_for_UNITY_4
+      name: Level_Details_8
       rect:
         serializedVersion: 2
-        x: 133
-        y: 4
-        width: 17
-        height: 25
+        x: 142
+        y: 107
+        width: 11
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +293,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a346b6304acedeb20800000000000000
-      internalID: 3165446302287488058
+      spriteID: 55c5b608861d789c0800000000000000
+      internalID: -3924938303468774315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking_left_animation_ready_for_UNITY_5
+      name: Level_Details_9
       rect:
         serializedVersion: 2
-        x: 168
-        y: 4
-        width: 17
-        height: 24
+        x: 162
+        y: 105
+        width: 16
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +314,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84d26edaa1425fd20800000000000000
-      internalID: 3311592798006160712
+      spriteID: 0adb0fee0e32d9c10800000000000000
+      internalID: 2061843653393956256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_Details_10
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 19
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d8cda04c9733320800000000000000
+      internalID: 2536504898042498384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level_Details_11
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 10
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bdb09b36bde56800800000000000000
+      internalID: 605151091890372019
       vertices: []
       indices: 
       edges: []
@@ -254,7 +374,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
