@@ -16,7 +16,7 @@ namespace SPACE.Managers
         private List<GameObject> _instancedSystemPrefabs;
         [SerializeField]
         PlayerHealth _playerHealth;
-       
+        public bool gameRunning = true;
         private void Awake()
         {
             

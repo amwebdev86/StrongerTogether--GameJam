@@ -623,6 +623,8 @@ GameObject:
   - component: {fileID: 841263682}
   - component: {fileID: 841263681}
   - component: {fileID: 841263683}
+  - component: {fileID: 841263684}
+  - component: {fileID: 841263685}
   m_Layer: 0
   m_Name: Enemy(Green_Squid_1)
   m_TagString: Untagged
@@ -689,7 +691,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841263678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.25, y: -8.08, z: 0}
+  m_LocalPosition: {x: 4.25, y: -7.19, z: 0}
   m_LocalScale: {x: 9.442377, y: 7.3353686, z: 1}
   m_Children:
   - {fileID: 210484276}
@@ -710,7 +712,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004347205, y: 0.02238363}
+  m_Offset: {x: 0.006084159, y: 0.095482275}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -721,7 +723,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16330999, y: 0.27523273}
+  m_Size: {x: 0.15996346, y: 0.12903544}
   m_EdgeRadius: 0
 --- !u!50 &841263682
 Rigidbody2D:
@@ -743,7 +745,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &841263683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +774,35 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!58 &841263684
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841263678}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0021837077, y: -0.02}
+  serializedVersion: 2
+  m_Radius: 0.08010042
+--- !u!114 &841263685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841263678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a347fa0deeabf9245b4408c74c84660e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 15
 --- !u!1 &854009920
 GameObject:
   m_ObjectHideFlags: 0
