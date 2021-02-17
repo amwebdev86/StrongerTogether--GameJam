@@ -8,7 +8,7 @@ namespace SPACE.Player.Alien
         [SerializeField]MainController controller;
         float alienHorizontalMovement;
         public float AlienSpeed = 3f;
-        [SerializeField] bool isJoined = false;
+        [HideInInspector]public bool isJoined = false;
         bool alienJump = false;
         private void Update()
         {

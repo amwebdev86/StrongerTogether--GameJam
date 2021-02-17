@@ -102,13 +102,13 @@ namespace SPACE.Player
             //smooth out movement and apply it to the character
             _Rigidbody2D.velocity = Vector3.SmoothDamp(_Rigidbody2D.velocity, targetVelocity, ref _Velocity, movementSmoothing);
             //if movement is going right but player is facing left
-            if(move > 0 && !_FacingRight)
-            {
-                Flip();
-            }else if(move < 0 && _FacingRight)
-            {
-                Flip();
-            }
+            //if(move > 0 && !_FacingRight)
+            //{
+            //    Flip();
+            //}else if(move < 0 && _FacingRight)
+            //{
+            //    Flip();
+            //}
             if(_Grounded && jump)
             {
                 _Grounded = false;

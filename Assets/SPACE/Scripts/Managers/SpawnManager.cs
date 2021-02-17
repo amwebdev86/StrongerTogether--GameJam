@@ -29,7 +29,7 @@ namespace SPACE.Managers
                 yield return new WaitForSeconds(SpawnTimer);
                 //TODO: Instantiate Enemy at spawner postion.
                 //Instantiate(enemyPrefabs[gameUtils.RandomNum(0, enemyPrefabs.Length)], spawnLocations[gameUtils.RandomNum(0,spawnLocations.Length)], Quaternion.identity);
-                Debug.Log(GameUtility.RandomNum(0, 10));
+               // Debug.Log(GameUtility.RandomNum(0, 10));
             }
             CR_Running = false;
         }

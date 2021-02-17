@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e158438e378ab440973c5980f73e96d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 400
+  jumpForce: 300
   crouchSpeed: 0
   movementSmoothing: 0.05
   airControl: 1
@@ -211,6 +211,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7625495395966751563}
   RunSpeed: 20
+  jumpKey: 32
+  crouchKey: 99
+  playerAnim: {fileID: 6874186815145040366}
 --- !u!50 &6806423653251740942
 Rigidbody2D:
   serializedVersion: 4
@@ -226,7 +229,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
