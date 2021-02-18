@@ -98,7 +98,7 @@ namespace SPACE.Managers
         /// <summary>
         /// Loads a scene Async. waiting for operation to complete before loading.
         /// </summary>
-        /// <param name="levelName"></param>
+        /// <param name="levelName">Name of the Level</param>
         public void LoadLevelAsync(string levelName)
         {
             //loads the scene
@@ -125,6 +125,10 @@ namespace SPACE.Managers
             Debug.Log("Loading Complete");
 
             operation.allowSceneActivation = true;
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+            }
 
         }
         /// <summary>
