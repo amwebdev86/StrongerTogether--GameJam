@@ -17,7 +17,7 @@ namespace SPACE.Enemy
         }
         private void Update()
         {
-            //rndRng = Random.Range(-1, 2);
+            
             Debug.Log(rndRng);
         }
         void FixedUpdate()
@@ -31,9 +31,7 @@ namespace SPACE.Enemy
             {
                 rndRng = Random.Range(-1, 2);
                 yield return new WaitForSeconds(3);
-                //rndRng = Random.Range(-1, 2);
-                //yield return new WaitForSeconds(3);
-                //rndRng = Random.Range(-1, 2);
+              
             }
         
 

@@ -15,6 +15,7 @@ namespace SPACE.Controller
         [SerializeField] Transform groundCheck;
         [SerializeField] Transform ceilingCheck;
         [SerializeField] Collider2D crouchDisableCollider;
+        [SerializeField] bool flipSprite = false;
         //TODO: ADD Animator Controller here.
         const float _GroundedRadius = .2f;
        bool _Grounded;
@@ -102,13 +103,13 @@ namespace SPACE.Controller
             //smooth out movement and apply it to the character
             _Rigidbody2D.velocity = Vector3.SmoothDamp(_Rigidbody2D.velocity, targetVelocity, ref _Velocity, movementSmoothing);
             //if movement is going right but player is facing left
-            //if(move > 0 && !_FacingRight)
-            //{
-            //    Flip();
-            //}else if(move < 0 && _FacingRight)
-            //{
-            //    Flip();
-            //}
+            if(move > 0 && !_FacingRight && flipSprite)
+            {
+               Flip();
+            }else if(move < 0 && _FacingRight && flipSprite)
+            {
+               Flip();
+            }
             if(_Grounded && jump)
             {
                 _Grounded = false;
