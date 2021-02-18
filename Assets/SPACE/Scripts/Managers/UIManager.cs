@@ -41,7 +41,7 @@ namespace SPACE.Managers
         /// </summary>
         public void RestartLevel()
         {
-            GameManager.Instance.UnloadLevel(SceneManager.GetActiveScene().name);
+            //GameManager.Instance.UnloadLevel(SceneManager.GetActiveScene().name);
             GameManager.Instance.LoadLevelAsync(SceneManager.GetActiveScene().name);
 
 
