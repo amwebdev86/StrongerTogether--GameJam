@@ -625,6 +625,8 @@ GameObject:
   - component: {fileID: 841263683}
   - component: {fileID: 841263684}
   - component: {fileID: 841263685}
+  - component: {fileID: 841263686}
+  - component: {fileID: 841263687}
   m_Layer: 0
   m_Name: Enemy(Green_Squid_1)
   m_TagString: Untagged
@@ -709,10 +711,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.006084159, y: 0.095482275}
+  m_Offset: {x: 0.0044631623, y: 0.07774611}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -723,7 +725,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15996346, y: 0.12903544}
+  m_Size: {x: 0.11133366, y: 0.0935631}
   m_EdgeRadius: 0
 --- !u!50 &841263682
 Rigidbody2D:
@@ -787,9 +789,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0021837077, y: -0.02}
+  m_Offset: {x: 0.0060915635, y: -0.04929363}
   serializedVersion: 2
-  m_Radius: 0.08010042
+  m_Radius: 0.06561876
 --- !u!114 &841263685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +805,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 15
+--- !u!95 &841263686
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841263678}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 345b5f91241025d428d63c61bdae9753, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &841263687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841263678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4dd7799731e3247a081f064de7dc55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
 --- !u!1 &854009920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,6 +2468,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 157089541449771605, guid: b26deaa10f20e2e4da0f4eb69e464093,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 157089541449771609, guid: b26deaa10f20e2e4da0f4eb69e464093,
         type: 3}
       propertyPath: _healthBar

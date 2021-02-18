@@ -15,14 +15,10 @@ namespace SPACE.Enemy
             controller = GetComponent<MainController>();
             StartCoroutine(EnemyMovement());
         }
-        private void Update()
-        {
-            //rndRng = Random.Range(-1, 2);
-            Debug.Log(rndRng);
-        }
+
         void FixedUpdate()
         {
-            
+
             controller.Move(rndRng * enemySpeed * Time.fixedDeltaTime, false, false);
         }
         IEnumerator EnemyMovement()
@@ -35,7 +31,7 @@ namespace SPACE.Enemy
                 //yield return new WaitForSeconds(3);
                 //rndRng = Random.Range(-1, 2);
             }
-        
+
 
         }
     }
