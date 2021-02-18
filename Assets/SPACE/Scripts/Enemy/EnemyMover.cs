@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SPACE.Controller;
@@ -15,25 +15,24 @@ namespace SPACE.Enemy
             controller = GetComponent<MainController>();
             StartCoroutine(EnemyMovement());
         }
-        private void Update()
-        {
-            
-            Debug.Log(rndRng);
-        }
+
         void FixedUpdate()
         {
-            
+
             controller.Move(rndRng * enemySpeed * Time.fixedDeltaTime, false, false);
         }
+        /// <summary>
+        /// Moves enemy
+        /// </summary>
+        /// <returns></returns>
         IEnumerator EnemyMovement()
         {
             while (GameManager.Instance.gameRunning)
             {
                 rndRng = Random.Range(-1, 2);
                 yield return new WaitForSeconds(3);
-              
             }
-        
+
 
         }
     }
