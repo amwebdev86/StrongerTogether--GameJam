@@ -1,18 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using SPACE.Utils;
 using SPACE.UI;
+
 namespace SPACE.Managers
 {
     public class UIManager : Singleton<UIManager>
     {
         [SerializeField] HealthBar healthBarDisplay;
+        [SerializeField] GameObject gameOverPanel;
         // Start is called before the first frame update
+        private void Awake()
+        {
+            Debug.Log(SceneManager.GetActiveScene().name);
+        }
         void Start()
         {
+            gameOverPanel.SetActive(false);
             if (!healthBarDisplay)
                 healthBarDisplay = GetComponentInChildren<HealthBar>();
+
 
         }
 
@@ -25,11 +32,24 @@ namespace SPACE.Managers
         {
             healthBarDisplay.SetHealth(health);
         }
-
-        // Update is called once per frame
-        void Update()
+        public void DisplayGameOver()
         {
+            gameOverPanel.SetActive(true);
+        }
+        /// <summary>
+        /// Restarts the current Level.
+        /// </summary>
+        public void RestartLevel()
+        {
+            GameManager.Instance.UnloadLevel(SceneManager.GetActiveScene().name);
+            GameManager.Instance.LoadLevelAsync(SceneManager.GetActiveScene().name);
+
 
         }
+        public void QuitToMenu()
+        {
+            GameManager.Instance.LoadLevelAsync("MainMenu");
+        }
+
     }
 }

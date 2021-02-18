@@ -33,17 +33,17 @@ namespace SPACE.Player
             _currentHealth = _maxHealth;
             //_healthBar.SetMaxHealth(_maxHealth);
         }
-       /// <summary>
-       /// Damages the player.
-       /// </summary>
-       /// <param name="damage">Amount to damage player</param>
+        /// <summary>
+        /// Damages the player.
+        /// </summary>
+        /// <param name="damage">Amount to damage player</param>
         public void TakeDamage(int damage)
         {
 
             _currentHealth -= damage;
             //_healthBar.SetHealth(_currentHealth);
             GameManager.Instance.UpdateHealthBar(_currentHealth);
-            if(_currentHealth < 0)
+            if (_currentHealth <= 0)
             {
                 //TODO: Invoke Gameover event
 
@@ -60,7 +60,7 @@ namespace SPACE.Player
         public void Heal(int amount)
         {
             _currentHealth += amount;
-            if(_currentHealth > _maxHealth)
+            if (_currentHealth > _maxHealth)
             {
                 _currentHealth = _maxHealth;
             }

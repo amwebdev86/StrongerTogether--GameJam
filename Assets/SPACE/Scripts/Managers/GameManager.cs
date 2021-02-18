@@ -18,24 +18,24 @@ namespace SPACE.Managers
         PlayerHealth _playerHealth;
         public bool gameRunning = true;
         public UnityEvent m_GameOverEvent;
-        private void Awake()
-        {
+        // private void Awake()
+        // {
 
-            DontDestroyOnLoad(gameObject);
+        //     DontDestroyOnLoad(gameObject);
 
-        }
+        // }
         private void Start()
         {
 
             _instancedSystemPrefabs = new List<GameObject>();
             InstantiateSystemPrefabs();
-            if (_instancedSystemPrefabs.Count > 0)
-            {
-                foreach (GameObject prefab in _instancedSystemPrefabs)
-                {
-                    DontDestroyOnLoad(prefab);
-                }
-            }
+            // if (_instancedSystemPrefabs.Count > 0)
+            // {
+            //     foreach (GameObject prefab in _instancedSystemPrefabs)
+            //     {
+            //         DontDestroyOnLoad(prefab);
+            //     }
+            // }
             SpawnManager.Instance.ActivateGame(true);
             StartCoroutine(SpawnManager.Instance.Spawner());
             _playerHealth = FindObjectOfType<PlayerHealth>();
@@ -77,9 +77,22 @@ namespace SPACE.Managers
         {
             _playerHealth.TakeDamage(amount);
         }
+        //TODO: Remove Update
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                DamagePlayer(100);
+            }
+        }
         void GameOver()
         {
             //TODO: create a Gameover screen
+            UIManager.Instance.DisplayGameOver();
+            SpawnManager.Instance.ActivateGame(false);
+            StopAllCoroutines();
+            Time.timeScale = 0;
+
             Debug.Log("Game Over!");
         }
         /// <summary>
@@ -112,8 +125,7 @@ namespace SPACE.Managers
             Debug.Log("Loading Complete");
 
             operation.allowSceneActivation = true;
-            //SpawnManager.Instance.ActivateGame(true);
-            //StartCoroutine(SpawnManager.Instance.Spawner());
+
         }
         /// <summary>
         /// Allows scene to be loading on top of level to host any
