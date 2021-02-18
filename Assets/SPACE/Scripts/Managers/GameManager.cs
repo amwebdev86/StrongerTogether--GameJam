@@ -87,7 +87,7 @@ namespace SPACE.Managers
         }
         void GameOver()
         {
-            //TODO: create a Gameover screen
+            
             UIManager.Instance.DisplayGameOver();
             SpawnManager.Instance.ActivateGame(false);
             StopAllCoroutines();
