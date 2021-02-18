@@ -27,9 +27,6 @@ namespace SPACE.Enemy
             {
                 rndRng = Random.Range(-1, 2);
                 yield return new WaitForSeconds(3);
-                //rndRng = Random.Range(-1, 2);
-                //yield return new WaitForSeconds(3);
-                //rndRng = Random.Range(-1, 2);
             }
 
 

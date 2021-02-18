@@ -1,4 +1,5 @@
-﻿using SPACE.UI;
+﻿//using SPACE.UI;
+using SPACE.Managers;
 using UnityEngine;
 
 namespace SPACE.Player
@@ -26,11 +27,11 @@ namespace SPACE.Player
             }
         }
         [SerializeField]
-        HealthBar _healthBar;
+        //HealthBar _healthBar;
         private void Start()
         {
             _currentHealth = _maxHealth;
-            _healthBar.SetMaxHealth(_maxHealth);
+            //_healthBar.SetMaxHealth(_maxHealth);
         }
        /// <summary>
        /// Damages the player.
@@ -38,18 +39,17 @@ namespace SPACE.Player
        /// <param name="damage">Amount to damage player</param>
         public void TakeDamage(int damage)
         {
-            if(_currentHealth == 0)
-            {
-                Debug.LogWarning("Yo Player been dead homie!");
-                return;
-            }
+
             _currentHealth -= damage;
-            _healthBar.SetHealth(_currentHealth);
+            //_healthBar.SetHealth(_currentHealth);
+            GameManager.Instance.UpdateHealthBar(_currentHealth);
             if(_currentHealth < 0)
             {
                 //TODO: Invoke Gameover event
+
                 _currentHealth = 0;
-                Debug.Log($"Player died health = {_currentHealth}... Should be game over here");
+                GameManager.Instance.m_GameOverEvent.Invoke();
+
             }
             Debug.Log($"Player was damaged {_currentHealth}-{damage}");
         }
@@ -65,7 +65,7 @@ namespace SPACE.Player
                 _currentHealth = _maxHealth;
             }
         }
-        
+
     }
 
 }

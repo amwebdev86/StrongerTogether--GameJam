@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 using SPACE.Utils;
 using SPACE.Player;
-
+using SPACE.UI;
 namespace SPACE.Managers
 {
     public class GameManager : Singleton<GameManager>
@@ -14,17 +15,18 @@ namespace SPACE.Managers
         GameObject[] _systemPrefabs;
         [SerializeField]
         private List<GameObject> _instancedSystemPrefabs;
-        [SerializeField]
         PlayerHealth _playerHealth;
         public bool gameRunning = true;
+        public UnityEvent m_GameOverEvent;
         private void Awake()
         {
-            
+
             DontDestroyOnLoad(gameObject);
-           
+
         }
         private void Start()
         {
+
             _instancedSystemPrefabs = new List<GameObject>();
             InstantiateSystemPrefabs();
             if (_instancedSystemPrefabs.Count > 0)
@@ -37,20 +39,27 @@ namespace SPACE.Managers
             SpawnManager.Instance.ActivateGame(true);
             StartCoroutine(SpawnManager.Instance.Spawner());
             _playerHealth = FindObjectOfType<PlayerHealth>();
+            if (m_GameOverEvent == null)
+            {
+                m_GameOverEvent = new UnityEvent();
+            }
+            m_GameOverEvent.AddListener(GameOver);
+            InitiateHealthBar(_playerHealth.MaxHealth);
 
         }
-        private void Update()
+        public void InitiateHealthBar(int amount)
         {
-          
-        
-                
-                if (Input.GetKeyDown(KeyCode.J))
-                {
-                    _playerHealth.TakeDamage(10);
-                   
-                }
-            
+            UIManager.Instance.SetInitialHealth(amount);
         }
+        /// <summary>
+        /// Updates the HealthBar
+        /// </summary>
+        /// <param name="currentHealth"></param>
+        public void UpdateHealthBar(int currentHealth)
+        {
+            UIManager.Instance.UpdatePlayerHealth(currentHealth);
+        }
+
         /// <summary>
         /// Adds any prefabs in _systemPrefabs to _instancedSystemPrefabs
         /// </summary>
@@ -62,7 +71,16 @@ namespace SPACE.Managers
                 prefabInstance = Instantiate(_systemPrefabs[i]);
                 _instancedSystemPrefabs.Add(prefabInstance);
             }
-           
+
+        }
+        public void DamagePlayer(int amount)
+        {
+            _playerHealth.TakeDamage(amount);
+        }
+        void GameOver()
+        {
+            //TODO: create a Gameover screen
+            Debug.Log("Game Over!");
         }
         /// <summary>
         /// Loads a scene Async. waiting for operation to complete before loading.
@@ -75,9 +93,9 @@ namespace SPACE.Managers
             Debug.Log($"Loading {levelName}....");
             //pause before going to scene to load needed managers
             operation.allowSceneActivation = false;
-            
+
             StartCoroutine(WaitForLoading(operation));
-            
+
         }
         /// <summary>
         /// Waits for async operation to complete allowing scene activation.
@@ -86,16 +104,16 @@ namespace SPACE.Managers
         /// <returns></returns>
         IEnumerator WaitForLoading(AsyncOperation operation)
         {
-            while(operation.progress < 0.9f)
+            while (operation.progress < 0.9f)
             {
                 yield return null;
             }
 
             Debug.Log("Loading Complete");
-            
+
             operation.allowSceneActivation = true;
-                //SpawnManager.Instance.ActivateGame(true);
-                //StartCoroutine(SpawnManager.Instance.Spawner());
+            //SpawnManager.Instance.ActivateGame(true);
+            //StartCoroutine(SpawnManager.Instance.Spawner());
         }
         /// <summary>
         /// Allows scene to be loading on top of level to host any
@@ -118,7 +136,13 @@ namespace SPACE.Managers
             yield return new WaitUntil(() => operation.isDone);
             Resources.UnloadUnusedAssets();
         }
-      
+
+
+        /// <summary>
+        /// Path for saving gameobject data.
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         public string PathForSaving(string filename)
         {
             string identifier = SystemInfo.deviceModel;
@@ -132,7 +156,7 @@ namespace SPACE.Managers
             }
             Debug.Log($"Saved file to {path}");
             return path;
-            
+
         }
 
     }
