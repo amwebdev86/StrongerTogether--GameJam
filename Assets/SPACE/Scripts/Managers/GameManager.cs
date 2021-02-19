@@ -77,18 +77,15 @@ namespace SPACE.Managers
     {
       _playerHealth.TakeDamage(amount);
     }
-    //TODO: Remove Update
-    private void Update()
-    {
-      if (Input.GetKeyDown(KeyCode.B))
-      {
-        DamagePlayer(100);
-      }
-    }
+
     void GameOver()
     {
       StartCoroutine(GameOverSequence());
     }
+    /// <summary>
+    /// Plays the sequence when the player dies.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator GameOverSequence()
     {
       Transform playerTransform = _playerHealth.GetComponent<Transform>();

@@ -603,6 +603,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0140fdff4a730e4eab4d80a9d359b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &157089541449771605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157089541449771603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce52fb4ee6220ac418efa5c47a62fa8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SpawnPoint: {fileID: 7092069485076163980}
+  _AlienCount: 0
 --- !u!1001 &450087843741062514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -674,11 +688,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy(Green_Squid_1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 450087843974152013, guid: 53a83c44137f4d14ca8e79269d23eb2c,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53a83c44137f4d14ca8e79269d23eb2c, type: 3}
@@ -820,6 +829,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90d616271a15d594495053012bb80d99, type: 3}
+--- !u!4 &7092069485076163980 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4184889225588741189, guid: 90d616271a15d594495053012bb80d99,
+    type: 3}
+  m_PrefabInstance: {fileID: 7092069485076163979}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8263959155207339430
 PrefabInstance:
   m_ObjectHideFlags: 0
