@@ -277,14 +277,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2133749986, guid: f8d095c71c5a59f438703eea72fed3a7, type: 3}
-      propertyPath: m_text
-      value: Galactic Bond
-      objectReference: {fileID: 0}
-    - target: {fileID: 2133749986, guid: f8d095c71c5a59f438703eea72fed3a7, type: 3}
-      propertyPath: m_fontSize
-      value: 42.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6277753671014988180, guid: f8d095c71c5a59f438703eea72fed3a7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -395,5 +387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 6277753671014988185, guid: f8d095c71c5a59f438703eea72fed3a7,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d095c71c5a59f438703eea72fed3a7, type: 3}
