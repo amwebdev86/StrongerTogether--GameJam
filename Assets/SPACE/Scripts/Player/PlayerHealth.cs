@@ -26,13 +26,17 @@ namespace SPACE.Player
         return _currentHealth;
       }
     }
-    [SerializeField]
-    //HealthBar _healthBar;
+
     private void Start()
     {
       _currentHealth = _maxHealth;
       //_healthBar.SetMaxHealth(_maxHealth);
     }
+    private void Update()
+    {
+
+    }
+
     /// <summary>
     /// Damages the player.
     /// </summary>
