@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 5847007022233698916}
-  AlienSpeed: 20
+  AlienSpeed: 25
   isJoined: 0
 --- !u!114 &5847007022233698916
 MonoBehaviour:
