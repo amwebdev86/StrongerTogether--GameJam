@@ -16,7 +16,7 @@ namespace SPACE.Player.Alien
         {
             if(collision.gameObject.name == "Player")
             {
-                //TODO: add alien to player companions list.
+               
                 movement.isJoined = true;
             }
         }
