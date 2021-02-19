@@ -675,6 +675,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy(Green_Squid_1)
       objectReference: {fileID: 0}
+    - target: {fileID: 450087843974152013, guid: 53a83c44137f4d14ca8e79269d23eb2c,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53a83c44137f4d14ca8e79269d23eb2c, type: 3}
 --- !u!1001 &5847007020595101876
@@ -881,6 +886,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106869699657242613, guid: b26deaa10f20e2e4da0f4eb69e464093,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350287727581227, guid: b26deaa10f20e2e4da0f4eb69e464093,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9304913
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350287727581227, guid: b26deaa10f20e2e4da0f4eb69e464093,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9304913
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600350287727581227, guid: b26deaa10f20e2e4da0f4eb69e464093,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9622642
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b26deaa10f20e2e4da0f4eb69e464093, type: 3}
