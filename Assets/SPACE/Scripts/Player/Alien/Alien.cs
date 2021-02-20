@@ -2,24 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SPACE.Player.Alien
+namespace SPACE.Player.Aliens
 {
-    public class Alien : MonoBehaviour
-    {
-        AlienMovement movement;
+  public class Alien : MonoBehaviour
+  {
+    AlienMovement movement;
+    AlienHealth health;
+    Transform alienTrans;
+    Player player;
 
-        private void Start()
-        {
-            movement = GetComponent<AlienMovement>();
-        }
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if(collision.gameObject.name == "Player")
-            {
-               
-                movement.isJoined = true;
-            }
-        }
+    private void Start()
+    {
+      movement = GetComponent<AlienMovement>();
+      health = GetComponent<AlienHealth>();
+      alienTrans = GetComponent<Transform>();
+      player = FindObjectOfType<Player>();
+
     }
+    /// <summary>
+    /// Checks if alien has fallen and if so starts the death coroutine
+    /// </summary>
+    private void Update()
+    {
+      if (alienTrans.position.y <= -9)
+      {
+        alienTrans.Rotate(new Vector3(0, 0, -90));
+        player.RemoveFromPlayer(this);
+        StartCoroutine(health.AlienDeathRoutine());
+      }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+      if (other.gameObject.tag == "Enemy")
+      {
+        health.DamageAlien();
+      }
+
+      if (other.gameObject.name == "Player")
+      {
+        Player player = other.gameObject.GetComponent<Player>();
+        if (movement.isJoined == false)
+        {
+          movement.isJoined = true;
+          player.AddAlien(this);
+
+        }
+        else
+        {
+
+
+        }
+        //TODO Fix issue where same alien can be added multiple times.
+
+
+      }
+    }
+
+
+
+  }
 
 }

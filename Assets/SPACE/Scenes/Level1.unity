@@ -616,7 +616,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _SpawnPoint: {fileID: 7092069485076163980}
-  _AlienCount: 0
 --- !u!1001 &450087843741062514
 PrefabInstance:
   m_ObjectHideFlags: 0

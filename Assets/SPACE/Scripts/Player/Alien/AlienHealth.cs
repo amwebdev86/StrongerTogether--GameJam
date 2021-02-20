@@ -2,39 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SPACE.Player.Alien
+namespace SPACE.Player.Aliens
 {
   public class AlienHealth : MonoBehaviour
   {
-    [SerializeField] int _Health;
-    Transform alienTrans;
+    [SerializeField] int _Health = 3;
+    Player player;
 
     private void Start()
     {
-      if (_Health == 0) { _Health = 3; }
-      alienTrans = GetComponent<Transform>();
-
+      player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
-    private void Update()
-    {
-      if (alienTrans.position.y <= -9)
-      {
-        StartCoroutine(AlienDeathRoutine());
-      }
-    }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-      if (other.gameObject.tag == "Enemy")
-      {
-        DamageAlien();
-      }
-    }
+
+
     /// <summary>
     /// Damages Alien by 1 HP
     /// </summary>
-    void DamageAlien()
+    public void DamageAlien()
     {
       _Health -= 1;
       if (_Health <= 0)
@@ -42,19 +28,18 @@ namespace SPACE.Player.Alien
         StartCoroutine(AlienDeathRoutine());
       }
     }
-    IEnumerator AlienDeathRoutine()
+    public IEnumerator AlienDeathRoutine()
     {
 
       SpriteRenderer alienRender = GetComponent<SpriteRenderer>();
       Color originalColor = alienRender.color;
-      alienTrans.Rotate(new Vector3(0, 0, -90));
       yield return new WaitForSeconds(.5f);
       alienRender.color = Color.red;
       yield return new WaitForSeconds(.5f);
       alienRender.color = originalColor;
       yield return new WaitForSeconds(1f);
+
       alienRender.color = Color.red;
-      //TODO: Call Companion Script to decrease current Alien Count.
       Destroy(gameObject);
 
 
