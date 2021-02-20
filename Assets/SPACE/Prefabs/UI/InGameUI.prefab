@@ -194,7 +194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quit
+  m_text: 'Quit To Menu
 
 '
   m_isRightToLeft: 0
@@ -594,6 +594,7 @@ MonoBehaviour:
   healthBarDisplay: {fileID: 3470398668254717666}
   gameOverPanel: {fileID: 7967139299826324071}
   scorePanel: {fileID: 6226444560081298074}
+  pausePanel: {fileID: 3119058704203125935}
   scoretext: {fileID: 4291515316312025114}
 --- !u!1 &7605954475340128441
 GameObject:
@@ -607,7 +608,7 @@ GameObject:
   - component: {fileID: 3574454371464999529}
   - component: {fileID: 2399896101630572969}
   m_Layer: 0
-  m_Name: PauseMenu
+  m_Name: PauseMenuText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
