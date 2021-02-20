@@ -2,7 +2,7 @@
 using SPACE.Managers;
 using UnityEngine;
 
-namespace SPACE.Player
+namespace SPACE.Players
 {
   /// <summary>
   /// Controls the player's health.

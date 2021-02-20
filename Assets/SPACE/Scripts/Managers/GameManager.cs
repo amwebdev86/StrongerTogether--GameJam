@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 using SPACE.Utils;
-using SPACE.Player;
+using SPACE.Players;
 using SPACE.UI;
 namespace SPACE.Managers
 {
@@ -66,7 +66,7 @@ namespace SPACE.Managers
 
     public void UpdatePlayerAlienCount(int value){
       UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>().AlienCountUpdate(value);
-      
+
 
     }
 

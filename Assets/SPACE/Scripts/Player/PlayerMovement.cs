@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SPACE.Controller;
-namespace SPACE.Player
+namespace SPACE.Players
 {
     public class PlayerMovement : MonoBehaviour
     {
@@ -13,7 +13,7 @@ namespace SPACE.Player
         bool isCrouching = false;
         public KeyCode jumpKey = KeyCode.Space, crouchKey = KeyCode.C;
         [SerializeField] Animator playerAnim;
-     
+
 
         private void Update()
         {
@@ -29,7 +29,7 @@ namespace SPACE.Player
             {
                 jump = true;
 
-              
+
             }
             if (Input.GetKeyDown(KeyCode.C))
             {
@@ -48,7 +48,7 @@ namespace SPACE.Player
             //moves character in Fixedupdate.. runs a fixed amount of time per second
             controller.Move(horizontalInput * Time.fixedDeltaTime, isCrouching, jump);
             jump = false;
-            
+
 
         }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SPACE.Player.Aliens
+namespace SPACE.Players.Aliens
 {
   public class AlienHealth : MonoBehaviour
   {

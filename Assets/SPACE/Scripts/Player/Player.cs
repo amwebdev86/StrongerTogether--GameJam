@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SPACE.Managers;
-using SPACE.Player.Aliens;
+using SPACE.Players.Aliens;
 
-namespace SPACE.Player
+namespace SPACE.Players
 {
   public class Player : MonoBehaviour
   {

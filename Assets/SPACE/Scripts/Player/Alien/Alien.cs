@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using SPACE.Players.Aliens;
 using UnityEngine;
 
-namespace SPACE.Player.Aliens
+namespace SPACE.Players.Aliens
 {
   public class Alien : MonoBehaviour
   {
