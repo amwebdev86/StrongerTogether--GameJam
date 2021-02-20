@@ -7,6 +7,8 @@ using UnityEngine.Events;
 using SPACE.Utils;
 using SPACE.Players;
 using SPACE.UI;
+using SPACE.Players.Aliens;
+
 namespace SPACE.Managers
 {
   public class GameManager : Singleton<GameManager>
@@ -18,24 +20,13 @@ namespace SPACE.Managers
     PlayerHealth _playerHealth;
     public bool gameRunning = true;
     public UnityEvent m_GameOverEvent;
-    // private void Awake()
-    // {
-
-    //     DontDestroyOnLoad(gameObject);
-
-    // }
+    private int _currentLvlAlienAmount;
     private void Start()
     {
 
       _instancedSystemPrefabs = new List<GameObject>();
       InstantiateSystemPrefabs();
-      // if (_instancedSystemPrefabs.Count > 0)
-      // {
-      //     foreach (GameObject prefab in _instancedSystemPrefabs)
-      //     {
-      //         DontDestroyOnLoad(prefab);
-      //     }
-      // }
+
       SpawnManager.Instance.ActivateGame(true);
       StartCoroutine(SpawnManager.Instance.Spawner());
       _playerHealth = FindObjectOfType<PlayerHealth>();
@@ -45,6 +36,7 @@ namespace SPACE.Managers
       }
       m_GameOverEvent.AddListener(GameOver);
       InitiateHealthBar(_playerHealth.MaxHealth);
+      _currentLvlAlienAmount = GetLevelTotalAlienCount();
 
     }
     /// <summary>
@@ -64,7 +56,8 @@ namespace SPACE.Managers
       UIManager.Instance.UpdatePlayerHealth(currentHealth);
     }
 
-    public void UpdatePlayerAlienCount(int value){
+    public void UpdatePlayerAlienCount(int value)
+    {
       UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>().AlienCountUpdate(value);
 
 
@@ -83,11 +76,27 @@ namespace SPACE.Managers
       }
 
     }
+
+    public int GetLevelTotalAlienCount()
+    {
+      Alien[] aliensInLevel = FindObjectsOfType<Alien>();
+      return aliensInLevel.Length;
+    }
     public void DamagePlayer(int amount)
     {
       _playerHealth.TakeDamage(amount);
     }
 
+/// <summary>
+/// When the player reaches the goal this method displays the score screen and updates the score.
+/// </summary>
+/// <param name="alienCount"></param>
+    public void WinGame(int alienCount)
+    {
+      UIManager.Instance.DisplayScoreScreen();
+      UIManager.Instance.UpdateScoreText(alienCount, _currentLvlAlienAmount);
+
+    }
     void GameOver()
     {
       StartCoroutine(GameOverSequence());
