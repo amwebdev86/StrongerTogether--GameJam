@@ -47,6 +47,10 @@ namespace SPACE.Managers
       InitiateHealthBar(_playerHealth.MaxHealth);
 
     }
+    /// <summary>
+    /// Sets the HealthBar to the appropriate player HP amount
+    /// </summary>
+    /// <param name="amount">Player Max HP</param>
     public void InitiateHealthBar(int amount)
     {
       UIManager.Instance.SetInitialHealth(amount);
@@ -54,10 +58,16 @@ namespace SPACE.Managers
     /// <summary>
     /// Updates the HealthBar
     /// </summary>
-    /// <param name="currentHealth"></param>
+    /// <param name="currentHealth">Player's Current Health</param>
     public void UpdateHealthBar(int currentHealth)
     {
       UIManager.Instance.UpdatePlayerHealth(currentHealth);
+    }
+
+    public void UpdatePlayerAlienCount(int value){
+      UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>().AlienCountUpdate(value);
+      
+
     }
 
     /// <summary>

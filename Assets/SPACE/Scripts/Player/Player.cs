@@ -12,9 +12,9 @@ namespace SPACE.Player
     [SerializeField] Transform _SpawnPoint;//currently only used for reseting player after falling.
     List<Alien> alienList;
 
-/// <summary>
-/// Grabs Player Transform and intiaites a new List of Alien components.
-/// </summary>
+    /// <summary>
+    /// Grabs Player Transform and intiaites a new List of Alien components.
+    /// </summary>
     private void Start()
     {
       _PlayerTrans = GetComponent<Transform>();
@@ -32,9 +32,9 @@ namespace SPACE.Player
         PlayerFallSequence();
       }
     }
-/// <summary>
-/// Removes each attached alien in players alienList.
-/// </summary>
+    /// <summary>
+    /// Removes each attached alien in players alienList.
+    /// </summary>
     void PlayerFallSequence()
     {
       if (alienList.Count > 0)
@@ -55,7 +55,7 @@ namespace SPACE.Player
     public void AddAlien(Alien alien)
     {
       alienList.Add(alien);
-
+      GameManager.Instance.UpdatePlayerAlienCount(alienList.Count);
     }
     /// <summary>
     /// Sets Alien movment Joinment to false and removes Alien from the Player's alienList.
@@ -65,6 +65,8 @@ namespace SPACE.Player
     {
       alien.GetComponent<AlienMovement>().isJoined = false;
       alienList.Remove(alien);
+      GameManager.Instance.UpdatePlayerAlienCount(alienList.Count);
+
     }
     /// <summary>
     /// Sets all aliens currently in the player's list movement Jointment to false;
@@ -76,8 +78,11 @@ namespace SPACE.Player
         alienList.ForEach(a => a.GetComponent<AlienMovement>().isJoined = false);
 
       }
+    }
 
-
+    public int AlientListCount()
+    {
+      return alienList.Count;
     }
   }
 

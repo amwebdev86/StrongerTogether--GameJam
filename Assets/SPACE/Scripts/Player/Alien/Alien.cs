@@ -31,6 +31,10 @@ namespace SPACE.Player.Aliens
         StartCoroutine(health.AlienDeathRoutine());
       }
     }
+    /// <summary>
+    /// Checks for enemy contact and takes damage. Or player contact and adds to alien list.
+    /// </summary>
+    /// <param name="other">GameObject Alien collided with.</param>
     private void OnCollisionEnter2D(Collision2D other)
     {
       if (other.gameObject.tag == "Enemy")
@@ -49,7 +53,7 @@ namespace SPACE.Player.Aliens
         }
         else
         {
-
+          return;
 
         }
         //TODO Fix issue where same alien can be added multiple times.
