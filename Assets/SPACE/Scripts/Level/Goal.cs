@@ -28,7 +28,6 @@ namespace SPACE.LevelManager
         int playerCount = player.AlientListCount();
         if (playerCount >= _GoalAmount)
         {
-          //TODO Win game
           GameManager.Instance.WinGame(playerCount);
           Debug.Log("YOU WON!");
 
@@ -40,6 +39,8 @@ namespace SPACE.LevelManager
         }
       }
     }
+
+    //TODO: Create corotine to add ship animation and winning sounds
 
   }
 

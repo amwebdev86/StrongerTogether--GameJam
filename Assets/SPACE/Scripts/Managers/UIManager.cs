@@ -62,9 +62,9 @@ namespace SPACE.Managers
     public void UpdateScoreText(int playerAlienCount, int levelMaxCount)
     {
       Debug.Log(playerAlienCount);
-      float completion = playerAlienCount / levelMaxCount;
-Debug.Log($"Completion is {completion}");
-      float percentComplete = completion * 100;
+      float completion = (float)playerAlienCount / (float)levelMaxCount;
+      Debug.Log($"Completion is {completion}");
+      float percentComplete = Mathf.Round(completion * 100);
       string scoreTxt = $"SCORE: {playerAlienCount}/{levelMaxCount} --- {percentComplete}%";
       //string scoreTxt = "What the fuck...";
 
