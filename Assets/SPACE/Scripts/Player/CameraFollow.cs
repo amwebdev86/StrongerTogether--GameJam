@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SPACE.Player
+namespace SPACE.Players
 {
     public class CameraFollow : MonoBehaviour
     {

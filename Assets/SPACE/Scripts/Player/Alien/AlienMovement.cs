@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SPACE.Controller;
-namespace SPACE.Player.Alien
+namespace SPACE.Players.Aliens
 {
     public class AlienMovement : MonoBehaviour
     {
@@ -22,7 +22,7 @@ namespace SPACE.Player.Alien
                 }
             }
 
-           
+
         }
         private void FixedUpdate()
         {
@@ -32,8 +32,8 @@ namespace SPACE.Player.Alien
                 alienJump = false;
 
             }
-               
+
         }
-       
+
     }
 }
