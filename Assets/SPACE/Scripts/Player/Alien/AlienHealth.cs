@@ -7,10 +7,12 @@ namespace SPACE.Players.Aliens
   public class AlienHealth : MonoBehaviour
   {
     [SerializeField] int _Health = 3;
+    Alien alien;
     Player player;
 
     private void Start()
     {
+      alien = GetComponent<Alien>();
       player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
@@ -38,7 +40,7 @@ namespace SPACE.Players.Aliens
       yield return new WaitForSeconds(.5f);
       alienRender.color = originalColor;
       yield return new WaitForSeconds(1f);
-
+      player.RemoveFromPlayer(alien);
       alienRender.color = Color.red;
       Destroy(gameObject);
 
