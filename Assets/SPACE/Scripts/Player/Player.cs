@@ -29,6 +29,7 @@ namespace SPACE.Players
 
       if (_PlayerTrans.position.y <= -9)
       {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.FALL);
         PlayerFallSequence();
       }
     }
@@ -37,7 +38,7 @@ namespace SPACE.Players
     /// </summary>
     void PlayerFallSequence()
     {
-      SoundManager.Instance.PlaySound(SoundManager.Sound.FALL);
+
       if (alienList.Count > 0)
       {
         alienList.ForEach(a => RemoveFromPlayer(a));

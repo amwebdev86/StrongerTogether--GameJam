@@ -20,15 +20,18 @@ namespace SPACE.Managers
     public enum Sound
     {
       PLAYERJUMP, PLAYERDEATH, PLAYERINTERACT, ACHEIVEMENT, HIT, FALL,
-      MENUCLICK, PLAYERMOVE
+      MENUCLICK, PLAYERMOVE, GAMEOVER, WIN, LOOP
     }
     private Dictionary<Sound, float> soundTimeDictionary;
     private GameObject oneShotGameObject;
+    private GameObject loopGameObject;
     private AudioSource oneShotAudioSource;
+    private AudioSource loopAudioSource;
 
     private void Awake()
     {
       Initialize();
+      PlaySoundLoop(Sound.LOOP);
     }
     public void Initialize()
     {
@@ -68,6 +71,22 @@ namespace SPACE.Managers
         }
 
         oneShotAudioSource.PlayOneShot(GetAudioClip(sound));
+        // Destroy(soundObj, audioSource.clip.length);
+      }
+
+    }
+    public void PlaySoundLoop(Sound sound)
+    {
+      if (CanPlaySound(sound))
+      {
+        if (loopGameObject == null)
+        {
+          oneShotGameObject = new GameObject("One Shot found");
+          oneShotAudioSource = oneShotGameObject.AddComponent<AudioSource>();
+        }
+        oneShotAudioSource.clip = GetAudioClip(sound);
+        oneShotAudioSource.loop = true;
+        oneShotAudioSource.Play();
         // Destroy(soundObj, audioSource.clip.length);
       }
 

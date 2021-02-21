@@ -79,7 +79,7 @@ namespace SPACE.Managers
     public void LoadNextLevel()
     {
       //TODO load next level.
-      Debug.Log("Loading next level.");
+      GameManager.Instance.LoadLevelAsync("Credits");
     }
 
     /// <summary>

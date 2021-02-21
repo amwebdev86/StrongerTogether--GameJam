@@ -22,33 +22,51 @@ namespace SPACE.Managers
     public UnityEvent m_GameOverEvent;
     private int _currentLvlAlienAmount;
     PlayerHUD _playerHUD;
+    private void Awake()
+    {
+      Debug.Log(SceneManager.GetActiveScene().name);
+      if (SceneManager.GetActiveScene().name == "Credits")
+      {
+        gameRunning = false;
+        StopAllCoroutines();
+      }
+
+    }
     private void Start()
     {
-
-      _instancedSystemPrefabs = new List<GameObject>();
-      InstantiateSystemPrefabs();
-
-      SpawnManager.Instance.ActivateGame(true);
-      StartCoroutine(SpawnManager.Instance.Spawner());
-      _playerHealth = FindObjectOfType<PlayerHealth>();
-      if (m_GameOverEvent == null)
+      if (gameRunning)
       {
-        m_GameOverEvent = new UnityEvent();
+        _instancedSystemPrefabs = new List<GameObject>();
+        InstantiateSystemPrefabs();
+
+        SpawnManager.Instance.ActivateGame(true);
+        StartCoroutine(SpawnManager.Instance.Spawner());
+        _playerHealth = FindObjectOfType<PlayerHealth>();
+        if (m_GameOverEvent == null)
+        {
+          m_GameOverEvent = new UnityEvent();
+        }
+        m_GameOverEvent.AddListener(GameOver);
+        InitiateHealthBar(_playerHealth.MaxHealth);
+        _currentLvlAlienAmount = GetLevelTotalAlienCount();
+
+        _playerHUD = UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>();
+        _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
       }
-      m_GameOverEvent.AddListener(GameOver);
-      InitiateHealthBar(_playerHealth.MaxHealth);
-      _currentLvlAlienAmount = GetLevelTotalAlienCount();
-
-      _playerHUD = UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>();
-      _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
-
 
 
     }
+
+    public void EndGame(){
+Application.Quit();
+    }
     private void Update()
     {
-      _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName() + ' ');
-      if (GetLevelTotalAlienCount() <= 0)
+
+
+      if (_playerHUD && gameRunning)
+        _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName() + ' ');
+      if (GetLevelTotalAlienCount() <= 0 && gameRunning)
       {
         GameOver();
       }
@@ -110,6 +128,7 @@ namespace SPACE.Managers
     public void WinGame(int alienCount)
     {
       _playerHUD.ToggleLevelText(false);
+      SoundManager.Instance.PlaySound(SoundManager.Sound.WIN);
       UIManager.Instance.DisplayScoreScreen();
       UIManager.Instance.UpdateScoreText(alienCount, _currentLvlAlienAmount);
 
@@ -117,7 +136,8 @@ namespace SPACE.Managers
     }
     void GameOver()
     {
-      StartCoroutine(GameOverSequence());
+      if (gameRunning)
+        StartCoroutine(GameOverSequence());
     }
     /// <summary>
     /// Plays the sequence when the player dies.
@@ -125,6 +145,7 @@ namespace SPACE.Managers
     /// <returns></returns>
     IEnumerator GameOverSequence()
     {
+
       Transform playerTransform = _playerHealth.GetComponent<Transform>();
       SpriteRenderer playerSprite = _playerHealth.GetComponent<SpriteRenderer>();
 
@@ -132,9 +153,11 @@ namespace SPACE.Managers
       playerSprite.color = Color.red;
       yield return new WaitForSeconds(1f);
       SpawnManager.Instance.ActivateGame(false);
+      gameRunning = false;
       Time.timeScale = 0;
-      SoundManager.Instance.PlaySound(SoundManager.Sound.PLAYERDEATH);
+      SoundManager.Instance.PlaySound(SoundManager.Sound.GAMEOVER);
       UIManager.Instance.DisplayGameOver();
+
     }
     /// <summary>
     /// Loads a scene Async. waiting for operation to complete before loading.
@@ -142,6 +165,7 @@ namespace SPACE.Managers
     /// <param name="levelName">Name of the Level</param>
     public void LoadLevelAsync(string levelName)
     {
+      StopAllCoroutines();
       //loads the scene
       AsyncOperation operation = SceneManager.LoadSceneAsync(levelName);
       Debug.Log($"Loading {levelName}....");

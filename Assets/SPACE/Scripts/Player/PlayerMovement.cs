@@ -28,7 +28,7 @@ namespace SPACE.Players
       }
       if (isCrouching)
       {
-        cam.RectOffset = new Vector3(cam.RectOffset.x, -4f, cam.RectOffset.z);
+        cam.RectOffset = new Vector3(cam.RectOffset.x, -2.5f, cam.RectOffset.z);
 
       }
     }

@@ -32,7 +32,7 @@ namespace SPACE.Players
       _currentHealth = _maxHealth;
       //_healthBar.SetMaxHealth(_maxHealth);
     }
-    
+
 
     /// <summary>
     /// Damages the player.
@@ -47,6 +47,7 @@ namespace SPACE.Players
       if (_currentHealth <= 0)
       {
         _currentHealth = 0;
+        
         GameManager.Instance.m_GameOverEvent.Invoke();
 
       }
