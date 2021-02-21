@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4809951860303905592
+--- !u!1 &3922553072473168753
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4809951860303905593}
-  - component: {fileID: 1265431637126463325}
+  - component: {fileID: 7169766715708417597}
+  - component: {fileID: 1095990798876722583}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4809951860303905593
+--- !u!4 &7169766715708417597
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4809951860303905592}
+  m_GameObject: {fileID: 3922553072473168753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.55820346, y: 0.13670234, z: -0.43413448}
+  m_LocalPosition: {x: 20.261616, y: -1.9437267, z: -9.670309}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1265431637126463325
+--- !u!114 &1095990798876722583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4809951860303905592}
+  m_GameObject: {fileID: 3922553072473168753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d82a97ca22f65a4bbe10158ce81e3c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ad4c00d4cc89a841811e76ad08d4d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _systemPrefabs:
-  - {fileID: 3470398668720200546, guid: 383c9e1acdb66f5409844c92526226fa, type: 3}
-  - {fileID: 1575450144377784521, guid: 707621433d59a364694e98181623cdae, type: 3}
-  - {fileID: 3922553072473168753, guid: cfe987ad6f675c6448d518d812619a7a, type: 3}
-  _instancedSystemPrefabs: []
-  gameRunning: 1
-  m_GameOverEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  playerJump: {fileID: 8300000, guid: 9b8ceef51d316ae4bb14781bea2bc738, type: 3}

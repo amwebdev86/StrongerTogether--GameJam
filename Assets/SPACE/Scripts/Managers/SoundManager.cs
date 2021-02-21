@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SPACE.Utils;
-namespace SPACE.Managers{
+namespace SPACE.Managers
+{
 
   public class SoundManager : Singleton<SoundManager>
   {
-    // Start is called before the first frame update
-    void Start()
+
+    public AudioClip playerJump;
+
+    public void PlayJumpSound()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+      GameObject soundObj = new GameObject("Sound");
+      AudioSource audioSource = soundObj.AddComponent<AudioSource>();
+      audioSource.PlayOneShot(playerJump);
     }
   }
 
