@@ -16,7 +16,7 @@ namespace SPACE.Enemy
         {
             if (other.gameObject.tag == "Player")
             {
-                health.DamageEnemy(1);
+                health.DamageEnemy(50);
 
             }
 

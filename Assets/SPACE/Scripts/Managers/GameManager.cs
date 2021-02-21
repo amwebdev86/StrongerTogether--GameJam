@@ -133,6 +133,7 @@ namespace SPACE.Managers
       yield return new WaitForSeconds(1f);
       SpawnManager.Instance.ActivateGame(false);
       Time.timeScale = 0;
+      SoundManager.Instance.PlaySound(SoundManager.Sound.PLAYERDEATH);
       UIManager.Instance.DisplayGameOver();
     }
     /// <summary>

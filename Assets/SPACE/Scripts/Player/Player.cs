@@ -43,7 +43,7 @@ namespace SPACE.Players
         alienList.ForEach(a => RemoveFromPlayer(a));
 
       }
-      GameManager.Instance.DamagePlayer(20);
+      GameManager.Instance.DamagePlayer(25);
       _PlayerTrans.position = _SpawnPoint.position;
 
 
