@@ -19,7 +19,7 @@ namespace SPACE.Managers
     }
     public enum Sound
     {
-      PLAYERJUMP, PLAYERDEATH, PLAYERINTERACT, ACHEIVEMENT, HIT, PICKUP
+      PLAYERJUMP, PLAYERDEATH, PLAYERINTERACT, ACHEIVEMENT, HIT, PICKUP, FALL
     }
     public SoundAudioClip[] soundAudioClipArray;
 

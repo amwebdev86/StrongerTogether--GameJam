@@ -48,6 +48,9 @@ namespace SPACE.Managers
     private void Update()
     {
       _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
+      if(GetLevelTotalAlienCount() <= 0){
+        GameOver();
+      }
 
     }
 

@@ -37,6 +37,7 @@ namespace SPACE.Players
     /// </summary>
     void PlayerFallSequence()
     {
+      SoundManager.Instance.PlaySound(SoundManager.Sound.FALL);
       if (alienList.Count > 0)
       {
         alienList.ForEach(a => RemoveFromPlayer(a));
@@ -55,6 +56,7 @@ namespace SPACE.Players
     public void AddAlien(Alien alien)
     {
       alienList.Add(alien);
+      SoundManager.Instance.PlaySound(SoundManager.Sound.PLAYERINTERACT);
       GameManager.Instance.UpdatePlayerAlienCount(alienList.Count);
     }
     /// <summary>

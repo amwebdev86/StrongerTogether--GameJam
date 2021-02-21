@@ -57,7 +57,6 @@ namespace SPACE.Players.Aliens
           return;
 
         }
-        //TODO Fix issue where same alien can be added multiple times.
 
 
       }
