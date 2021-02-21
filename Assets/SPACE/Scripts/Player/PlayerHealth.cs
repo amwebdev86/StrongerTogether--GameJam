@@ -32,10 +32,7 @@ namespace SPACE.Players
       _currentHealth = _maxHealth;
       //_healthBar.SetMaxHealth(_maxHealth);
     }
-    private void Update()
-    {
 
-    }
 
     /// <summary>
     /// Damages the player.
@@ -45,15 +42,16 @@ namespace SPACE.Players
     {
 
       _currentHealth -= damage;
-      //_healthBar.SetHealth(_currentHealth);
+
       GameManager.Instance.UpdateHealthBar(_currentHealth);
       if (_currentHealth <= 0)
       {
         _currentHealth = 0;
+        
         GameManager.Instance.m_GameOverEvent.Invoke();
 
       }
-      Debug.Log($"Player was damaged {_currentHealth}-{damage}");
+
     }
     /// <summary>
     /// Heals the Player

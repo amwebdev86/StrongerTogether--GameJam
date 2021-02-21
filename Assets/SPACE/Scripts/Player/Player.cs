@@ -29,6 +29,7 @@ namespace SPACE.Players
 
       if (_PlayerTrans.position.y <= -9)
       {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.FALL);
         PlayerFallSequence();
       }
     }
@@ -37,12 +38,13 @@ namespace SPACE.Players
     /// </summary>
     void PlayerFallSequence()
     {
+
       if (alienList.Count > 0)
       {
         alienList.ForEach(a => RemoveFromPlayer(a));
 
       }
-      GameManager.Instance.DamagePlayer(20);
+      GameManager.Instance.DamagePlayer(25);
       _PlayerTrans.position = _SpawnPoint.position;
 
 
@@ -55,6 +57,7 @@ namespace SPACE.Players
     public void AddAlien(Alien alien)
     {
       alienList.Add(alien);
+      SoundManager.Instance.PlaySound(SoundManager.Sound.PLAYERINTERACT);
       GameManager.Instance.UpdatePlayerAlienCount(alienList.Count);
     }
     /// <summary>

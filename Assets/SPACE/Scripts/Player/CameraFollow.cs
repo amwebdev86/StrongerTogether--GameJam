@@ -9,7 +9,14 @@ namespace SPACE.Players
         public GameObject target;
         [SerializeField]
         Vector3 offset; //offset distance between the player and camera
-
+        public Vector3 RectOffset{
+            get{
+        return offset;
+      }
+            set{
+                offset = value;
+            }
+        }
 
         void Start()
         {

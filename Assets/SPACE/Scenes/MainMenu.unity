@@ -270,18 +270,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &786270578 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1391582303, guid: f8d095c71c5a59f438703eea72fed3a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 6277753671037928161}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd655675690e3a64980f1fb821cbc730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6277753671037928161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,21 +277,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 179251059, guid: f8d095c71c5a59f438703eea72fed3a7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+    - target: {fileID: 3628783743104499117, guid: f8d095c71c5a59f438703eea72fed3a7,
+        type: 3}
+      propertyPath: m_Text
+      value: 'MOVE L/R -AD or Arrow Keys <- ->
+
+        JUMP - SPACEBAR
+
+        Crouch
+        - C
+
+        Touch aliens to  have them follow. Aliens follow your input.'
       objectReference: {fileID: 0}
-    - target: {fileID: 179251059, guid: f8d095c71c5a59f438703eea72fed3a7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 786270578}
-    - target: {fileID: 179251059, guid: f8d095c71c5a59f438703eea72fed3a7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGame
+    - target: {fileID: 3628783743104499117, guid: f8d095c71c5a59f438703eea72fed3a7,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.12220778
       objectReference: {fileID: 0}
-    - target: {fileID: 1074071231, guid: f8d095c71c5a59f438703eea72fed3a7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 3628783743104499117, guid: f8d095c71c5a59f438703eea72fed3a7,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.072267726
+      objectReference: {fileID: 0}
+    - target: {fileID: 3628783743104499117, guid: f8d095c71c5a59f438703eea72fed3a7,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5283019
       objectReference: {fileID: 0}
     - target: {fileID: 6277753671014988180, guid: f8d095c71c5a59f438703eea72fed3a7,
         type: 3}

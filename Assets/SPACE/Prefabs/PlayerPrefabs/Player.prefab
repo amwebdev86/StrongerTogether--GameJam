@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 157089541449771604}
   - component: {fileID: 157089541449771605}
   - component: {fileID: 157089541449771609}
+  - component: {fileID: 3159237510395390003}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -140,7 +141,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 100
   m_Sprite: {fileID: 6470334983485643, guid: 813f48df8e8221040a721936e8fca139, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9622642, g: 0.9304913, b: 0.9304913, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -191,6 +192,7 @@ MonoBehaviour:
   groundCheck: {fileID: 463519756771335116}
   ceilingCheck: {fileID: 3119188746287394862}
   crouchDisableCollider: {fileID: 0}
+  flipSprite: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -290,3 +292,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+--- !u!114 &3159237510395390003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8106869699657242613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce52fb4ee6220ac418efa5c47a62fa8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SpawnPoint: {fileID: 0}

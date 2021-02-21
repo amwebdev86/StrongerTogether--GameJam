@@ -1,4 +1,4 @@
-# GALATIC BOND
+# GALATIC BOND [PLAY](https://aurmorgamedev.itch.io/galatic-bond)
 
 # Gameplay
 
