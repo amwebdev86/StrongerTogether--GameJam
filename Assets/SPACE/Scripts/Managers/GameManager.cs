@@ -21,6 +21,7 @@ namespace SPACE.Managers
     public bool gameRunning = true;
     public UnityEvent m_GameOverEvent;
     private int _currentLvlAlienAmount;
+    PlayerHUD _playerHUD;
     private void Start()
     {
 
@@ -38,7 +39,18 @@ namespace SPACE.Managers
       InitiateHealthBar(_playerHealth.MaxHealth);
       _currentLvlAlienAmount = GetLevelTotalAlienCount();
 
+      _playerHUD = UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>();
+      _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
+
+
+
     }
+    private void Update()
+    {
+      _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
+
+    }
+
     /// <summary>
     /// Sets the HealthBar to the appropriate player HP amount
     /// </summary>
@@ -58,8 +70,8 @@ namespace SPACE.Managers
 
     public void UpdatePlayerAlienCount(int value)
     {
-      UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>().AlienCountUpdate(value);
-
+      //UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>().AlienCountUpdate(value);
+      _playerHUD.AlienCountUpdate(value);
 
     }
 
@@ -87,14 +99,16 @@ namespace SPACE.Managers
       _playerHealth.TakeDamage(amount);
     }
 
-/// <summary>
-/// When the player reaches the goal this method displays the score screen and updates the score.
-/// </summary>
-/// <param name="alienCount"></param>
+    /// <summary>
+    /// When the player reaches the goal this method displays the score screen and updates the score.
+    /// </summary>
+    /// <param name="alienCount"></param>
     public void WinGame(int alienCount)
     {
+      _playerHUD.ToggleLevelText(false);
       UIManager.Instance.DisplayScoreScreen();
       UIManager.Instance.UpdateScoreText(alienCount, _currentLvlAlienAmount);
+
 
     }
     void GameOver()
@@ -126,6 +140,7 @@ namespace SPACE.Managers
       //loads the scene
       AsyncOperation operation = SceneManager.LoadSceneAsync(levelName);
       Debug.Log($"Loading {levelName}....");
+
       //pause before going to scene to load needed managers
       operation.allowSceneActivation = false;
 
@@ -195,6 +210,10 @@ namespace SPACE.Managers
       Debug.Log($"Saved file to {path}");
       return path;
 
+    }
+    public string GetSceneName()
+    {
+      return SceneManager.GetActiveScene().name;
     }
 
   }
