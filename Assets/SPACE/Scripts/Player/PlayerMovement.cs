@@ -13,8 +13,25 @@ namespace SPACE.Players
     bool isCrouching = false;
     public KeyCode jumpKey = KeyCode.Space, crouchKey = KeyCode.C;
     [SerializeField] Animator playerAnim;
+    CameraFollow cam;
 
+    private void Start()
+    {
+      cam = Camera.main.gameObject.GetComponent<CameraFollow>();
+    }
+    private void LateUpdate()
+    {
+      if (!controller.CheckPlayerGrounded())
+      {
+        cam.RectOffset = new Vector3(cam.RectOffset.x, -2f, cam.RectOffset.z);
 
+      }
+      if (isCrouching)
+      {
+        cam.RectOffset = new Vector3(cam.RectOffset.x, -4f, cam.RectOffset.z);
+
+      }
+    }
     private void Update()
     {
 
@@ -41,6 +58,8 @@ namespace SPACE.Players
       {
         Debug.Log("Crouching");
         isCrouching = true;
+
+
       }
       else if (Input.GetKeyUp(KeyCode.C))
       {

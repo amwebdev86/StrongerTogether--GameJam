@@ -47,8 +47,9 @@ namespace SPACE.Managers
     }
     private void Update()
     {
-      _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
-      if(GetLevelTotalAlienCount() <= 0){
+      _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName() + ' ');
+      if (GetLevelTotalAlienCount() <= 0)
+      {
         GameOver();
       }
 
@@ -216,7 +217,19 @@ namespace SPACE.Managers
     }
     public string GetSceneName()
     {
-      return SceneManager.GetActiveScene().name;
+
+      string sceneName = SceneManager.GetActiveScene().name;
+      if (sceneName.Contains("Level"))
+      {
+        string level = sceneName.Substring(0, 5);
+        char[] removeChars = level.ToCharArray();
+        return level + " " + sceneName.Trim(removeChars);
+
+      }
+      else
+      {
+        return null;
+      }
     }
 
   }

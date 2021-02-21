@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using SPACE.Managers;
+﻿using SPACE.Managers;
 using UnityEngine;
 using UnityEngine.Events;
 
