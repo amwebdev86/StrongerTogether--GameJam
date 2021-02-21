@@ -1273,6 +1273,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 717635231191511312, guid: 7d8b5412d93dd1143bfc8540310f71fc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 443b5d96b3785e64a845183046813104,
+        type: 3}
     - target: {fileID: 717635231191511313, guid: 7d8b5412d93dd1143bfc8540310f71fc,
         type: 3}
       propertyPath: m_AnchoredPosition.x
