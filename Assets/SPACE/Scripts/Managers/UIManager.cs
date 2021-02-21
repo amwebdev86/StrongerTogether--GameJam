@@ -11,14 +11,42 @@ namespace SPACE.Managers
     [SerializeField] HealthBar healthBarDisplay;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject scorePanel;
+    [SerializeField] GameObject pausePanel;
     [SerializeField] Text scoretext;
     // Start is called before the first frame update
+    bool isPaused = false;
 
     void Start()
     {
       gameOverPanel.SetActive(false);
       if (!healthBarDisplay)
         healthBarDisplay = GetComponentInChildren<HealthBar>();
+    }
+
+    private void Update()
+    {
+      if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+      {
+        if (!isPaused)
+        {
+          isPaused = true;
+
+        }
+        else
+        {
+          isPaused = false;
+        }
+
+      }
+      pausePanel.SetActive(isPaused);
+      if (isPaused)
+      {
+        Time.timeScale = 0;
+      }
+      else
+      {
+        Time.timeScale = 1;
+      }
     }
 
     public void SetInitialHealth(int amount)
