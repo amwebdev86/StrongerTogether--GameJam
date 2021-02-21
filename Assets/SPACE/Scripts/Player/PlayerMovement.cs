@@ -25,6 +25,11 @@ namespace SPACE.Players
     {
       horizontalInput = Input.GetAxisRaw("Horizontal") * RunSpeed;
       playerAnim.SetFloat("horizontal", horizontalInput / RunSpeed);
+      if (horizontalInput != 0 && controller.CheckPlayerGrounded())
+      {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.PLAYERMOVE, transform.position);
+
+      }
       if (Input.GetKeyDown(KeyCode.Space))
       {
         jump = true;

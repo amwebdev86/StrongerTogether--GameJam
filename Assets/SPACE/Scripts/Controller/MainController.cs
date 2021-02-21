@@ -114,7 +114,7 @@ namespace SPACE.Controller
       }
       if (_Grounded && jump)
       {
-        SoundManager.Instance.PlaySound(SoundManager.Sound.PLAYERJUMP);
+        SoundManager.Instance.PlaySound(SoundManager.Sound.PLAYERJUMP, transform.position);
         _Grounded = false;
         _Rigidbody2D.AddForce(new Vector2(0f, jumpForce));
       }
@@ -128,6 +128,10 @@ namespace SPACE.Controller
       transform.localScale = theScale;
     }
 
-
+    public bool CheckPlayerGrounded()
+    {
+      return _Grounded;
+    }
   }
+
 }

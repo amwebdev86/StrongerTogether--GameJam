@@ -19,9 +19,39 @@ namespace SPACE.Managers
     }
     public enum Sound
     {
-      PLAYERJUMP, PLAYERDEATH, PLAYERINTERACT, ACHEIVEMENT, HIT, PICKUP, FALL
+      PLAYERJUMP, PLAYERDEATH, PLAYERINTERACT, ACHEIVEMENT, HIT, FALL,
+      MENUCLICK, PLAYERMOVE
+    }
+    private Dictionary<Sound, float> soundTimeDictionary;
+    private GameObject oneShotGameObject;
+    private AudioSource oneShotAudioSource;
+
+    private void Awake()
+    {
+      Initialize();
+    }
+    public void Initialize()
+    {
+      soundTimeDictionary = new Dictionary<Sound, float>();
+      soundTimeDictionary[Sound.PLAYERMOVE] = 0;
+
     }
     public SoundAudioClip[] soundAudioClipArray;
+
+    public void PlaySound(Sound sound, Vector3 position)
+    {
+
+      if (CanPlaySound(sound))
+      {
+        GameObject soundObj = new GameObject("Sound");
+        soundObj.transform.position = position;
+        AudioSource audioSource = soundObj.AddComponent<AudioSource>();
+        audioSource.clip = GetAudioClip(sound);
+
+        audioSource.Play();
+        Object.Destroy(soundObj, audioSource.clip.length);
+      }
+    }
 
     /// <summary>
     /// Takes a Sound type and plays the associated audioclip in a one shot.
@@ -29,9 +59,46 @@ namespace SPACE.Managers
     /// <param name="sound">Sound enum</param>
     public void PlaySound(Sound sound)
     {
-      GameObject soundObj = new GameObject("Sound");
-      AudioSource audioSource = soundObj.AddComponent<AudioSource>();
-      audioSource.PlayOneShot(GetAudioClip(sound));
+      if (CanPlaySound(sound))
+      {
+        if (oneShotGameObject == null)
+        {
+          oneShotGameObject = new GameObject("One Shot found");
+          oneShotAudioSource = oneShotGameObject.AddComponent<AudioSource>();
+        }
+
+        oneShotAudioSource.PlayOneShot(GetAudioClip(sound));
+        // Destroy(soundObj, audioSource.clip.length);
+      }
+
+    }
+    private bool CanPlaySound(Sound sound)
+    {
+      switch (sound)
+      {
+        default:
+          return true;
+        case Sound.PLAYERMOVE:
+          if (soundTimeDictionary.ContainsKey(sound))
+          {
+            float lastTimePlayed = soundTimeDictionary[sound];
+            float playerMoveTimerMax = .1f;
+            if (lastTimePlayed + playerMoveTimerMax < Time.time)
+            {
+              soundTimeDictionary[sound] = Time.time;
+              return true;
+            }
+            else
+            {
+              return false;
+            }
+          }
+          else
+          {
+            return true;
+          }
+          //break;
+      }
     }
     /// <summary>
     /// Gets the audio clip based on the Sound enum
