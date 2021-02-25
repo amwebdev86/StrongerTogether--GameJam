@@ -27,15 +27,15 @@ namespace SPACE.Players
     private void Update()
     {
 
-      if (_PlayerTrans.position.y <= -9)
-      {
-        PlayerFallSequence();
-      }
+      // if (_PlayerTrans.position.y <= -9)
+      // {
+      //   PlayerFallSequence();
+      // }
     }
     /// <summary>
     /// Removes each attached alien in players alienList.
     /// </summary>
-    void PlayerFallSequence()
+    public void PlayerFallSequence()
     {
       if (alienList.Count > 0)
       {

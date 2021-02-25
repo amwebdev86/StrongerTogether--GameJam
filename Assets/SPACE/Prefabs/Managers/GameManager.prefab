@@ -44,7 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _systemPrefabs:
-  - {fileID: 908107915316981136, guid: 2ea01b2bb4096a647ab585f5b5caa688, type: 3}
+  - {fileID: 3470398668720200546, guid: 383c9e1acdb66f5409844c92526226fa, type: 3}
   - {fileID: 1575450144377784521, guid: 707621433d59a364694e98181623cdae, type: 3}
   _instancedSystemPrefabs: []
-  _playerHealth: {fileID: 0}
+  gameRunning: 1
+  m_GameOverEvent:
+    m_PersistentCalls:
+      m_Calls: []

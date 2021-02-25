@@ -32,10 +32,7 @@ namespace SPACE.Players
       _currentHealth = _maxHealth;
       //_healthBar.SetMaxHealth(_maxHealth);
     }
-    private void Update()
-    {
-
-    }
+    
 
     /// <summary>
     /// Damages the player.
