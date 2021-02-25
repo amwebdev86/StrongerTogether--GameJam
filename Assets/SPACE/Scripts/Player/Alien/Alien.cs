@@ -20,18 +20,15 @@ namespace SPACE.Players.Aliens
       player = FindObjectOfType<Player>();
 
     }
-    /// <summary>
-    /// Checks if alien has fallen and if so starts the death coroutine
-    /// </summary>
-    private void Update()
+  
+
+    public void AlienFallSequence()
     {
-      if (alienTrans.position.y <= -9)
-      {
-        alienTrans.Rotate(new Vector3(0, 0, -90));
-        player.RemoveFromPlayer(this);
-        StartCoroutine(health.AlienDeathRoutine());
-      }
+      alienTrans.Rotate(new Vector3(0, 0, -90));
+      player.RemoveFromPlayer(this);
+      StartCoroutine(health.AlienDeathRoutine());
     }
+
     /// <summary>
     /// Checks for enemy contact and takes damage. Or player contact and adds to alien list.
     /// </summary>
