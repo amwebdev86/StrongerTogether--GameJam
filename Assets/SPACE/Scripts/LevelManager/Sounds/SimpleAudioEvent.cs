@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using AMGame.Core.Utilities;
+﻿using UnityEngine;
+using SPACE.Utils;
 
-namespace AMGame.Core.Sound
+namespace SPACE.LevelManager.Sounds
 {
+  [CreateAssetMenu(menuName = "GalacticBond/Audio/SimpleAudioEvent", fileName = "AudioEvent")]
   public class SimpleAudioEvent : AudioEvent
   {
     public AudioClip[] clips;
@@ -13,7 +12,7 @@ namespace AMGame.Core.Sound
 
     public override void Play(AudioSource source)
     {
-      if(clips.Length == 0) return;
+      if (clips.Length == 0) return;
       source.clip = clips[Random.Range(0, clips.Length)];
       source.volume = 10;
       source.pitch = 2;

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AMGame.Core.Utilities
+namespace SPACE.Utils
 {
-    [CreateAssetMenu(menuName="AMGame/Utilities/Singleton", fileName="SingletonData")]
+  [CreateAssetMenu(menuName = "GalacticBond/Utils/Singleton", fileName = "SingletonData")]
   public class MySingleton : ScriptableObject
   {
     private static MySingleton _instance;

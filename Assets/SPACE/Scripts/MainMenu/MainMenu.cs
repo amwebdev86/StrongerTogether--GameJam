@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace SPACE.MainMenu
+namespace SPACE.Menus
 {
   public class MainMenu : MonoBehaviour
   {

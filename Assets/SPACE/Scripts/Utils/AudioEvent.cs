@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AMGame.Core.Utilities{
+namespace SPACE.Utils
+{
   public abstract class AudioEvent : ScriptableObject
   {
     public abstract void Play(AudioSource source);
