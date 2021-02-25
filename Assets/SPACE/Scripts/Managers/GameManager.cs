@@ -13,6 +13,7 @@ namespace SPACE.Managers
 {
   public class GameManager : Singleton<GameManager>
   {
+    [SerializeField] SceneData levelData;
     [SerializeField]
     GameObject[] _systemPrefabs;
     [SerializeField]
@@ -48,7 +49,7 @@ namespace SPACE.Managers
     private void Update()
     {
       _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
-      if (Input.GetKeyDown(KeyCode.P))
+
 
     }
 

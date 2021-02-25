@@ -20,9 +20,9 @@ namespace SPACE.Utils
       if (levelIndex <= levels.Count)
       {
         //loads the scene
-        AsyncOperation operation = SceneManager.LoadSceneAsync($"Gameplay {levelIndex}");
+        AsyncOperation operation = SceneManager.LoadSceneAsync($"Level{levelIndex}");
         //AsyncOperation operationPart2 = SceneManager.LoadSceneAsync($"Gameplay {levelIndex}", LoadSceneMode.Additive);
-        Debug.Log($"Gameplay {levelIndex} Loading....");
+        Debug.Log($"Level {levelIndex} Loading....");
 
         //pause before going to scene to load needed managers
         operation.allowSceneActivation = false;
@@ -50,10 +50,15 @@ namespace SPACE.Utils
       currentLevelIndex++;
       LoadLevelAsync(currentLevelIndex);
     }
+    public void Resume()
+    {
+      SceneManager.UnloadSceneAsync(menus[(int)MenuType.PauseMenu].sceneName, UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
+    }
     public void RestartLevel()
     {
       LoadLevelAsync(currentLevelIndex);
     }
+    
     public void NewGame()
     {
       LoadLevelAsync(1);
