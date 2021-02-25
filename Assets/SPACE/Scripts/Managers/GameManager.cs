@@ -135,39 +135,39 @@ namespace SPACE.Managers
     /// Loads a scene Async. waiting for operation to complete before loading.
     /// </summary>
     /// <param name="levelName">Name of the Level</param>
-    public void LoadLevelAsync(string levelName)
-    {
-      //loads the scene
-      AsyncOperation operation = SceneManager.LoadSceneAsync(levelName);
-      Debug.Log($"Loading {levelName}....");
+    // public void LoadLevelAsync(string levelName)
+    // {
+    //   //loads the scene
+    //   AsyncOperation operation = SceneManager.LoadSceneAsync(levelName);
+    //   Debug.Log($"Loading {levelName}....");
 
-      //pause before going to scene to load needed managers
-      operation.allowSceneActivation = false;
+    //   //pause before going to scene to load needed managers
+    //   operation.allowSceneActivation = false;
 
-      StartCoroutine(WaitForLoading(operation));
+    //   StartCoroutine(WaitForLoading(operation));
 
-    }
+    // }
     /// <summary>
     /// Waits for async operation to complete allowing scene activation.
     /// </summary>
     /// <param name="operation">Async loading operation</param>
     /// <returns></returns>
-    IEnumerator WaitForLoading(AsyncOperation operation)
-    {
-      while (operation.progress < 0.9f)
-      {
-        yield return null;
-      }
+    // IEnumerator WaitForLoading(AsyncOperation operation)
+    // {
+    //   while (operation.progress < 0.9f)
+    //   {
+    //     yield return null;
+    //   }
 
-      Debug.Log("Loading Complete");
+    //   Debug.Log("Loading Complete");
 
-      operation.allowSceneActivation = true;
-      if (Time.timeScale == 0)
-      {
-        Time.timeScale = 1;
-      }
+    //   operation.allowSceneActivation = true;
+    //   if (Time.timeScale == 0)
+    //   {
+    //     Time.timeScale = 1;
+    //   }
 
-    }
+    // }
     /// <summary>
     /// Allows scene to be loading on top of level to host any
     /// managers or utilities.

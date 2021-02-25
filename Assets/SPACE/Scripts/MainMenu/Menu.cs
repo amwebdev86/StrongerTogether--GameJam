@@ -9,12 +9,13 @@ namespace SPACE.Menus
   {
     MainMenu,
     PauseMenu,
-    OptionsMenu
+    OptionsMenu,
+    Credits
   }
   [CreateAssetMenu(fileName = "Menu Scene", menuName = "GalacticBond/Levels/Menu")]
   public class Menu : GameScene
   {
-    MenuType typeOfMenu;
+    public MenuType typeOfMenu;
   }
 
 }

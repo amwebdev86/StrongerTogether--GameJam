@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcd6677f4d657a44912daa3da104df0, type: 3}
-  m_Name: Level1Data
+  m_Name: Summary Screen
   m_EditorClassIdentifier: 
-  sceneName: 
-  shortDescription: 
+  sceneName: Summary
+  shortDescription: Shows level completion stats
   audioManager: {fileID: 0}
   alienCount: 0
   followers: 0

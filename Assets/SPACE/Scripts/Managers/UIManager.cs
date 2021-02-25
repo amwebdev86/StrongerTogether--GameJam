@@ -69,13 +69,13 @@ namespace SPACE.Managers
     /// <summary>
     /// Restarts the current Level.
     /// </summary>
-    public void RestartLevel()
-    {
-      //GameManager.Instance.UnloadLevel(SceneManager.GetActiveScene().name);
-      GameManager.Instance.LoadLevelAsync(SceneManager.GetActiveScene().name);
+    // public void RestartLevel()
+    // {
+    //   //GameManager.Instance.UnloadLevel(SceneManager.GetActiveScene().name);
+    //   GameManager.Instance.LoadLevelAsync(SceneManager.GetActiveScene().name);
 
 
-    }
+    // }
     public void LoadNextLevel()
     {
       //TODO load next level.
@@ -99,10 +99,10 @@ namespace SPACE.Managers
       scoretext.text = scoreTxt;
 
     }
-    public void QuitToMenu()
-    {
-      GameManager.Instance.LoadLevelAsync("MainMenu");
-    }
+    // public void QuitToMenu()
+    // {
+    //   GameManager.Instance.LoadLevelAsync("MainMenu");
+    // }
 
   }
 }

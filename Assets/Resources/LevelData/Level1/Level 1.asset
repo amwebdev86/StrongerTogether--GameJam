@@ -9,6 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 426472c35538a1c4c98d5b2b2b77d2b9, type: 3}
-  m_Name: GameManagerSingleton
+  m_Script: {fileID: 11500000, guid: 1dcd6677f4d657a44912daa3da104df0, type: 3}
+  m_Name: Level 1
   m_EditorClassIdentifier: 
+  sceneName: Level1
+  shortDescription: First level of the game.
+  audioManager: {fileID: 11400000, guid: 8895b6c3350a25649aa60c651b8f026c, type: 2}
+  alienCount: 3
+  followers: 0
