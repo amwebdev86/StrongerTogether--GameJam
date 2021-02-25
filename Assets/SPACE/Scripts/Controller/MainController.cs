@@ -82,7 +82,7 @@ namespace SPACE.Controller
             OnCrouchEvent.Invoke(true);
           }
         }
-        move += settings.crouchSpeed.Value;//reduce speed by the crouchSpeed multiplier
+        move *= settings.crouchSpeed.Value;//reduce speed by the crouchSpeed multiplier
         //disable one of the colliders when crouching
         if (crouchDisableCollider != null)
           crouchDisableCollider.enabled = false;
