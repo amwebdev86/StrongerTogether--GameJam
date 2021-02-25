@@ -26,9 +26,9 @@ namespace SPACE.Utils
 
         //pause before going to scene to load needed managers
         operation.allowSceneActivation = false;
-       // operationPart2.allowSceneActivation = false;
+        // operationPart2.allowSceneActivation = false;
 
-        if (operation.isDone )
+        if (operation.isDone)
         {
           operation.allowSceneActivation = true;
           //operationPart2.allowSceneActivation = true;
@@ -69,7 +69,7 @@ namespace SPACE.Utils
     }
     public void LoadOptionsMenu()
     {
-      SceneManager.LoadSceneAsync(menus[(int)MenuType.OptionsMenu].sceneName, LoadSceneMode.Additive);
+      SceneManager.LoadSceneAsync(menus[(int)MenuType.OptionsMenu].sceneName);
 
     }
 

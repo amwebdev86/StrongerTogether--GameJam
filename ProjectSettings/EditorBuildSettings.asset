@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/SPACE/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/SPACE/Scenes/Level1.unity
-    guid: f6ed94000670b9b438e67af8aaf181ac
+    path: Assets/SPACE/Scenes/PauseMenu.unity
+    guid: 4a2706b719c22b04791dafe43691de13
+  - enabled: 1
+    path: Assets/SPACE/Scenes/OptionsMenu.unity
+    guid: 34052a82e50b6714988869641d672dbc
   - enabled: 1
     path: Assets/SPACE/Scenes/Credits.unity
     guid: f84706eee592ae84d84e1922f57ba40f
   - enabled: 1
-    path: Assets/SPACE/Scenes/OptionsMenu.unity
-    guid: 34052a82e50b6714988869641d672dbc
+    path: Assets/SPACE/Scenes/Level1.unity
+    guid: f6ed94000670b9b438e67af8aaf181ac
   m_configObjects: {}
