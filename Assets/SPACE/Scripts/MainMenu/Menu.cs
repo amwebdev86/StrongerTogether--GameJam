@@ -10,7 +10,8 @@ namespace SPACE.Menus
     MainMenu,
     PauseMenu,
     OptionsMenu,
-    Credits
+    Credits,
+    SummaryMenu
   }
   [CreateAssetMenu(fileName = "Menu Scene", menuName = "GalacticBond/Levels/Menu")]
   public class Menu : GameScene

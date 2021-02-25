@@ -58,7 +58,7 @@ namespace SPACE.Utils
     {
       LoadLevelAsync(currentLevelIndex);
     }
-    
+
     public void NewGame()
     {
       LoadLevelAsync(1);
