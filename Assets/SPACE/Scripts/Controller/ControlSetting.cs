@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SPACE.Utils;
 
-public class ControlSetting : ScriptableObject
+namespace SPACE.Controller
 {
-  [SerializeField] float jumpForce = 400f;
-  [Range(0, 1)] [SerializeField] float crouchSpeed;
-  [Range(0, .3f)] [SerializeField] float movementSmoothing = .05f;
-  [SerializeField] bool airControl = false;
-  [SerializeField] LayerMask groundMask;
-  [SerializeField] Transform groundCheck;
-  [SerializeField] Transform ceilingCheck;
-  [SerializeField] Collider2D crouchDisableCollider;
-  [SerializeField] bool flipSprite = false;
+  [CreateAssetMenu(menuName = "GalacticBond/Controllers/ControlSetting", fileName = "ControlSetting")]
+  public class ControlSetting : ScriptableObject
+  {
+    public FloatReference jumpForce;
+    public FloatReference crouchSpeed;
+    public FloatReference movementSmoothing;
+    
+
+  }
+
 }

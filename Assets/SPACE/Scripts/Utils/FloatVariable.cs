@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace AMGame.Core.StatSystem
+namespace SPACE.Utils
 {
-  [CreateAssetMenu(fileName = "FloatStat", menuName = "AMGame/Stats/Stat(Float)", order = 2)]
+  [CreateAssetMenu(fileName = "FloatVar", menuName = "GalacticBond/Utils/FloatVar", order = 2)]
 
   public class FloatVariable : ScriptableObject
   {

@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 6fe6a8c9204ac3b4bbaa7454941f407b,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -128,6 +129,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5847007022233698916, guid: d361fafbdf5179c4488c5d7ca7108ecd,
+        type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 34b4daa1472b6a446a19761e0609e2ad,
+        type: 2}
     - target: {fileID: 5847007022233698936, guid: d361fafbdf5179c4488c5d7ca7108ecd,
         type: 3}
       propertyPath: m_RootOrder
@@ -277,6 +284,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5847007022233698916, guid: d361fafbdf5179c4488c5d7ca7108ecd,
+        type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 34b4daa1472b6a446a19761e0609e2ad,
+        type: 2}
     - target: {fileID: 5847007022233698936, guid: d361fafbdf5179c4488c5d7ca7108ecd,
         type: 3}
       propertyPath: m_RootOrder
@@ -412,6 +425,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 450087843974151985, guid: 53a83c44137f4d14ca8e79269d23eb2c,
+        type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 34b4daa1472b6a446a19761e0609e2ad,
+        type: 2}
     - target: {fileID: 450087843974151986, guid: 53a83c44137f4d14ca8e79269d23eb2c,
         type: 3}
       propertyPath: m_RootOrder
@@ -497,19 +516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0140fdff4a730e4eab4d80a9d359b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &157089541449771605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157089541449771603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce52fb4ee6220ac418efa5c47a62fa8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _SpawnPoint: {fileID: 7092069485076163980}
 --- !u!1001 &450087843741062514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -517,6 +523,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 450087843974151985, guid: 53a83c44137f4d14ca8e79269d23eb2c,
+        type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 34b4daa1472b6a446a19761e0609e2ad,
+        type: 2}
     - target: {fileID: 450087843974151986, guid: 53a83c44137f4d14ca8e79269d23eb2c,
         type: 3}
       propertyPath: m_RootOrder
@@ -665,6 +677,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5847007022233698916, guid: d361fafbdf5179c4488c5d7ca7108ecd,
+        type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 11400000, guid: 34b4daa1472b6a446a19761e0609e2ad,
+        type: 2}
     - target: {fileID: 5847007022233698936, guid: d361fafbdf5179c4488c5d7ca7108ecd,
         type: 3}
       propertyPath: m_RootOrder
@@ -817,12 +835,12 @@ PrefabInstance:
     - target: {fileID: 2188301148806843509, guid: b26deaa10f20e2e4da0f4eb69e464093,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.38
+      value: -22.85
       objectReference: {fileID: 0}
     - target: {fileID: 2188301148806843509, guid: b26deaa10f20e2e4da0f4eb69e464093,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.67
+      value: 2.15
       objectReference: {fileID: 0}
     - target: {fileID: 2188301148806843509, guid: b26deaa10f20e2e4da0f4eb69e464093,
         type: 3}
@@ -869,25 +887,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8106869699657242613, guid: b26deaa10f20e2e4da0f4eb69e464093,
+    - target: {fileID: 8585357530380650324, guid: b26deaa10f20e2e4da0f4eb69e464093,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8600350287727581227, guid: b26deaa10f20e2e4da0f4eb69e464093,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.9304913
-      objectReference: {fileID: 0}
-    - target: {fileID: 8600350287727581227, guid: b26deaa10f20e2e4da0f4eb69e464093,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.9304913
-      objectReference: {fileID: 0}
-    - target: {fileID: 8600350287727581227, guid: b26deaa10f20e2e4da0f4eb69e464093,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.9622642
-      objectReference: {fileID: 0}
+      propertyPath: _SpawnPoint
+      value: 
+      objectReference: {fileID: 7092069485076163980}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b26deaa10f20e2e4da0f4eb69e464093, type: 3}
