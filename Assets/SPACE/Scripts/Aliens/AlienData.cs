@@ -8,23 +8,9 @@ namespace SPACE.Aliens
   public class AlienData : ScriptableObject
   {
     public int alienId;
-    public FloatReference alienHealth;
-    public bool isJoinded;
-    public void DamageAlien(float amount)
-    {
-      alienHealth.Variable.Value -= amount;
-
-    }
-    private void OnDisable()
-    {
-      isJoinded = false;
-    }
-    private void OnEnable()
-    {
-      if (isJoinded) isJoinded = false;
-    }
-
-
+    [Header("Health")]
+    public FloatReference maxAlienHealth;
+    public FloatReference currAlienHealth;
   }
 }
 

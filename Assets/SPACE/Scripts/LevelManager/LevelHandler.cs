@@ -46,22 +46,18 @@ namespace SPACE.LevelManager
       InitHealthBar();
 
     }
-
-    private void InitLevelHandler()
-    {
-
-      currLevelAlienCount.Value = levelData.maxAlienCount.Value;
-      aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
-    }
-
     private void Update()
     {
       TogglePauseControl();
       UpdateHealthBar();
       UpdateHUDText();
 
-
-
+    }
+    private void InitLevelHandler()
+    {
+      Cursor.lockState = CursorLockMode.Locked;
+      currLevelAlienCount.Value = levelData.maxAlienCount.Value;
+      aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
     }
 
     private void TogglePauseControl()
@@ -115,9 +111,6 @@ namespace SPACE.LevelManager
     {
       healthBar.fillAmount = player.playerHealthCurrent.Value / player.playerHealthMax.Value;
 
-      // var newHealthValue = playerHP.Value;
-      // Debug.Log(newHealthValue);
-      //healthBar.fillAmount = playerHP.Value / playerHPMax.Value;
       if (healthBar.fillAmount >= .75)
       {
         healthBar.color = Color.green;
@@ -134,17 +127,11 @@ namespace SPACE.LevelManager
 
     void UpdateHUDText()
     {
-      // playerAlienCount.text = playerCurrentAlienCount.Value.ToString();
-      // aliensRemainingText.text = remainingAliensRef.Value.ToString();
+      playerAlienCount.text = player.rescuedCount.Value.ToString();
+      currLevelAlienCount.Value = levelData.maxAlienCount.Value - player.rescuedCount.Value;
+      aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
     }
     public void DisplayGameOver() => gameOverPanel.SetActive(true);
-    // public void IncreaseRemainingAliensCount() => levelData.IncrementLevelAlienCount();
-    //public void DecreaseRemainingAliensCount() => levelData.DecrementLevelAlienCount();
-
-
-
-
-
 
   }
 }

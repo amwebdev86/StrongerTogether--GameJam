@@ -9,6 +9,19 @@ namespace SPACE.Aliens
   {
     AlienMovement movement;
     [SerializeField] AlienData alienData;
+    bool isJoinded;
+    public bool IsJoined
+    {
+      get
+      {
+        return isJoinded;
+      }
+      set
+      {
+        isJoinded = value;
+      }
+    }
+
     //AlienHealth health;
     // Transform alienTrans;
     //Player player;
@@ -29,7 +42,7 @@ namespace SPACE.Aliens
     }
     private void Update()
     {
-      movement.isJoined = alienData.isJoinded;
+      movement.isJoined = isJoinded;
     }
 
     public void AlienFallSequence()

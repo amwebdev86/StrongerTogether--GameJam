@@ -55,24 +55,43 @@ namespace SPACE.Players
     /// <summary>
     /// Sets all aliens currently in the player's list movement Jointment to false;
     /// </summary>
-    public void UnjoinAliens()
+    public void UnjoinAlien(Alien alien)
     {
+      if (alien.IsJoined)
+      {
+        alien.IsJoined = true;
+        rescuedCount.Value--;
+      }
+      else
+      {
+        return;
+      }
 
 
     }
 
-    public void JoinAlien(AlienData alien)
+    public void JoinAlien(Alien alien)
     {
+      if (!alien.IsJoined)
+      {
+        alien.IsJoined = true;
+        rescuedCount.Value++;
+      }
+      else
+      {
+        return;
+      }
+
 
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
       if (other.gameObject.tag == "Alien")
       {
-        AlienData aliendata = other.GetComponent<Alien>().GetAlienData();
-        if (aliendata != null)
+        Alien alien = other.GetComponent<Alien>();
+        if (alien != null)
         {
-          JoinAlien(aliendata);
+          JoinAlien(alien);
 
         }
         else if (other.gameObject.tag == "Enemy")

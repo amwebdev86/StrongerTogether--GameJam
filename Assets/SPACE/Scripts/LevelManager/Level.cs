@@ -16,23 +16,6 @@ namespace SPACE.LevelManager
     [SerializeField] FloatReference currlevelScoreRef;
     //public FloatVariable playerScoreVar;//from playerdata
     //public FloatVariable remaingAliens;
-    public void InitLevelData()
-    {
-
-    }
-    // public void DecrementLevelAlienCount() => remaingAliens.Value--;
-    // public void IncrementLevelAlienCount() => remaingAliens.Value++;
-
-    public void UpdateScore(float value)
-    {
-     // score.Value = value;
-      //UpdateRemaing((int)score.Value);
-    }
-    // void UpdateRemaing(int value)
-    // {
-    //   remaingAliens = (int)maxScore.Value - value;
-    //   Debug.Log(remaingAliens);
-    // }
   }
 
 }
