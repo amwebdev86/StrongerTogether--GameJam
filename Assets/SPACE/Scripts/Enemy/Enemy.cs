@@ -21,13 +21,13 @@ namespace SPACE.Enemy
             }
 
         }
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (other.gameObject.tag == "Player")
-            {
-                GameManager.Instance.DamagePlayer(enemyDamage);
-            }
-        }
+        // private void OnCollisionEnter2D(Collision2D other)
+        // {
+        //     if (other.gameObject.tag == "Player")
+        //     {
+        //         GameManager.Instance.DamagePlayer(enemyDamage);
+        //     }
+        // }
 
 
     }

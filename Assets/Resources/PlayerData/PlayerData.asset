@@ -16,9 +16,14 @@ MonoBehaviour:
     UseConstant: 1
     ConstantValue: 1
     Variable: {fileID: 11400000, guid: e5c7b3b06944db84eb26dde4eef1f240, type: 2}
-  playerHealth:
+  playerHealthMax:
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  playerHealthCurrent:
     UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 11400000, guid: e5c7b3b06944db84eb26dde4eef1f240, type: 2}
+    Variable: {fileID: 11400000, guid: a01964ed68cb8054d84d8c03d0782362, type: 2}
+  currentScore: 0
   alienList:
   - {fileID: 11400000, guid: f74b5c068e86a964fb752eeb2e420d0e, type: 2}

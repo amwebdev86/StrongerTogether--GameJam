@@ -17,4 +17,4 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 30563948f39225d44b170c8d46bb3a8a, type: 2}
-  isJoinded: 1
+  isJoinded: 0

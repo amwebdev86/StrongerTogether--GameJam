@@ -2,7 +2,8 @@ using SPACE.Utils;
 using UnityEngine;
 
 
-namespace SPACE.Aliens{
+namespace SPACE.Aliens
+{
   [CreateAssetMenu(fileName = "AlienData", menuName = "GalacticBond/Aliens/AlienData", order = 0)]
   public class AlienData : ScriptableObject
   {
@@ -13,6 +14,14 @@ namespace SPACE.Aliens{
     {
       alienHealth.Variable.Value -= amount;
 
+    }
+    private void OnDisable()
+    {
+      isJoinded = false;
+    }
+    private void OnEnable()
+    {
+      if (isJoinded) isJoinded = false;
     }
 
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SPACE.Aliens;
+using SPACE.Utils;
 
 namespace SPACE.Players
 {
@@ -11,12 +12,27 @@ namespace SPACE.Players
     [SerializeField] Transform _SpawnPoint;
 
     [SerializeField] PlayerData playerData;
+    [SerializeField] FloatVariable playerCurrentHealth;
 
-    private void onEnble()
+    //TODO Add this to start and instantiate new list.
+
+    // public void InitPlayerHealth()
+    // {
+    //   playerCurrentHealth.Value = playerData.playerHealthMax.Value;
+
+    // }
+    private void Start()
     {
       _PlayerTrans = GetComponent<Transform>();
 
       playerData.alienList = new List<AlienData>();
+      // InitPlayerHealth();
+     // playerData.InitHealth();
+
+    }
+    public void DamagePlayer(float amount)
+    {
+      playerCurrentHealth.Value -= amount;
     }
 
     /// <summary>
@@ -72,6 +88,10 @@ namespace SPACE.Players
         {
           JoinAlien(aliendata);
 
+        }
+        else if (other.gameObject.tag == "Enemy")
+        {
+          // var enemy =
         }
         else
         {

@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 349090932}
   - component: {fileID: 349090931}
   m_Layer: 5
-  m_Name: Background
+  m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1261070480089392836, guid: 383c9e1acdb66f5409844c92526226fa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 383c9e1acdb66f5409844c92526226fa, type: 3}
 --- !u!114 &426755372
 MonoBehaviour:
@@ -862,6 +863,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alienData: {fileID: 11400000, guid: 3aad85dc6e31df54b8a02fdf142e41d8, type: 2}
+--- !u!1 &1531605735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3119058704203125935, guid: 383c9e1acdb66f5409844c92526226fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 379546548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1656554186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,6 +1175,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53a83c44137f4d14ca8e79269d23eb2c, type: 3}
+--- !u!1 &1859060390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7967139299826324071, guid: 383c9e1acdb66f5409844c92526226fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 379546548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1859386817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3470398668720200546, guid: 383c9e1acdb66f5409844c92526226fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 379546548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1859386818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859386817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2657e28bd4d44b549bf661655bbf6916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelData: {fileID: 11400000, guid: 32dfe9aa20992e34f946af3aeb328760, type: 2}
+  playerData: {fileID: 11400000, guid: fa649c124e9f9fe4bb54dee48bb6f9bc, type: 2}
+  healthBar: {fileID: 349090931}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  gameOverPanel: {fileID: 1859060390}
+  pausePanel: {fileID: 1531605735}
 --- !u!1 &1974667526
 GameObject:
   m_ObjectHideFlags: 0

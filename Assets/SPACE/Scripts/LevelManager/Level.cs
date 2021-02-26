@@ -9,8 +9,13 @@ namespace SPACE.LevelManager
   public class Level : GameScene
   {
     [Header("Level Specific")]
-    public int alienCount;
+    public int alienCount = 0;
     public int followers = 0;
+    public FloatVariable score;
+
+    public void UpdateScore(float value){
+      score.Value = value;
+    }
   }
 
 }

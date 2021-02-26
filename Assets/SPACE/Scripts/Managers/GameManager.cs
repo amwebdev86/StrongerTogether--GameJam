@@ -13,32 +13,32 @@ namespace SPACE.Managers
 {
   public class GameManager : Singleton<GameManager>
   {
-    [SerializeField] SceneData levelData;
-    [SerializeField]
-    GameObject[] _systemPrefabs;
-    [SerializeField]
-    private List<GameObject> _instancedSystemPrefabs;
-    PlayerHealth _playerHealth;
-    public bool gameRunning = true;
-    public UnityEvent m_GameOverEvent;
-    private int _currentLvlAlienAmount;
-    PlayerHUD _playerHUD;
+   // [SerializeField] SceneData levelData;
+    //[SerializeField]
+    //GameObject[] _systemPrefabs;
+    //[SerializeField]
+    //private List<GameObject> _instancedSystemPrefabs;
+    //PlayerHealth _playerHealth;
+    //public bool gameRunning = true;
+    //public UnityEvent m_GameOverEvent;
+    //private int _currentLvlAlienAmount;
+    //PlayerHUD _playerHUD;
     private void Start()
     {
 
-      _instancedSystemPrefabs = new List<GameObject>();
+      //_instancedSystemPrefabs = new List<GameObject>();
      // InstantiateSystemPrefabs();
 
-      SpawnManager.Instance.ActivateGame(true);
-      StartCoroutine(SpawnManager.Instance.Spawner());
-      _playerHealth = FindObjectOfType<PlayerHealth>();
-      if (m_GameOverEvent == null)
-      {
-        m_GameOverEvent = new UnityEvent();
-      }
-      m_GameOverEvent.AddListener(GameOver);
-      InitiateHealthBar(_playerHealth.MaxHealth);
-      _currentLvlAlienAmount = GetLevelTotalAlienCount();
+     // SpawnManager.Instance.ActivateGame(true);
+     // StartCoroutine(SpawnManager.Instance.Spawner());
+      //_playerHealth = FindObjectOfType<PlayerHealth>();
+      // if (m_GameOverEvent == null)
+      // {
+      //   m_GameOverEvent = new UnityEvent();
+      // }
+      // m_GameOverEvent.AddListener(GameOver);
+      // InitiateHealthBar(_playerHealth.MaxHealth);
+      // _currentLvlAlienAmount = GetLevelTotalAlienCount();
 
       //_playerHUD = UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>();
      // _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
@@ -49,7 +49,6 @@ namespace SPACE.Managers
     private void Update()
     {
 //      _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
-
 
     }
 
@@ -65,74 +64,74 @@ namespace SPACE.Managers
     /// Updates the HealthBar
     /// </summary>
     /// <param name="currentHealth">Player's Current Health</param>
-    public void UpdateHealthBar(int currentHealth)
-    {
-      //UIManager.Instance.UpdatePlayerHealth(currentHealth);
-    }
+    // public void UpdateHealthBar(int currentHealth)
+    // {
+    //   UIManager.Instance.UpdatePlayerHealth(currentHealth);
+    // }
 
-    public void UpdatePlayerAlienCount(int value)
-    {
-      //UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>().AlienCountUpdate(value);
-      _playerHUD.AlienCountUpdate(value);
+    // public void UpdatePlayerAlienCount(int value)
+    // {
+    //   //UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>().AlienCountUpdate(value);
+    //   _playerHUD.AlienCountUpdate(value);
 
-    }
+    // }
 
     /// <summary>
     /// Adds any prefabs in _systemPrefabs to _instancedSystemPrefabs
     /// </summary>
-    private void InstantiateSystemPrefabs()
-    {
-      GameObject prefabInstance;
-      for (int i = 0; i < _systemPrefabs.Length; i++)
-      {
-        prefabInstance = Instantiate(_systemPrefabs[i]);
-        _instancedSystemPrefabs.Add(prefabInstance);
-      }
+    // private void InstantiateSystemPrefabs()
+    // {
+    //   GameObject prefabInstance;
+    //   for (int i = 0; i < _systemPrefabs.Length; i++)
+    //   {
+    //     prefabInstance = Instantiate(_systemPrefabs[i]);
+    //     _instancedSystemPrefabs.Add(prefabInstance);
+    //   }
 
-    }
+    // }
 
-    public int GetLevelTotalAlienCount()
-    {
-      Alien[] aliensInLevel = FindObjectsOfType<Alien>();
-      return aliensInLevel.Length;
-    }
-    public void DamagePlayer(int amount)
-    {
-      _playerHealth.TakeDamage(amount);
-    }
+    // public int GetLevelTotalAlienCount()
+    // {
+    //   Alien[] aliensInLevel = FindObjectsOfType<Alien>();
+    //   return aliensInLevel.Length;
+    // }
+    // public void DamagePlayer(int amount)
+    // {
+    //   _playerHealth.TakeDamage(amount);
+    // }
 
     /// <summary>
     /// When the player reaches the goal this method displays the score screen and updates the score.
     /// </summary>
     /// <param name="alienCount"></param>
-    public void WinGame(int alienCount)
-    {
-      _playerHUD.ToggleLevelText(false);
-      //UIManager.Instance.DisplayScoreScreen();
-      //UIManager.Instance.UpdateScoreText(alienCount, _currentLvlAlienAmount);
+    // public void WinGame(int alienCount)
+    // {
+    //   _playerHUD.ToggleLevelText(false);
+    //   //UIManager.Instance.DisplayScoreScreen();
+    //   //UIManager.Instance.UpdateScoreText(alienCount, _currentLvlAlienAmount);
 
 
-    }
-    void GameOver()
-    {
-      StartCoroutine(GameOverSequence());
-    }
+    // }
+    // void GameOver()
+    // {
+    //   StartCoroutine(GameOverSequence());
+    // }
     /// <summary>
     /// Plays the sequence when the player dies.
     /// </summary>
     /// <returns></returns>
-    IEnumerator GameOverSequence()
-    {
-      Transform playerTransform = _playerHealth.GetComponent<Transform>();
-      SpriteRenderer playerSprite = _playerHealth.GetComponent<SpriteRenderer>();
+    // IEnumerator GameOverSequence()
+    // {
+    //   Transform playerTransform = _playerHealth.GetComponent<Transform>();
+    //   SpriteRenderer playerSprite = _playerHealth.GetComponent<SpriteRenderer>();
 
-      playerTransform.Rotate(new Vector3(0, 0, -90));
-      playerSprite.color = Color.red;
-      yield return new WaitForSeconds(1f);
-      SpawnManager.Instance.ActivateGame(false);
-      Time.timeScale = 0;
-     // UIManager.Instance.DisplayGameOver();
-    }
+    //   playerTransform.Rotate(new Vector3(0, 0, -90));
+    //   playerSprite.color = Color.red;
+    //   yield return new WaitForSeconds(1f);
+    //   SpawnManager.Instance.ActivateGame(false);
+    //   Time.timeScale = 0;
+    //  // UIManager.Instance.DisplayGameOver();
+    // }
     /// <summary>
     /// Loads a scene Async. waiting for operation to complete before loading.
     /// </summary>
@@ -181,16 +180,16 @@ namespace SPACE.Managers
     /// <summary>
     /// Unload a scene (async)
     /// </summary>
-    public void UnloadLevel(string sceneName)
-    {
-      AsyncOperation unloadOperation = SceneManager.UnloadSceneAsync(sceneName);
-      WaitForUnloading(unloadOperation);
-    }
-    IEnumerator WaitForUnloading(AsyncOperation operation)
-    {
-      yield return new WaitUntil(() => operation.isDone);
-      Resources.UnloadUnusedAssets();
-    }
+    // public void UnloadLevel(string sceneName)
+    // {
+    //   AsyncOperation unloadOperation = SceneManager.UnloadSceneAsync(sceneName);
+    //   WaitForUnloading(unloadOperation);
+    // }
+    // IEnumerator WaitForUnloading(AsyncOperation operation)
+    // {
+    //   yield return new WaitUntil(() => operation.isDone);
+    //   Resources.UnloadUnusedAssets();
+    // }
 
 
     /// <summary>
@@ -198,25 +197,25 @@ namespace SPACE.Managers
     /// </summary>
     /// <param name="filename"></param>
     /// <returns></returns>
-    public string PathForSaving(string filename)
-    {
-      string identifier = SystemInfo.deviceModel;
-      Debug.Log($"Device ID: {identifier}");
-      string folderToStoreFiles = Application.persistentDataPath;
-      string path = System.IO.Path.Combine(folderToStoreFiles, filename);
-      if (String.IsNullOrEmpty(path))
-      {
-        Debug.LogError("No access to save data");
-        return null;
-      }
-      Debug.Log($"Saved file to {path}");
-      return path;
+    // public string PathForSaving(string filename)
+    // {
+    //   string identifier = SystemInfo.deviceModel;
+    //   Debug.Log($"Device ID: {identifier}");
+    //   string folderToStoreFiles = Application.persistentDataPath;
+    //   string path = System.IO.Path.Combine(folderToStoreFiles, filename);
+    //   if (String.IsNullOrEmpty(path))
+    //   {
+    //     Debug.LogError("No access to save data");
+    //     return null;
+    //   }
+    //   Debug.Log($"Saved file to {path}");
+    //   return path;
 
-    }
-    public string GetSceneName()
-    {
-      return SceneManager.GetActiveScene().name;
-    }
+    // }
+    // public string GetSceneName()
+    // {
+    //   return SceneManager.GetActiveScene().name;
+    // }
 
   }
 

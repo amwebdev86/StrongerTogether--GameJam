@@ -24,19 +24,19 @@ namespace SPACE.Utils
         //AsyncOperation operationPart2 = SceneManager.LoadSceneAsync($"Gameplay {levelIndex}", LoadSceneMode.Additive);
         Debug.Log($"Level {levelIndex} Loading....");
 
-        //pause before going to scene to load needed managers
-        operation.allowSceneActivation = false;
-        // operationPart2.allowSceneActivation = false;
+        // //pause before going to scene to load needed managers
+        // operation.allowSceneActivation = false;
+        // // operationPart2.allowSceneActivation = false;
 
-        if (operation.isDone)
-        {
-          operation.allowSceneActivation = true;
-          //operationPart2.allowSceneActivation = true;
-        }
-        else
-        {
-          Debug.LogError("Unable to load level");
-        }
+        // if (operation.isDone)
+        // {
+        //   operation.allowSceneActivation = true;
+        //   //operationPart2.allowSceneActivation = true;
+        // }
+        // else
+        // {
+        //   Debug.LogError("Unable to load level");
+        // }
 
       }
       else

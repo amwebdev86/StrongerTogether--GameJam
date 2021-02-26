@@ -13,7 +13,7 @@ namespace SPACE.Enemy
         void Start()
         {
             controller = GetComponent<MainController>();
-            StartCoroutine(EnemyMovement());
+            //StartCoroutine(EnemyMovement());
         }
 
         void FixedUpdate()
@@ -25,15 +25,15 @@ namespace SPACE.Enemy
         /// Moves enemy
         /// </summary>
         /// <returns></returns>
-        IEnumerator EnemyMovement()
-        {
-            while (GameManager.Instance.gameRunning)
-            {
-                rndRng = Random.Range(-1, 2);
-                yield return new WaitForSeconds(3);
-            }
+        // IEnumerator EnemyMovement()
+        // {
+        //     while (GameManager.Instance.gameRunning)
+        //     {
+        //         rndRng = Random.Range(-1, 2);
+        //         yield return new WaitForSeconds(3);
+        //     }
 
 
-        }
+        // }
     }
 }
