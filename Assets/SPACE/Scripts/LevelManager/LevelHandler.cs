@@ -11,27 +11,29 @@ namespace SPACE.LevelManager
 {
   public class LevelHandler : MonoBehaviour
   {
-    //----------Level DATA
+
+    [Header("----Character Data----")]
+    [SerializeField] PlayerData player;
+    //List<Alien> aliensToRescue;
+    [Header("----Level Data----")]
     [SerializeField] Level levelData;
-    [SerializeField] FloatReference levelScoreReference;
-    [SerializeField] FloatReference remainingAliensRef;
+    [SerializeField] FloatVariable currLevelAlienCount;
+    [SerializeField] FloatVariable remainingAliensVar;
+    [SerializeField] FloatVariable currlevelScoreVar;
 
     // ------------ Character data;
     // [SerializeField] PlayerData playerData;
-    [SerializeField] FloatReference playerScore;
-    [SerializeField] FloatReference playerHP;
-    [SerializeField] FloatReference playerHPMax;
-    [SerializeField] FloatReference playerCurrentAlienCount;
+    // [SerializeField] FloatReference playerScoreRef;
+    // [SerializeField] FloatReference playerHPRef;
+    // [SerializeField] FloatReference playerHPMaxRef;
+    // [SerializeField] FloatReference playerCurrentAlienCountRef;
 
-
-    [SerializeField] List<AlienData> aliens;
-    //TODO Add ENEMYDATA REF
-    //-------------UI
+    [Header("----UI Data----")]
     [SerializeField] Image healthBar;
     [SerializeField] TMP_Text playerAlienCount;
     [SerializeField] TMP_Text aliensRemainingText;
-    //--------- IN GAME MENU
-    [SerializeField] GameObject gameOverPanel;
+    [Header("----InGame Menus----")]
+    [SerializeField] GameObject gameOverPanel;//TODO Change to scene
     [SerializeField] GameObject pausePanel;
 
 
@@ -40,26 +42,25 @@ namespace SPACE.LevelManager
 
     void Start()
     {
-      aliens = new List<AlienData>();//TODO
-      //gameOverPanel.SetActive(false);
-      levelData.InitLevelData();
-
+      InitLevelHandler();
       InitHealthBar();
 
+    }
+
+    private void InitLevelHandler()
+    {
+
+      currLevelAlienCount.Value = levelData.maxAlienCount.Value;
+      aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
     }
 
     private void Update()
     {
       TogglePauseControl();
-      if (Input.GetKeyDown(KeyCode.Z))//TODO DEBUG PURPOSES ONLY
-      {
-        // playerData.DamagePlayer(10);
-
-      }
       UpdateHealthBar();
       UpdateHUDText();
-      // levelData.UpdateScore(playerData.currentScore);
-      levelData.UpdateScore(playerScore.Value); //TODO
+
+
 
     }
 
@@ -105,16 +106,18 @@ namespace SPACE.LevelManager
     void InitHealthBar()
     {
 
-      healthBar.fillAmount = playerHP.Value / playerHPMax.Value;
+      healthBar.fillAmount = player.playerHealthCurrent.Value / player.playerHealthMax.Value;
       healthBar.color = Color.green;
 
     }
 
     void UpdateHealthBar()
     {
+      healthBar.fillAmount = player.playerHealthCurrent.Value / player.playerHealthMax.Value;
+
       // var newHealthValue = playerHP.Value;
       // Debug.Log(newHealthValue);
-      healthBar.fillAmount = playerHP.Value / playerHPMax.Value;
+      //healthBar.fillAmount = playerHP.Value / playerHPMax.Value;
       if (healthBar.fillAmount >= .75)
       {
         healthBar.color = Color.green;
@@ -131,12 +134,12 @@ namespace SPACE.LevelManager
 
     void UpdateHUDText()
     {
-      playerAlienCount.text = playerCurrentAlienCount.Value.ToString();
-      aliensRemainingText.text = remainingAliensRef.Value.ToString();
+      // playerAlienCount.text = playerCurrentAlienCount.Value.ToString();
+      // aliensRemainingText.text = remainingAliensRef.Value.ToString();
     }
     public void DisplayGameOver() => gameOverPanel.SetActive(true);
-    public void IncreaseRemainingAliensCount() => levelData.IncrementLevelAlienCount();
-    public void DecreaseRemainingAliensCount() => levelData.DecrementLevelAlienCount();
+    // public void IncreaseRemainingAliensCount() => levelData.IncrementLevelAlienCount();
+    //public void DecreaseRemainingAliensCount() => levelData.DecrementLevelAlienCount();
 
 
 

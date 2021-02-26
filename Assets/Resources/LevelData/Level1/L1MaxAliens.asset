@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad847c33ae10834db577064130b4b40, type: 3}
   m_Name: L1MaxAliens
   m_EditorClassIdentifier: 
-  Value: 0
+  Value: 3

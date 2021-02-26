@@ -11,33 +11,41 @@ namespace SPACE.Players
     //Transform _PlayerTrans;
     [SerializeField] Transform _SpawnPoint;
     [SerializeField] PlayerData playerData;
+    [SerializeField] FloatVariable playerHealthCurrent;
+    [SerializeField] FloatVariable playerScore;
+    [SerializeField] FloatVariable rescuedCount;
     //[SerializeField] FloatVariable playerCurrentHealth;
 
-    //TODO Add this to start and instantiate new list.
+    private void Update()
+    {
+      if (Input.GetKeyDown(KeyCode.V))
+      {
+        DamagePlayer(10);
+      }
+    }
+    public bool DamagePlayer(float amount)
+    {
+      playerHealthCurrent.Value -= amount;
+      Debug.Log("Damaged player");
+      if (playerHealthCurrent.Value <= 0)
+      {
 
+        return true;
+      }
+      return false;
+    }
 
     private void Start()
     {
-      //_PlayerTrans = GetComponent<Transform>();
-
-      //playerData.alienList = new List<AlienData>();
-      playerData.InitPlayerData();
-
+      playerHealthCurrent.Value = playerData.playerHealthMax.Value;
     }
-    private void Update()
-    {
-      playerData.PlayerDataUpdate();
-    }
+
     /// <summary>
     /// Removes each attached alien in players alienList.
     /// </summary>
     public void PlayerFallSequence()
     {
-      if (playerData.alienList.Count > 0)
-      {
-        playerData.alienList.ForEach(a => playerData.RemoveAlien(a));
 
-      }
       //GameManager.Instance.DamagePlayer(20);
       transform.position = _SpawnPoint.position;
     }
@@ -49,28 +57,13 @@ namespace SPACE.Players
     /// </summary>
     public void UnjoinAliens()
     {
-      if (playerData.alienList.Count > 0)
-      {
-        playerData.alienList.ForEach(a =>
-        {
-          a.isJoinded = false;
-          playerData.RemoveAlien(a);
 
-        });
-
-
-      }
 
     }
 
     public void JoinAlien(AlienData alien)
     {
-      if (alien.isJoinded)
-      {
-        return;
-      }
-      alien.isJoinded = true;
-      playerData.alienList.Add(alien);
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

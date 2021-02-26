@@ -1041,32 +1041,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2657e28bd4d44b549bf661655bbf6916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: fa649c124e9f9fe4bb54dee48bb6f9bc, type: 2}
   levelData: {fileID: 11400000, guid: 32dfe9aa20992e34f946af3aeb328760, type: 2}
-  levelScoreReference:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: c1e21df0759aafb42b1e63cc2478dd27, type: 2}
-  remainingAliensRef:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 969547bdc82174e4f967560a5101dbe3, type: 2}
-  playerScore:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: c6007fb0839565e498e05216468c7012, type: 2}
-  playerHP:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 99e1dda494c16d842857c80db0627d63, type: 2}
-  playerHPMax:
-    UseConstant: 1
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: e6d82df8e1d43d94193fe0a4e522c194, type: 2}
-  playerCurrentAlienCount:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: d763152086498c543ace781403c2ab1b, type: 2}
-  aliens: []
+  currLevelAlienCount: {fileID: 11400000, guid: 969547bdc82174e4f967560a5101dbe3,
+    type: 2}
+  remainingAliensVar: {fileID: 11400000, guid: 9bca818e9ded59f4cb573bb5db95838b, type: 2}
+  currlevelScoreVar: {fileID: 11400000, guid: c1e21df0759aafb42b1e63cc2478dd27, type: 2}
   healthBar: {fileID: 349090931}
   playerAlienCount: {fileID: 2413128493956785009}
   aliensRemainingText: {fileID: 7101044631488224290}
@@ -3958,6 +3938,24 @@ PrefabInstance:
       propertyPath: _SpawnPoint
       value: 
       objectReference: {fileID: 7092069485076163980}
+    - target: {fileID: 8585357530380650324, guid: b26deaa10f20e2e4da0f4eb69e464093,
+        type: 3}
+      propertyPath: playerScore
+      value: 
+      objectReference: {fileID: 11400000, guid: c6007fb0839565e498e05216468c7012,
+        type: 2}
+    - target: {fileID: 8585357530380650324, guid: b26deaa10f20e2e4da0f4eb69e464093,
+        type: 3}
+      propertyPath: rescuedCount
+      value: 
+      objectReference: {fileID: 11400000, guid: d763152086498c543ace781403c2ab1b,
+        type: 2}
+    - target: {fileID: 8585357530380650324, guid: b26deaa10f20e2e4da0f4eb69e464093,
+        type: 3}
+      propertyPath: playerHealthCurrent
+      value: 
+      objectReference: {fileID: 11400000, guid: 99e1dda494c16d842857c80db0627d63,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b26deaa10f20e2e4da0f4eb69e464093, type: 3}
 --- !u!222 &8377516602906763029

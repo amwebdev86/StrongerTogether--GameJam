@@ -9,20 +9,23 @@ namespace SPACE.LevelManager
   public class Level : GameScene
   {
     [Header("Level Specific")]
-    public FloatVariable maxAlienCount;
-    public FloatVariable maxScore;
-    public FloatVariable score;
-    public FloatVariable remaingAliens;
+    public FloatReference maxAlienCount;
+    public FloatReference currAlienCount;
+    public FloatReference maxScoreRef;
+    [SerializeField] FloatReference remainingAliensRef;
+    [SerializeField] FloatReference currlevelScoreRef;
+    //public FloatVariable playerScoreVar;//from playerdata
+    //public FloatVariable remaingAliens;
     public void InitLevelData()
     {
-      remaingAliens = maxAlienCount;
+
     }
-    public void DecrementLevelAlienCount() => remaingAliens.Value--;
-    public void IncrementLevelAlienCount() => remaingAliens.Value++;
+    // public void DecrementLevelAlienCount() => remaingAliens.Value--;
+    // public void IncrementLevelAlienCount() => remaingAliens.Value++;
 
     public void UpdateScore(float value)
     {
-      score.Value = value;
+     // score.Value = value;
       //UpdateRemaing((int)score.Value);
     }
     // void UpdateRemaing(int value)
