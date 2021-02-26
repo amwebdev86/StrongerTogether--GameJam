@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0abcc9821aff98d4382b37d3e5471632, type: 3}
-  m_Name: SummaryMenu
+  m_Script: {fileID: 11500000, guid: 0ad847c33ae10834db577064130b4b40, type: 3}
+  m_Name: PlayerHealth
   m_EditorClassIdentifier: 
-  sceneName: 
-  shortDescription: 
-  audioManager: {fileID: 0}
-  typeOfMenu: 4
+  Value: 100

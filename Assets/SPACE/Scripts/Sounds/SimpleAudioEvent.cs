@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using SPACE.Utils;
 
-namespace SPACE.LevelManager.Sounds
+namespace SPACE.Sounds
 {
   [CreateAssetMenu(menuName = "GalacticBond/Audio/SimpleAudioEvent", fileName = "AudioEvent")]
   public class SimpleAudioEvent : AudioEvent

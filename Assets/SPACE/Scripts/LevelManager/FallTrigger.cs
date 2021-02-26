@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SPACE.Players;
-using SPACE.Players.Aliens;
+using SPACE.Aliens;
 
 
 namespace SPACE.LevelManager

@@ -18,27 +18,27 @@ namespace SPACE.LevelManager
     /// object (2D physics only).
     /// </summary>
     /// <param name="other">The other Collider2D involved in this collision.</param>
-    void OnTriggerEnter2D(Collider2D other)
-    {
-      Debug.Log("Entering goal");
-      if (other.gameObject.tag == "Player")
-      {
-        Debug.Log("Player entered goal");
-        var player = other.gameObject.GetComponent<Player>();
-        int playerCount = player.AlientListCount();
-        if (playerCount >= _GoalAmount)
-        {
-          GameManager.Instance.WinGame(playerCount);
-          Debug.Log("YOU WON!");
+    // void OnTriggerEnter2D(Collider2D other)
+    // {
+    //   Debug.Log("Entering goal");
+    //   if (other.gameObject.tag == "Player")
+    //   {
+    //     Debug.Log("Player entered goal");
+    //     var player = other.gameObject.GetComponent<Player>();
+    //     int playerCount = player.AlientListCount();
+    //     if (playerCount >= _GoalAmount)
+    //     {
+    //       GameManager.Instance.WinGame(playerCount);
+    //       Debug.Log("YOU WON!");
 
-        }
-        else
-        {
-          //TODO: Notify player not enough Aliens
-          return;
-        }
-      }
-    }
+    //     }
+    //     else
+    //     {
+    //       //TODO: Notify player not enough Aliens
+    //       return;
+    //     }
+    //   }
+    // }
 
     //TODO: Create corotine to add ship animation and winning sounds
 

@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using SPACE.Utils;
 using SPACE.Players;
 using SPACE.UI;
-using SPACE.Players.Aliens;
+using SPACE.Aliens;
 
 namespace SPACE.Managers
 {
@@ -27,7 +27,7 @@ namespace SPACE.Managers
     {
 
       _instancedSystemPrefabs = new List<GameObject>();
-      InstantiateSystemPrefabs();
+     // InstantiateSystemPrefabs();
 
       SpawnManager.Instance.ActivateGame(true);
       StartCoroutine(SpawnManager.Instance.Spawner());
@@ -40,15 +40,15 @@ namespace SPACE.Managers
       InitiateHealthBar(_playerHealth.MaxHealth);
       _currentLvlAlienAmount = GetLevelTotalAlienCount();
 
-      _playerHUD = UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>();
-      _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
+      //_playerHUD = UIManager.Instance.gameObject.GetComponentInChildren<PlayerHUD>();
+     // _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
 
 
 
     }
     private void Update()
     {
-      _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
+//      _playerHUD.UpdateLevelUI(GetLevelTotalAlienCount(), GetSceneName());
 
 
     }
@@ -59,7 +59,7 @@ namespace SPACE.Managers
     /// <param name="amount">Player Max HP</param>
     public void InitiateHealthBar(int amount)
     {
-      UIManager.Instance.SetInitialHealth(amount);
+      //UIManager.Instance.SetInitialHealth(amount);
     }
     /// <summary>
     /// Updates the HealthBar
@@ -67,7 +67,7 @@ namespace SPACE.Managers
     /// <param name="currentHealth">Player's Current Health</param>
     public void UpdateHealthBar(int currentHealth)
     {
-      UIManager.Instance.UpdatePlayerHealth(currentHealth);
+      //UIManager.Instance.UpdatePlayerHealth(currentHealth);
     }
 
     public void UpdatePlayerAlienCount(int value)
@@ -108,8 +108,8 @@ namespace SPACE.Managers
     public void WinGame(int alienCount)
     {
       _playerHUD.ToggleLevelText(false);
-      UIManager.Instance.DisplayScoreScreen();
-      UIManager.Instance.UpdateScoreText(alienCount, _currentLvlAlienAmount);
+      //UIManager.Instance.DisplayScoreScreen();
+      //UIManager.Instance.UpdateScoreText(alienCount, _currentLvlAlienAmount);
 
 
     }
@@ -131,7 +131,7 @@ namespace SPACE.Managers
       yield return new WaitForSeconds(1f);
       SpawnManager.Instance.ActivateGame(false);
       Time.timeScale = 0;
-      UIManager.Instance.DisplayGameOver();
+     // UIManager.Instance.DisplayGameOver();
     }
     /// <summary>
     /// Loads a scene Async. waiting for operation to complete before loading.

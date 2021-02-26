@@ -1,26 +1,28 @@
-﻿using UnityEngine.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using SPACE.Utils;
 using SPACE.UI;
 
-namespace SPACE.Managers
+namespace SPACE.LevelManager
 {
   public class UIManager : Singleton<UIManager>
   {
+    [SerializeField] Level levelData;
+
+    //TODO Add player data
     [SerializeField] HealthBar healthBarDisplay;
     [SerializeField] GameObject gameOverPanel;
-    [SerializeField] GameObject scorePanel;
+    //[SerializeField] GameObject scorePanel;
     [SerializeField] GameObject pausePanel;
-    [SerializeField] Text scoretext;
+   // [SerializeField] Text scoretext;
     // Start is called before the first frame update
     bool isPaused = false;
 
     void Start()
     {
       gameOverPanel.SetActive(false);
-      if (!healthBarDisplay)
-        healthBarDisplay = GetComponentInChildren<HealthBar>();
+      // if (!healthBarDisplay)
+      //   healthBarDisplay = GetComponentInChildren<HealthBar>();
     }
 
     private void Update()
@@ -38,6 +40,11 @@ namespace SPACE.Managers
         }
 
       }
+      PauseMenu();
+    }
+
+    private void PauseMenu()
+    {
       pausePanel.SetActive(isPaused);
       if (isPaused)
       {
@@ -62,10 +69,10 @@ namespace SPACE.Managers
     {
       gameOverPanel.SetActive(true);
     }
-    public void DisplayScoreScreen()
-    {
-      scorePanel.SetActive(true);
-    }
+    // public void DisplayScoreScreen()
+    // {
+    //   scorePanel.SetActive(true);
+    // }
     /// <summary>
     /// Restarts the current Level.
     /// </summary>
@@ -96,7 +103,7 @@ namespace SPACE.Managers
       string scoreTxt = $"SCORE: {playerAlienCount}/{levelMaxCount} --- {percentComplete}%";
       //string scoreTxt = "What the fuck...";
 
-      scoretext.text = scoreTxt;
+     // scoretext.text = scoreTxt;
 
     }
     // public void QuitToMenu()

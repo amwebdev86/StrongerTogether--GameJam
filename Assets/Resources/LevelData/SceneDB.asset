@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - {fileID: 11400000, guid: 32dfe9aa20992e34f946af3aeb328760, type: 2}
-  - {fileID: 11400000, guid: cbe19f079cf0c7f44a37704b8a4b0727, type: 2}
   menus:
   - {fileID: 11400000, guid: 5897ee917d200394db041323dda2adab, type: 2}
   - {fileID: 11400000, guid: daad71b934918654781938d2271588d2, type: 2}
   - {fileID: 11400000, guid: 64e6c49db3606194c924fc9335472b58, type: 2}
   - {fileID: 11400000, guid: 56219b1ecc3f79a43b2985079a1b3505, type: 2}
+  - {fileID: 11400000, guid: 87f4dc6e1e5b98e4a9e56149d44e2239, type: 2}
   currentLevelIndex: 1

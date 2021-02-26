@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SPACE.Controller;
-namespace SPACE.Players.Aliens
+namespace SPACE.Aliens
 {
     public class AlienMovement : MonoBehaviour
     {
         [SerializeField]MainController controller;
+        
         float alienHorizontalMovement;
         public float AlienSpeed = 3f;
         [HideInInspector]public bool isJoined = false;

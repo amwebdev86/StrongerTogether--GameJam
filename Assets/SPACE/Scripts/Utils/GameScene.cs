@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using SPACE.LevelManager.Sounds;
+using SPACE.Sounds;
 using UnityEngine;
 
 namespace SPACE.Utils
