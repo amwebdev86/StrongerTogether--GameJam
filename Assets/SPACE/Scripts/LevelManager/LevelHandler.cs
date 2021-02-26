@@ -130,7 +130,7 @@ namespace SPACE.LevelManager
 
     void UpdateHUDText()
     {
-      playerAlienCount.text = playerAlienCount.ToString();
+      playerAlienCount.text = playerCurrentAlienCount.Value.ToString();
       aliensRemainingText.text = remainingAliensRef.Value.ToString();
     }
     public void DisplayGameOver() => gameOverPanel.SetActive(true);
