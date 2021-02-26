@@ -39,6 +39,7 @@ namespace SPACE.Utils
             GameObject go = new GameObject(name);
             //create and attach whichever T
             T singletonCompoonent = go.AddComponent<T>();
+            
             return singletonCompoonent;
 
         }
