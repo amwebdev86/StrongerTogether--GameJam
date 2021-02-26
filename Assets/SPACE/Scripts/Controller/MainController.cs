@@ -114,7 +114,7 @@ namespace SPACE.Controller
       }
       if (_Grounded && jump)
       {
-        Debug.Log("Im Jumping");
+        //Debug.Log("Im Jumping");
         _Grounded = false;
         _Rigidbody2D.AddForce(new Vector2(0f, settings.jumpForce.Value));
       }

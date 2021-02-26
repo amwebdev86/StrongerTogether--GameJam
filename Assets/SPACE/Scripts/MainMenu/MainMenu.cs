@@ -13,11 +13,12 @@ namespace SPACE.Menus
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject loadingInterface;
     [SerializeField] Image loadScreenProgressBar;
-    [SerializeField] GameObject optionsMenu;
+    //[SerializeField] GameObject optionsMenu;
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
     public void StartGame()
     {
+      //DontDestroyOnLoad(gameObject);
       HideMenu();
       ShowLoadingScreen();
       scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1"));
@@ -29,14 +30,19 @@ namespace SPACE.Menus
     private IEnumerator LoadingScreen()
     {
       float totalProgress = 0;
+
       for (int i = 0; i < scenesToLoad.Count; ++i)
       {
-        while (!scenesToLoad[i].isDone)
+
+         while (!scenesToLoad[i].isDone)
         {
           totalProgress += scenesToLoad[i].progress;
           loadScreenProgressBar.fillAmount = totalProgress / scenesToLoad.Count;
           yield return null;
+
         }
+
+
       }
     }
 
@@ -53,6 +59,10 @@ namespace SPACE.Menus
     public void QuitGame()
     {
       Application.Quit();
+    }
+    private void OnDestroy()
+    {
+      StopAllCoroutines();
     }
 
   }

@@ -92,7 +92,7 @@ namespace SPACE.LevelManager
     void UpdateHealthBar()
     {
       var newHealthValue = playerData.playerHealthCurrent.Value;
-      Debug.Log(newHealthValue.ToString() + " is the new health value");
+      //Debug.Log(newHealthValue.ToString() + " is the new health value");
       healthBar.fillAmount = (float)playerData.playerHealthCurrent.Value / (float)playerData.playerHealthMax.Value;
 if(healthBar.fillAmount >= .75){
         healthBar.color = Color.green;
@@ -101,7 +101,7 @@ if(healthBar.fillAmount >= .75){
       {
         healthBar.color = Color.yellow;
       }
-      else if (healthBar.fillAmount < .25f)
+      else if (healthBar.fillAmount <= .25f)
       {
         healthBar.color = Color.red;
       }
