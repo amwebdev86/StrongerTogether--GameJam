@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dcd6677f4d657a44912daa3da104df0, type: 3}
-  m_Name: Level 1
+  m_Name: L1Level
   m_EditorClassIdentifier: 
   sceneName: Level1
   shortDescription: First level of the game.
   audioManager: {fileID: 11400000, guid: 8895b6c3350a25649aa60c651b8f026c, type: 2}
-  alienCount: 3
-  followers: 0
+  maxAlienCount: {fileID: 11400000, guid: d8f539d1da7efd7459f3879f6350fb64, type: 2}
+  maxScore: {fileID: 11400000, guid: 9bca818e9ded59f4cb573bb5db95838b, type: 2}
   score: {fileID: 11400000, guid: c1e21df0759aafb42b1e63cc2478dd27, type: 2}
+  remaingAliens: {fileID: 11400000, guid: d8f539d1da7efd7459f3879f6350fb64, type: 2}

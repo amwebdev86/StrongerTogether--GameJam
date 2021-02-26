@@ -910,7 +910,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1042,6 +1042,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelData: {fileID: 11400000, guid: 32dfe9aa20992e34f946af3aeb328760, type: 2}
+  levelScoreReference:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: c1e21df0759aafb42b1e63cc2478dd27, type: 2}
+  remainingAliensRef:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 969547bdc82174e4f967560a5101dbe3, type: 2}
   playerData: {fileID: 11400000, guid: fa649c124e9f9fe4bb54dee48bb6f9bc, type: 2}
   aliens: []
   healthBar: {fileID: 349090931}
@@ -1139,32 +1147,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8263959155207339430}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &157089541449771614
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157089541449771603}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.030359134, y: -0.008674152}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.26580095, y: 0.3612156}
-  m_EdgeRadius: 0
 --- !u!224 &179756286286071374
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3896,11 +3878,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 463519756771335116, guid: b26deaa10f20e2e4da0f4eb69e464093,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.104
-      objectReference: {fileID: 0}
     - target: {fileID: 2188301148806843509, guid: b26deaa10f20e2e4da0f4eb69e464093,
         type: 3}
       propertyPath: m_RootOrder
@@ -3956,26 +3933,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3119188746287394862, guid: b26deaa10f20e2e4da0f4eb69e464093,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.041
-      objectReference: {fileID: 0}
-    - target: {fileID: 3119188746287394862, guid: b26deaa10f20e2e4da0f4eb69e464093,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 3523426698945853003, guid: b26deaa10f20e2e4da0f4eb69e464093,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7625495395966751563, guid: b26deaa10f20e2e4da0f4eb69e464093,
-        type: 3}
-      propertyPath: airControl
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8106869699657242613, guid: b26deaa10f20e2e4da0f4eb69e464093,
         type: 3}
       propertyPath: m_Name
@@ -3983,21 +3940,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8585357530380650324, guid: b26deaa10f20e2e4da0f4eb69e464093,
         type: 3}
-      propertyPath: playerData
-      value: 
-      objectReference: {fileID: 11400000, guid: fa649c124e9f9fe4bb54dee48bb6f9bc,
-        type: 2}
-    - target: {fileID: 8585357530380650324, guid: b26deaa10f20e2e4da0f4eb69e464093,
-        type: 3}
       propertyPath: _SpawnPoint
       value: 
       objectReference: {fileID: 7092069485076163980}
-    - target: {fileID: 8585357530380650324, guid: b26deaa10f20e2e4da0f4eb69e464093,
-        type: 3}
-      propertyPath: playerCurrentHealth
-      value: 
-      objectReference: {fileID: 11400000, guid: a01964ed68cb8054d84d8c03d0782362,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b26deaa10f20e2e4da0f4eb69e464093, type: 3}
 --- !u!222 &8377516602906763029

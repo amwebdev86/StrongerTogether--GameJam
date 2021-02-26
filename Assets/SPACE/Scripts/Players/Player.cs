@@ -8,33 +8,26 @@ namespace SPACE.Players
 {
   public class Player : MonoBehaviour
   {
-    Transform _PlayerTrans;
+    //Transform _PlayerTrans;
     [SerializeField] Transform _SpawnPoint;
-
     [SerializeField] PlayerData playerData;
-    [SerializeField] FloatVariable playerCurrentHealth;
+    //[SerializeField] FloatVariable playerCurrentHealth;
 
     //TODO Add this to start and instantiate new list.
 
-    // public void InitPlayerHealth()
-    // {
-    //   playerCurrentHealth.Value = playerData.playerHealthMax.Value;
 
-    // }
     private void Start()
     {
-      _PlayerTrans = GetComponent<Transform>();
+      //_PlayerTrans = GetComponent<Transform>();
 
-      playerData.alienList = new List<AlienData>();
-      // InitPlayerHealth();
-     // playerData.InitHealth();
+      //playerData.alienList = new List<AlienData>();
+      playerData.InitPlayerData();
 
     }
-    public void DamagePlayer(float amount)
+    private void Update()
     {
-      playerCurrentHealth.Value -= amount;
+      playerData.PlayerDataUpdate();
     }
-
     /// <summary>
     /// Removes each attached alien in players alienList.
     /// </summary>
@@ -46,7 +39,7 @@ namespace SPACE.Players
 
       }
       //GameManager.Instance.DamagePlayer(20);
-      _PlayerTrans.position = _SpawnPoint.position;
+      transform.position = _SpawnPoint.position;
     }
 
 

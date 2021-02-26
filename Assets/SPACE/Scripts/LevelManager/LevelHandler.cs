@@ -5,14 +5,25 @@ using UnityEngine.UI;
 using TMPro;
 using SPACE.Players;
 using SPACE.Aliens;
+using SPACE.Utils;
 
 namespace SPACE.LevelManager
 {
   public class LevelHandler : MonoBehaviour
   {
-    //----------DATA
+    //----------Level DATA
     [SerializeField] Level levelData;
-    [SerializeField] PlayerData playerData;
+    [SerializeField] FloatReference levelScoreReference;
+    [SerializeField] FloatReference remainingAliensRef;
+
+    // ------------ Character data;
+    // [SerializeField] PlayerData playerData;
+    [SerializeField] FloatReference playerScore;
+    [SerializeField] FloatReference playerHP;
+    [SerializeField] FloatReference playerHPMax;
+    [SerializeField] FloatReference playerCurrentAlienCount;
+
+
     [SerializeField] List<AlienData> aliens;
     //TODO Add ENEMYDATA REF
     //-------------UI
@@ -29,37 +40,47 @@ namespace SPACE.LevelManager
 
     void Start()
     {
-      gameOverPanel.SetActive(false);
-      //pausePanel.SetActive(false);
-      playerData.InitHealth();
+      aliens = new List<AlienData>();//TODO
+      //gameOverPanel.SetActive(false);
+      levelData.InitLevelData();
+
       InitHealthBar();
 
     }
 
     private void Update()
     {
-      // InitHealthBar();
+      TogglePauseControl();
+      if (Input.GetKeyDown(KeyCode.Z))//TODO DEBUG PURPOSES ONLY
+      {
+        // playerData.DamagePlayer(10);
 
+      }
+      UpdateHealthBar();
+      UpdateHUDText();
+      // levelData.UpdateScore(playerData.currentScore);
+      levelData.UpdateScore(playerScore.Value); //TODO
+
+    }
+
+    private void TogglePauseControl()
+    {
       if (Input.GetKeyDown(KeyCode.P))
       {
         if (!isPaused)
         {
           isPaused = true;
+          TogglePause();
 
         }
         else
         {
           isPaused = false;
+          TogglePause();
+
         }
 
       }
-      if (Input.GetKeyDown(KeyCode.Z))
-      {
-        playerData.DamagePlayer(10);
-
-      }
-      TogglePause();
-      UpdateHealthBar();
     }
 
     void TogglePause()
@@ -84,17 +105,17 @@ namespace SPACE.LevelManager
     void InitHealthBar()
     {
 
-      healthBar.fillAmount = playerData.playerHealthCurrent.Value / playerData.playerHealthMax.Value;
+      healthBar.fillAmount = playerHP.Value / playerHPMax.Value;
       healthBar.color = Color.green;
 
     }
 
     void UpdateHealthBar()
     {
-      var newHealthValue = playerData.playerHealthCurrent.Value;
-      //Debug.Log(newHealthValue.ToString() + " is the new health value");
-      healthBar.fillAmount = (float)playerData.playerHealthCurrent.Value / (float)playerData.playerHealthMax.Value;
-if(healthBar.fillAmount >= .75){
+      var newHealthValue = playerHP.Value;
+      healthBar.fillAmount = playerHP.Value / playerHP.Value;
+      if (healthBar.fillAmount >= .75)
+      {
         healthBar.color = Color.green;
       }
       else if (healthBar.fillAmount <= .5f)
@@ -106,10 +127,16 @@ if(healthBar.fillAmount >= .75){
         healthBar.color = Color.red;
       }
     }
-    public void DisplayGameOver()
+
+    void UpdateHUDText()
     {
-      gameOverPanel.SetActive(true);
+      playerAlienCount.text = playerAlienCount.ToString();
+      aliensRemainingText.text = remainingAliensRef.Value.ToString();
     }
+    public void DisplayGameOver() => gameOverPanel.SetActive(true);
+    public void IncreaseRemainingAliensCount() => levelData.IncrementLevelAlienCount();
+    public void DecreaseRemainingAliensCount() => levelData.DecrementLevelAlienCount();
+
 
 
 

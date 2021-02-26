@@ -8,27 +8,23 @@ namespace SPACE.Players
   [CreateAssetMenu(fileName = "PlayerData", menuName = "GalacticBond/Players/PlayerData", order = 0)]
   public class PlayerData : ScriptableObject
   {
-    public FloatReference playerId;
-    public FloatReference playerHealthMax;
-    public FloatReference playerHealthCurrent;
-    public float currentScore = 0;
+    public FloatVariable playerId;
+    public FloatVariable playerHealthMax;
+    public FloatVariable playerHealthCurrent;
+    public FloatVariable currentScore;
+    public FloatVariable currentAlienCount;
     public List<AlienData> alienList = new List<AlienData>();
 
-    private void OnEnable()
+
+    public void InitPlayerData()
     {
-
-
-    }
-    private void OnDisable()
-    {
-
-
-
-    }
-    public void InitHealth()
-    {
+      alienList = new List<AlienData>();
       playerHealthCurrent.Value = playerHealthMax.Value;
 
+    }
+    public void PlayerDataUpdate()
+    {
+      currentAlienCount.Value = alienList.Count;
     }
 
     public void AddAlien(AlienData alien)
@@ -39,6 +35,7 @@ namespace SPACE.Players
 
       }
       alienList.Add(alien);
+      currentAlienCount.Value++;
     }
     public void RemoveAlien(AlienData alien)
     {
@@ -49,19 +46,25 @@ namespace SPACE.Players
       }
       AlienData alientToRemove = alienList.Find(a => a.alienId == alien.alienId);
       alienList.Remove(alientToRemove);
+      currentAlienCount.Value--;
 
 
     }
-
-    public void DamagePlayer(float amount)
+    /// <summary>
+    /// Damages the player and checks if dead.
+    /// </summary>
+    /// <param name="amount"></param>
+    /// <returns>Returns true if the player has died from damage</returns>
+    public bool DamagePlayer(float amount)
     {
       playerHealthCurrent.Value -= amount;
       Debug.Log("Damaged player");
       if (playerHealthCurrent.Value <= 0)
       {
-        Debug.LogWarning("Call Gameover event Listener");
-        return;
+
+        return true;
       }
+      return false;
     }
 
   }
