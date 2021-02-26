@@ -48,6 +48,10 @@ namespace SPACE.LevelManager
     }
     private void Update()
     {
+      if (Input.GetKeyDown(KeyCode.Escape))
+      {
+        Cursor.lockState = CursorLockMode.None;
+      }
       TogglePauseControl();
       UpdateHealthBar();
       UpdateHUDText();
@@ -85,7 +89,7 @@ namespace SPACE.LevelManager
 
       if (isPaused)
       {
-
+        Cursor.lockState = CursorLockMode.Confined;
         pausePanel.SetActive(isPaused);
         Time.timeScale = 0;
       }
