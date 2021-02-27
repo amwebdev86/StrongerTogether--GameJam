@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Level1
   shortDescription: First level of the game.
-  audioManager: {fileID: 11400000, guid: 8895b6c3350a25649aa60c651b8f026c, type: 2}
+  audioManager: {fileID: 0}
   maxAlienCount:
     UseConstant: 0
     ConstantValue: 3
@@ -35,3 +35,4 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: c1e21df0759aafb42b1e63cc2478dd27, type: 2}
+  audioData: {fileID: 11400000, guid: a68ce3d4f6a08ff40a6e6d023b9773e1, type: 2}

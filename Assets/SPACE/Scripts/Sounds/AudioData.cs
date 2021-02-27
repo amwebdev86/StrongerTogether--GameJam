@@ -9,7 +9,7 @@ namespace SPACE.Sounds
   public class AudioData : AudioEvent
   {
 
-    public FloatReference volume;//TODO Options has the var that changes this value.
+    public FloatVariable volume;//TODO Options has the var that changes this value.
     public AudioClip[] fxClips;
     public AudioClip musicClip;
     public void PlayClip(int index, AudioSource source)
@@ -32,6 +32,15 @@ namespace SPACE.Sounds
       source.clip = musicClip;
       source.volume = volume.Value;
       source.Play();
+    }
+    public void AdjustVolume(float value){
+        if(value > 1 ){
+        value = 1;
+      }
+      if(value <= 0 ){
+        value = 0;
+      }
+      volume.Value = value;
     }
   }
 }

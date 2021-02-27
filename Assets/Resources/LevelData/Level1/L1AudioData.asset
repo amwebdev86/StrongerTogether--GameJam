@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd99597e915a9ba4ab57f9f842c2ef11, type: 3}
-  m_Name: AudioData
+  m_Name: L1AudioData
   m_EditorClassIdentifier: 
-  volume:
-    UseConstant: 1
-    ConstantValue: 0
-    Variable: {fileID: 0}
+  volume: {fileID: 11400000, guid: 9317c15b188082c408a8c3f0e614bc24, type: 2}
+  fxClips: []
+  musicClip: {fileID: 8300000, guid: a27e37142e6259b4eab8c055a0884ac4, type: 3}

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f167195e264d6048bb79457ceaa9553, type: 3}
   m_Name: Level1Audio
   m_EditorClassIdentifier: 
-  clips: []
+  clips:
+  - {fileID: 0}
   volume: 0
