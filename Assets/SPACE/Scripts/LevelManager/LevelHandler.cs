@@ -46,6 +46,10 @@ namespace SPACE.LevelManager
     }
     void Start()
     {
+      if (levelAudioSource == null)
+      {
+        levelAudioSource = new GameObject("new AudioManager").AddComponent<AudioSource>();
+      }
       //levelAudioSource = GetComponent<AudioSource>();
       if (maxAlienCount.Value <= storedMaxCount)
       {
@@ -80,6 +84,8 @@ namespace SPACE.LevelManager
 
         }
       }
+
+      
       stopTime = TogglePause(isPaused);
 
 
@@ -88,12 +94,13 @@ namespace SPACE.LevelManager
       UpdateHUDText();
 
     }
-
-    private void OnDisable()
+    //TODO Add SFX . Remove this Event and add in event SO ...
+    public void OnJumpSFX()
     {
 
-    }
+      levelData.audioManager.PlayClip(5, levelAudioSource);
 
+    }
     private void PauseTime()
     {
       Time.timeScale = 0;

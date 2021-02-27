@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: L1AudioData
   m_EditorClassIdentifier: 
   volume: {fileID: 11400000, guid: 9317c15b188082c408a8c3f0e614bc24, type: 2}
-  fxClips: []
+  fxClips:
+  - {fileID: 8300000, guid: fd38fe302db84034fad5daa4a037d679, type: 3}
+  - {fileID: 8300000, guid: 66852431e1babd74b828f9b901e038be, type: 3}
+  - {fileID: 8300000, guid: 47a9ebc0dd5350240bbbdd06beaad05d, type: 3}
+  - {fileID: 8300000, guid: f05206903c6c9f9468fd064aa38a7e8b, type: 3}
+  - {fileID: 8300000, guid: 0c85d5a09b6133440a717a37740805d7, type: 3}
+  - {fileID: 8300000, guid: 9b8ceef51d316ae4bb14781bea2bc738, type: 3}
+  - {fileID: 8300000, guid: 46b70a75d62459a4fab909c0af0fdef1, type: 3}
   musicClip: {fileID: 8300000, guid: a27e37142e6259b4eab8c055a0884ac4, type: 3}
