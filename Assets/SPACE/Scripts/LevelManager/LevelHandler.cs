@@ -17,6 +17,8 @@ namespace SPACE.LevelManager
     //List<Alien> aliensToRescue;
     [Header("----Level Data----")]
     [SerializeField] Level levelData;
+    [SerializeField] FloatVariable maxAlienCount;
+    [SerializeField] const float storedMaxCount = 3;
     [SerializeField] FloatVariable currLevelAlienCount;
     [SerializeField] FloatVariable remainingAliensVar;
     [SerializeField] FloatVariable currlevelScoreVar;
@@ -42,6 +44,10 @@ namespace SPACE.LevelManager
 
     void Start()
     {
+      if (maxAlienCount.Value <= storedMaxCount)
+      {
+        maxAlienCount.Value = storedMaxCount;
+      }
       InitLevelHandler();
       InitHealthBar();
 
@@ -50,53 +56,46 @@ namespace SPACE.LevelManager
     {
       if (Input.GetKeyDown(KeyCode.Escape))
       {
-        Cursor.lockState = CursorLockMode.None;
+        if (Cursor.lockState == CursorLockMode.Locked)
+          Cursor.lockState = CursorLockMode.None;
+        else
+          Cursor.lockState = CursorLockMode.Locked;
       }
       TogglePauseControl();
       UpdateHealthBar();
       UpdateHUDText();
 
+
+
     }
     private void InitLevelHandler()
     {
+
       Cursor.lockState = CursorLockMode.Locked;
-      currLevelAlienCount.Value = levelData.maxAlienCount.Value;
+      currLevelAlienCount.Value = storedMaxCount;
       aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
     }
 
     private void TogglePauseControl()
     {
-      if (Input.GetKeyDown(KeyCode.P))
-      {
-        if (!isPaused)
-        {
-          isPaused = true;
-          TogglePause();
-
-        }
-        else
-        {
-          isPaused = false;
-          TogglePause();
-
-        }
-
-      }
+      //TODO PAUSE ISSUE - TIME DOESNT START BACK UP ON RESTART FROM PAUSE.
     }
 
-    void TogglePause()
+    bool TogglePause(bool active)
     {
 
-      if (isPaused)
+      if (active)
       {
         Cursor.lockState = CursorLockMode.Confined;
-        pausePanel.SetActive(isPaused);
-        Time.timeScale = 0;
+        pausePanel.SetActive(active);
+        //Time.timeScale = 0;
+        return true;
       }
       else
       {
-        pausePanel.SetActive(isPaused);
-        Time.timeScale = 1;
+        pausePanel.SetActive(active);
+        //Time.timeScale = 1;
+        return false;
       }
 
 

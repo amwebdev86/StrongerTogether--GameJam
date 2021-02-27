@@ -16,6 +16,17 @@ namespace SPACE.LevelManager
     [SerializeField] FloatReference currlevelScoreRef;
     //public FloatVariable playerScoreVar;//from playerdata
     //public FloatVariable remaingAliens;
+    private void OnEnable()
+    {
+      maxAlienCount.Value = maxAlienCount.ConstantValue;
+    }
+    private void OnDisable()
+    {
+      maxAlienCount.Value = maxAlienCount.ConstantValue;
+
+    }
   }
+
+
 
 }

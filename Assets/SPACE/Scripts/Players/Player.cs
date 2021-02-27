@@ -38,6 +38,7 @@ namespace SPACE.Players
     private void Start()
     {
       playerHealthCurrent.Value = playerData.playerHealthMax.Value;
+      rescuedCount.Value = 0;
     }
 
     /// <summary>
