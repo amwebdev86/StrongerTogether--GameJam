@@ -14,8 +14,16 @@ namespace SPACE.LevelManager
     [SerializeField] FloatVariable score;
     [SerializeField] AudioData audioData;
     [SerializeField] AudioSource source;
+    [SerializeField] FloatReference volume;
+    private void OnEnable()
+    {
+      source.volume = volume.Value;
 
-
+    }
+    private void Start()
+    {
+      source.volume = volume.Value;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
 

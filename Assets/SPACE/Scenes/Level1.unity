@@ -1426,6 +1426,17 @@ PrefabInstance:
       propertyPath: source
       value: 
       objectReference: {fileID: 131111417}
+    - target: {fileID: 7189103093583387553, guid: 90d616271a15d594495053012bb80d99,
+        type: 3}
+      propertyPath: volume.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 9317c15b188082c408a8c3f0e614bc24,
+        type: 2}
+    - target: {fileID: 7189103093583387553, guid: 90d616271a15d594495053012bb80d99,
+        type: 3}
+      propertyPath: volume.UseConstant
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90d616271a15d594495053012bb80d99, type: 3}
 --- !u!114 &4318428544688792219
