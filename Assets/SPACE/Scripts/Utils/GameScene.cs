@@ -11,6 +11,6 @@ namespace SPACE.Utils
     public string sceneName;
     public string shortDescription;
     [Header("Sounds")]
-    public RandomSoundMachine audioManager;
+    public AudioData audioManager;
   }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using SPACE.Sounds;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,10 +16,16 @@ namespace SPACE.Menus
     [SerializeField] Image loadScreenProgressBar;
     //[SerializeField] GameObject optionsMenu;
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioData audioData;
 
+    private void Start()
+    {
+      audioData.PlayMusic(audioSource);
+    }
     public void StartGame()
     {
-      //DontDestroyOnLoad(gameObject);
+
       HideMenu();
       ShowLoadingScreen();
       scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1"));
@@ -34,7 +41,7 @@ namespace SPACE.Menus
       for (int i = 0; i < scenesToLoad.Count; ++i)
       {
 
-         while (!scenesToLoad[i].isDone)
+        while (!scenesToLoad[i].isDone)
         {
           totalProgress += scenesToLoad[i].progress;
           loadScreenProgressBar.fillAmount = totalProgress / scenesToLoad.Count;

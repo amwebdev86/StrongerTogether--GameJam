@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using SPACE.Sounds;
 using SPACE.Utils;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ namespace SPACE.Menus
   {
     [SerializeField] FloatReference volume;
     [SerializeField] Slider volumeSlider;
+    [SerializeField] AudioData audioData;
+    [SerializeField] AudioSource source;
 
     private void OnEnable()
     {
@@ -18,6 +21,7 @@ namespace SPACE.Menus
     }
     private void Start()
     {
+      audioData.PlayMusic(source);
     }
 
   }
