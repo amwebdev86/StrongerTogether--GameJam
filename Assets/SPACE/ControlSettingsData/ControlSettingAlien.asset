@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b0de07dc62e75b42901f937dacb319c, type: 3}
-  m_Name: ControlSetting
+  m_Name: ControlSettingAlien
   m_EditorClassIdentifier: 
   jumpForce:
     UseConstant: 1
-    ConstantValue: 650
+    ConstantValue: 350
     Variable: {fileID: 11400000, guid: 3393fa3b683698d41b84f3df331d6fac, type: 2}
   crouchSpeed:
     UseConstant: 1
@@ -22,5 +22,5 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 56b15ce56c9402a468b7c54d17f76112, type: 2}
   movementSmoothing:
     UseConstant: 1
-    ConstantValue: 0.3
+    ConstantValue: 0.1
     Variable: {fileID: 11400000, guid: dc46cb004cb12b14aaa4561b46cf2f14, type: 2}

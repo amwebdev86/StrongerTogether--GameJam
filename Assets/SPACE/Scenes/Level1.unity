@@ -952,7 +952,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0041084588, y: 0.05695277}
+  m_Offset: {x: -0.013752371, y: 0.08878296}
   m_SpriteTilingProperty:
     border: {x: 0.09375, y: 0.078125, z: 0.109375, w: 0.078125}
     pivot: {x: 0.5, y: 0.5}
@@ -963,7 +963,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13101175, y: 0.09761328}
+  m_Size: {x: 0.2874567, y: 0.16127361}
   m_EdgeRadius: 0
 --- !u!58 &1656554191
 CircleCollider2D:
@@ -978,9 +978,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008216828, y: -0.050172567}
+  m_Offset: {x: -0.008216828, y: -0.06887704}
   serializedVersion: 2
-  m_Radius: 0.05009945
+  m_Radius: 0.05652867
 --- !u!114 &1656554192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,10 +993,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e158438e378ab440973c5980f73e96d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 34b4daa1472b6a446a19761e0609e2ad, type: 2}
+  settings: {fileID: 11400000, guid: fbe021e5cf7a0ad4e91ea9a6971a09c3, type: 2}
   _Grounded: 0
   flipSprite: 0
-  airControl: 1
+  airControl: 0
   groundCheck: {fileID: 170404}
   ceilingCheck: {fileID: 298762377}
   crouchDisableCollider: {fileID: 0}
@@ -1630,10 +1630,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e158438e378ab440973c5980f73e96d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 34b4daa1472b6a446a19761e0609e2ad, type: 2}
+  settings: {fileID: 11400000, guid: fbe021e5cf7a0ad4e91ea9a6971a09c3, type: 2}
   _Grounded: 0
   flipSprite: 0
-  airControl: 1
+  airControl: 0
   groundCheck: {fileID: 5847007021039718706}
   ceilingCheck: {fileID: 5847007021328877599}
   crouchDisableCollider: {fileID: 0}
@@ -1827,10 +1827,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e158438e378ab440973c5980f73e96d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 34b4daa1472b6a446a19761e0609e2ad, type: 2}
+  settings: {fileID: 11400000, guid: fbe021e5cf7a0ad4e91ea9a6971a09c3, type: 2}
   _Grounded: 0
   flipSprite: 0
-  airControl: 1
+  airControl: 0
   groundCheck: {fileID: 5847007020593214802}
   ceilingCheck: {fileID: 5847007020839873663}
   crouchDisableCollider: {fileID: 0}
@@ -1877,7 +1877,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0041084588, y: 0.05695277}
+  m_Offset: {x: -0.009466171, y: 0.084538825}
   m_SpriteTilingProperty:
     border: {x: 0.09375, y: 0.078125, z: 0.109375, w: 0.078125}
     pivot: {x: 0.5, y: 0.5}
@@ -1888,7 +1888,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13101175, y: 0.09761328}
+  m_Size: {x: 0.3024587, y: 0.1641031}
   m_EdgeRadius: 0
 --- !u!58 &5847007022227385913
 CircleCollider2D:
@@ -1903,9 +1903,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008216828, y: -0.050172567}
+  m_Offset: {x: -0.008216828, y: -0.089487165}
   serializedVersion: 2
-  m_Radius: 0.05009945
+  m_Radius: 0.06563681
 --- !u!4 &5847007022227385914
 Transform:
   m_ObjectHideFlags: 0

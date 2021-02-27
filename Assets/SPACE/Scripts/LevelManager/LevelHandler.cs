@@ -44,8 +44,7 @@ namespace SPACE.LevelManager
     {
       if (Time.timeScale == 0)
         Time.timeScale = 1;
-      else if (currlevelScoreVar.Value > 0)
-        currlevelScoreVar.Value = 0;
+
 
     }
     void Start()
@@ -59,9 +58,11 @@ namespace SPACE.LevelManager
       {
         maxAlienCount.Value = storedMaxCount;
       }
+      if (currlevelScoreVar.Value > 0)
+        currlevelScoreVar.Value = 0;
       InitLevelHandler();
       InitHealthBar();
-      levelData.StartMusic(levelAudioSource);
+      // levelData.StartMusic(levelAudioSource);
 
     }
     private void Update()
