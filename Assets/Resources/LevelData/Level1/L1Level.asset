@@ -16,9 +16,9 @@ MonoBehaviour:
   shortDescription: First level of the game.
   audioManager: {fileID: 11400000, guid: 8895b6c3350a25649aa60c651b8f026c, type: 2}
   maxAlienCount:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 3
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: d8f539d1da7efd7459f3879f6350fb64, type: 2}
   currAlienCount:
     UseConstant: 0
     ConstantValue: 0

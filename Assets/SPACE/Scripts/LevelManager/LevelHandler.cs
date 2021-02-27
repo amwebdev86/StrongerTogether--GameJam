@@ -6,6 +6,7 @@ using TMPro;
 using SPACE.Players;
 using SPACE.Aliens;
 using SPACE.Utils;
+using System;
 
 namespace SPACE.LevelManager
 {
@@ -41,7 +42,12 @@ namespace SPACE.LevelManager
 
 
     bool isPaused = false;
-
+    bool stopTime = false;
+    private void OnEnable()
+    {
+      if (Time.timeScale == 0)
+        Time.timeScale = 1;
+    }
     void Start()
     {
       if (maxAlienCount.Value <= storedMaxCount)
@@ -61,13 +67,42 @@ namespace SPACE.LevelManager
         else
           Cursor.lockState = CursorLockMode.Locked;
       }
-      TogglePauseControl();
+      if (Input.GetKeyDown(KeyCode.P))
+      {
+        if (isPaused)
+        {
+          isPaused = false;
+          ResumeTime();
+
+        }
+        else
+        {
+          isPaused = true;
+          PauseTime();
+
+        }
+      }
+      stopTime = TogglePause(isPaused);
+
+      Debug.Log("Stop Time = " + stopTime);
+      ;
       UpdateHealthBar();
       UpdateHUDText();
 
 
 
     }
+
+    private void PauseTime()
+    {
+      Time.timeScale = 0;
+    }
+
+    private void ResumeTime()
+    {
+      Time.timeScale = 1;
+    }
+
     private void InitLevelHandler()
     {
 
@@ -76,10 +111,6 @@ namespace SPACE.LevelManager
       aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
     }
 
-    private void TogglePauseControl()
-    {
-      //TODO PAUSE ISSUE - TIME DOESNT START BACK UP ON RESTART FROM PAUSE.
-    }
 
     bool TogglePause(bool active)
     {
