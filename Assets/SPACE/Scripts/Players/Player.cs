@@ -14,15 +14,9 @@ namespace SPACE.Players
     [SerializeField] FloatVariable playerHealthCurrent;
     [SerializeField] FloatVariable playerScore;
     [SerializeField] FloatVariable rescuedCount;
-    //[SerializeField] FloatVariable playerCurrentHealth;
 
-    private void Update()
-    {
-      if (Input.GetKeyDown(KeyCode.V))
-      {
-        DamagePlayer(10);
-      }
-    }
+
+
     public bool DamagePlayer(float amount)
     {
       playerHealthCurrent.Value -= amount;
@@ -95,14 +89,17 @@ namespace SPACE.Players
           JoinAlien(alien);
 
         }
-        else if (other.gameObject.tag == "Enemy")
-        {
-          // var enemy =
-        }
+
         else
         {
           Debug.LogError("Could not get alien data");
         }
+      }
+      else if (other.gameObject.tag == "Enemy")
+      {
+        //TODO Add reference to either enemydata or reference field for enemy damage.
+        Debug.Log("Hit the enemy");
+        DamagePlayer(10);
       }
     }
 
