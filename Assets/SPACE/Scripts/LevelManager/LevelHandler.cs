@@ -24,7 +24,7 @@ namespace SPACE.LevelManager
     [SerializeField] FloatVariable remainingAliensVar;
     [SerializeField] FloatVariable currlevelScoreVar;
 
-    [Header("----Audio----")]
+
 
     [Header("----UI Data----")]
     [SerializeField] Image healthBar;
@@ -109,7 +109,7 @@ namespace SPACE.LevelManager
 
       Cursor.lockState = CursorLockMode.Locked;
       levelAudioSource = FindObjectOfType<AudioSource>();
-      levelAudioSource.Stop();
+      // levelAudioSource.Stop();
       levelData.StartMusic(levelAudioSource);
       currLevelAlienCount.Value = storedMaxCount;
       aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
