@@ -15,7 +15,7 @@ namespace SPACE.LevelManager
 
     [Header("----Character Data----")]
     [SerializeField] PlayerData player;
-    //List<Alien> aliensToRescue;
+
     [Header("----Level Data----")]
     [SerializeField] Level levelData;
     [SerializeField] FloatVariable maxAlienCount;
@@ -24,12 +24,7 @@ namespace SPACE.LevelManager
     [SerializeField] FloatVariable remainingAliensVar;
     [SerializeField] FloatVariable currlevelScoreVar;
 
-    // ------------ Character data;
-    // [SerializeField] PlayerData playerData;
-    // [SerializeField] FloatReference playerScoreRef;
-    // [SerializeField] FloatReference playerHPRef;
-    // [SerializeField] FloatReference playerHPMaxRef;
-    // [SerializeField] FloatReference playerCurrentAlienCountRef;
+    [Header("----Audio----")]
 
     [Header("----UI Data----")]
     [SerializeField] Image healthBar;
@@ -38,7 +33,7 @@ namespace SPACE.LevelManager
     [Header("----InGame Menus----")]
     [SerializeField] GameObject gameOverPanel;//TODO Change to scene
     [SerializeField] GameObject pausePanel;
-    [SerializeField] AudioSource levelAudioSource;
+    AudioSource levelAudioSource;
 
 
 
@@ -51,7 +46,7 @@ namespace SPACE.LevelManager
     }
     void Start()
     {
-      levelAudioSource = GetComponent<AudioSource>();
+      //levelAudioSource = GetComponent<AudioSource>();
       if (maxAlienCount.Value <= storedMaxCount)
       {
         maxAlienCount.Value = storedMaxCount;
@@ -87,15 +82,16 @@ namespace SPACE.LevelManager
       }
       stopTime = TogglePause(isPaused);
 
-      Debug.Log("Stop Time = " + stopTime);
-      ;
+
+
       UpdateHealthBar();
       UpdateHUDText();
 
     }
 
-    private void OnDisable() {
-      
+    private void OnDisable()
+    {
+
     }
 
     private void PauseTime()
@@ -112,6 +108,9 @@ namespace SPACE.LevelManager
     {
 
       Cursor.lockState = CursorLockMode.Locked;
+      levelAudioSource = FindObjectOfType<AudioSource>();
+      levelAudioSource.Stop();
+      levelData.StartMusic(levelAudioSource);
       currLevelAlienCount.Value = storedMaxCount;
       aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
     }

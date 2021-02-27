@@ -45,6 +45,23 @@ namespace SPACE.Sounds
       }
       volume.Value = value;
     }
+    public void AudioVolUpdate(float value, AudioSource source)
+    {
+      volume.Value = value;
+      if (source.volume != volume.Value)
+      {
+        source.volume = volume.Value;
+      }
+     
+    }
+    public void PauseMusic(AudioSource source)
+    {
+      source.Pause();
+    }
+    public void ResumeMusic(AudioSource source)
+    {
+      source.Play();
+    }
     public void StopPlaying(AudioSource source)
     {
       source.Stop();

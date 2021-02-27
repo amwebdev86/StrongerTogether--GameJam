@@ -16,17 +16,22 @@ namespace SPACE.Menus
     [SerializeField] Image loadScreenProgressBar;
     //[SerializeField] GameObject optionsMenu;
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
-    [SerializeField] AudioSource audioSource;
+    AudioSource audioSource;
     [SerializeField] AudioData audioData;
 
     private void Start()
     {
+      audioSource = FindObjectOfType<AudioSource>();
       audioData.PlayMusic(audioSource);
+      DontDestroyOnLoad(audioSource.gameObject);
+
     }
+
     public void StartGame()
     {
 
       HideMenu();
+
       ShowLoadingScreen();
       scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1"));
       StartCoroutine(LoadingScreen());

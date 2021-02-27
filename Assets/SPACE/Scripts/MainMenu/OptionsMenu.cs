@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using SPACE.Sounds;
 using SPACE.Utils;
@@ -18,11 +19,29 @@ namespace SPACE.Menus
     {
       volume.UseConstant = false;
       volumeSlider.value = volume.Value;
+
     }
     private void Start()
     {
-      audioData.PlayMusic(source);
+      //throw new NullReferenceException();
+      try
+      {
+        source = FindObjectOfType<AudioSource>();
+
+      }
+      catch (NullReferenceException err)
+      {
+        Debug.LogError(err);
+        source = new GameObject("AudioManager").AddComponent<AudioSource>();
+
+      }
+
     }
+    private void Update()
+    {
+      audioData.AudioVolUpdate(volumeSlider.value, source);
+    }
+
 
   }
 }
