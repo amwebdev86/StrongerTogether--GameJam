@@ -1,6 +1,6 @@
 ﻿
 using UnityEngine;
-using SPACE.Managers;
+
 
 namespace SPACE.Enemy
 {

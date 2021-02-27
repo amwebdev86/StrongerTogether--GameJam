@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Space_terrain_1
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: fa60ac0498bfebf45af1fa6d96d2dd9d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.58665043, g: 0.34082413, b: 0.6509434, a: 1}
   m_Transform:
     e00: 1
     e01: 0

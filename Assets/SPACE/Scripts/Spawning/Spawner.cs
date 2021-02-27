@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AMGame.Core.SpawnSystem
+namespace SPACE.Spawning
 {
   public class Spawner : MonoBehaviour
   {

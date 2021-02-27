@@ -30,6 +30,7 @@ namespace SPACE.LevelManager
     [SerializeField] Image healthBar;
     [SerializeField] TMP_Text playerAlienCount;
     [SerializeField] TMP_Text aliensRemainingText;
+    [SerializeField] TMP_Text scoreText;
     [Header("----InGame Menus----")]
     [SerializeField] GameObject gameOverPanel;//TODO Change to scene
     [SerializeField] GameObject pausePanel;
@@ -43,6 +44,9 @@ namespace SPACE.LevelManager
     {
       if (Time.timeScale == 0)
         Time.timeScale = 1;
+      else if (currlevelScoreVar.Value > 0)
+        currlevelScoreVar.Value = 0;
+
     }
     void Start()
     {
@@ -85,7 +89,7 @@ namespace SPACE.LevelManager
         }
       }
 
-      
+
       stopTime = TogglePause(isPaused);
 
 
@@ -175,6 +179,7 @@ namespace SPACE.LevelManager
       playerAlienCount.text = player.rescuedCount.Value.ToString();
       currLevelAlienCount.Value = levelData.maxAlienCount.Value - player.rescuedCount.Value;
       aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
+      scoreText.text = $"Score: {currlevelScoreVar.Value}";
     }
     public void DisplayGameOver() => gameOverPanel.SetActive(true);
 

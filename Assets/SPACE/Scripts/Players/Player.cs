@@ -16,7 +16,6 @@ namespace SPACE.Players
     [SerializeField] FloatVariable rescuedCount;
 
 
-
     public bool DamagePlayer(float amount)
     {
       playerHealthCurrent.Value -= amount;

@@ -1,17 +1,18 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace AMGame.Core.EventSystem
+namespace SPACE.Events
 {
   public class GameEventListener : MonoBehaviour
   {
     public GameEventSO EventSO;
     public UnityEvent Response;
 
-/// <summary>
-/// Invokes the unity event.
-/// </summary>
-    public void EventRaised(){
+    /// <summary>
+    /// Invokes the unity event.
+    /// </summary>
+    public void EventRaised()
+    {
       Response.Invoke();
     }
     private void OnEnable()

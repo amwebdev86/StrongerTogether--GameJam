@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace AMGame.Core.EventSystem
+namespace SPACE.Events
 {
   [CreateAssetMenu(fileName = "GameEventsSO", menuName = "AMGame/Events/GameEventsSO", order = 0)]
   public class GameEventSO : ScriptableObject

@@ -12,6 +12,11 @@ namespace SPACE.Sounds
     public FloatVariable volume;
     public AudioClip[] fxClips;
     public AudioClip musicClip;
+    public void PlayFX(int index, AudioSource source)
+    {
+      source.clip = fxClips[index];
+      source.PlayOneShot(source.clip);
+    }
     public void PlayClip(int index, AudioSource source)
     {
       source.clip = fxClips[index];
@@ -52,7 +57,7 @@ namespace SPACE.Sounds
       {
         source.volume = volume.Value;
       }
-     
+
     }
     public void PauseMusic(AudioSource source)
     {

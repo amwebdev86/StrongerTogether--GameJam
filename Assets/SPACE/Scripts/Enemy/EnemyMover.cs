@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SPACE.Controller;
-using SPACE.Managers;
+
 namespace SPACE.Enemy
 {
     public class EnemyMover : MonoBehaviour

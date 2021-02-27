@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace AMGame.Core.SpawnSystem
+namespace SPACE.Spawning
 {
-  [CreateAssetMenu(fileName = "SpawnManager", menuName = "AMGame/SpawnSystem/SpawnManagerScriptableObject", order = 1)]
+  [CreateAssetMenu(fileName = "SpawnManager", menuName = "GalacticBond/Spawning/SpawnManagerScriptableObject", order = 1)]
   public class SpawnManagerSO : ScriptableObject
   {
     public string PrefabName;
