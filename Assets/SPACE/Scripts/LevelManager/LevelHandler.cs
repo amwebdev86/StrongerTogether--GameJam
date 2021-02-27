@@ -38,6 +38,7 @@ namespace SPACE.LevelManager
     [Header("----InGame Menus----")]
     [SerializeField] GameObject gameOverPanel;//TODO Change to scene
     [SerializeField] GameObject pausePanel;
+    [SerializeField] AudioSource levelAudioSource;
 
 
 
@@ -50,12 +51,14 @@ namespace SPACE.LevelManager
     }
     void Start()
     {
+      levelAudioSource = GetComponent<AudioSource>();
       if (maxAlienCount.Value <= storedMaxCount)
       {
         maxAlienCount.Value = storedMaxCount;
       }
       InitLevelHandler();
       InitHealthBar();
+      levelData.StartMusic(levelAudioSource);
 
     }
     private void Update()
@@ -89,8 +92,10 @@ namespace SPACE.LevelManager
       UpdateHealthBar();
       UpdateHUDText();
 
+    }
 
-
+    private void OnDisable() {
+      
     }
 
     private void PauseTime()

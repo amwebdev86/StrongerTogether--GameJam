@@ -3,8 +3,8 @@ using SPACE.Utils;
 
 namespace SPACE.Sounds
 {
-  [CreateAssetMenu(menuName = "GalacticBond/Audio/SimpleAudioEvent", fileName = "AudioEvent")]
-  public class SimpleAudioEvent : AudioEvent
+  [CreateAssetMenu(menuName = "GalacticBond/Audio/RandomSoundGen", fileName = "AudioEvent")]
+  public class RandomSoundMachine : AudioEvent
   {
     public AudioClip[] clips;
     [Range(0, 20)]

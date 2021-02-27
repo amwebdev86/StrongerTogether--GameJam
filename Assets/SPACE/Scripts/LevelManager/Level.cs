@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using SPACE.Sounds;
 using SPACE.Utils;
 using UnityEngine;
 
@@ -14,8 +15,13 @@ namespace SPACE.LevelManager
     public FloatReference maxScoreRef;
     [SerializeField] FloatReference remainingAliensRef;
     [SerializeField] FloatReference currlevelScoreRef;
+    [SerializeField] AudioData audioData;
     //public FloatVariable playerScoreVar;//from playerdata
     //public FloatVariable remaingAliens;
+    public void StartMusic(AudioSource source){
+      audioData.PlayMusic(source);
+      
+    }
     private void OnEnable()
     {
       maxAlienCount.Value = maxAlienCount.ConstantValue;
@@ -23,6 +29,7 @@ namespace SPACE.LevelManager
     private void OnDisable()
     {
       maxAlienCount.Value = maxAlienCount.ConstantValue;
+
 
     }
   }
