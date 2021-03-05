@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SPACE.Controller;
+using SPACE.Utils;
+
 namespace SPACE.Players
 {
   public class PlayerMovement : MonoBehaviour
@@ -11,10 +13,16 @@ namespace SPACE.Players
     public float RunSpeed = 12;
     bool jump = false;
     [SerializeField] bool isCrouching = false;
-    public KeyCode jumpKey = KeyCode.Space, crouchKey = KeyCode.C;
+    public KeyCode jumpKey = KeyCode.Space;
     [SerializeField] Animator playerAnim;
-
-
+    [SerializeField] FloatVariable playerCrouchSpeed;
+    private void Start()
+    {
+      if (playerCrouchSpeed.Value != 1)
+      {
+        playerCrouchSpeed.Value = 1;
+      }
+    }
     private void Update()
     {
 
@@ -31,15 +39,25 @@ namespace SPACE.Players
 
 
       }
-      if (Input.GetKeyDown(KeyCode.C))
+      if (Input.GetAxis("Vertical") < 0)
       {
         Debug.Log("Crouching");
         isCrouching = true;
+        playerCrouchSpeed.Value = 0;
+
       }
-      else if (Input.GetKeyUp(KeyCode.C))
+      else if (Input.GetAxis("Vertical") == 0)
       {
         isCrouching = false;
+        Debug.Log("Not Crouching");
+        playerCrouchSpeed.Value = 1f;
+
       }
+    }
+    public bool PlayerCrouch(bool crouch)
+    {
+      isCrouching = crouch;
+      return isCrouching;
     }
 
     private void FixedUpdate()

@@ -12,6 +12,9 @@ namespace SPACE.Players
     [SerializeField] Transform _SpawnPoint;
     [SerializeField] PlayerData playerData;
     [SerializeField] FloatVariable playerHealthCurrent;
+
+
+
     [SerializeField] FloatVariable playerScore;
     [SerializeField] FloatVariable rescuedCount;
 
@@ -49,58 +52,62 @@ namespace SPACE.Players
     /// <summary>
     /// Sets all aliens currently in the player's list movement Jointment to false;
     /// </summary>
-    public void UnjoinAlien(Alien alien)
+    // public void UnjoinAlien(Alien alien)
+    // {
+    //   if (alien.IsJoined)
+    //   {
+    //     alien.IsJoined = true;
+    //     rescuedCount.Value--;
+    //   }
+    //   else
+    //   {
+    //     return;
+    //   }
+
+
+    // }
+
+    // public void JoinAlien(Alien alien)
+    // {
+    //   if (!alien.IsJoined)
+    //   {
+    //     alien.IsJoined = true;
+    //     rescuedCount.Value++;
+    //   }
+    //   else
+    //   {
+    //     return;
+    //   }
+
+
+    //  }
+    private void OnCollisionEnter2D(Collision2D other)
     {
-      if (alien.IsJoined)
-      {
-        alien.IsJoined = true;
-        rescuedCount.Value--;
-      }
-      else
-      {
-        return;
-      }
-
-
-    }
-
-    public void JoinAlien(Alien alien)
-    {
-      if (!alien.IsJoined)
-      {
-        alien.IsJoined = true;
-        rescuedCount.Value++;
-      }
-      else
-      {
-        return;
-      }
-
-
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-      if (other.gameObject.tag == "Alien")
-      {
-        Alien alien = other.GetComponent<Alien>();
-        if (alien != null)
-        {
-          JoinAlien(alien);
-
-        }
-
-        else
-        {
-          Debug.LogError("Could not get alien data");
-        }
-      }
-      else if (other.gameObject.tag == "Enemy")
+      if (other.gameObject.tag == "Enemy")
       {
         //TODO Add reference to either enemydata or reference field for enemy damage.
         Debug.Log("Hit the enemy");
         DamagePlayer(10);
       }
     }
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //   if (other.gameObject.tag == "Alien")
+    //   {
+    //     Alien alien = other.GetComponent<Alien>();
+    //     if (alien != null)
+    //     {
+    //       JoinAlien(alien);
+
+    //     }
+
+    //     else
+    //     {
+    //       Debug.LogError("Could not get alien data");
+    //     }
+    //   }
+
+    // }
 
 
   }

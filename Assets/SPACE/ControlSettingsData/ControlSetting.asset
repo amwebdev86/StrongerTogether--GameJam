@@ -17,7 +17,7 @@ MonoBehaviour:
     ConstantValue: 600
     Variable: {fileID: 11400000, guid: 3393fa3b683698d41b84f3df331d6fac, type: 2}
   crouchSpeed:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 1
     Variable: {fileID: 11400000, guid: 56b15ce56c9402a468b7c54d17f76112, type: 2}
   movementSmoothing:

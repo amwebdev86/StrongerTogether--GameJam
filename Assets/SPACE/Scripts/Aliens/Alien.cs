@@ -9,32 +9,8 @@ namespace SPACE.Aliens
   {
     AlienMovement movement;
     [SerializeField] AlienData alienData;
-    bool isJoinded;
-    public bool IsJoined
-    {
-      get
-      {
-        return isJoinded;
-      }
-      set
-      {
-        isJoinded = value;
-      }
-    }
-
-    //AlienHealth health;
-    // Transform alienTrans;
-    //Player player;
-
-    // private void onEnable()
-    // {
-    //   // health = GetComponent<AlienHealth>();
-
-    //   //alienTrans = GetComponent<Transform>();
-    //   //player = FindObjectOfType<Player>();
-
-
-    // }
+    private bool isJoinded;
+  
     private void Start()
     {
       movement = GetComponent<AlienMovement>();
@@ -72,38 +48,13 @@ namespace SPACE.Aliens
     {
       return alienData;
     }
-    /// <summary>
-    /// Checks for enemy contact and takes damage. Or player contact and adds to alien list.
-    /// </summary>
-    /// <param name="other">GameObject Alien collided with.</param>
-    // private void OnCollisionEnter2D(Collision2D other)
-    // {
-    //   if (other.gameObject.tag == "Enemy")
-    //   {
-    //     health.DamageAlien();
-    //   }
-
-    //   if (other.gameObject.name == "Player")
-    //   {
-    //     Player player = other.gameObject.GetComponent<Player>();
-    //     if (movement.isJoined == false)
-    //     {
-    //       movement.isJoined = true;
-    //       player.AddAlien(this);
-
-    //     }
-    //     else
-    //     {
-    //       return;
-
-    //     }
-    //     //TODO Fix issue where same alien can be added multiple times.
-
-
-    //   }
-    // }
-
-
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+      if (other.gameObject.CompareTag("Player") && !isJoinded)
+      {
+        isJoinded = true;
+      }
+    }
 
   }
 

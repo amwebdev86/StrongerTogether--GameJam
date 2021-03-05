@@ -65,6 +65,7 @@ namespace SPACE.Controller
       //check to see if able to stand when Crouching
       if (!crouch)
       {
+        //TODO ADJUST COLLIDERS and ground/ceiling checks
         if (Physics2D.OverlapCircle(ceilingCheck.position, _CeilingRadius, groundMask))//keep player crouching if unable to stand
         {
           crouch = true;
@@ -126,6 +127,11 @@ namespace SPACE.Controller
       Vector3 theScale = transform.localScale;
       theScale.x *= -1;
       transform.localScale = theScale;
+    }
+
+    public bool GetIsGrounded()
+    {
+      return _Grounded;
     }
 
 

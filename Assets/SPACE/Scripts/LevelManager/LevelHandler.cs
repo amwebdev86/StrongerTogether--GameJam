@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using SPACE.Players;
-using SPACE.Aliens;
 using SPACE.Utils;
-using System;
+using SPACE.Aliens;
 
 namespace SPACE.LevelManager
 {
@@ -19,7 +18,7 @@ namespace SPACE.LevelManager
     [Header("----Level Data----")]
     [SerializeField] Level levelData;
     [SerializeField] FloatVariable maxAlienCount;
-    [SerializeField] const float storedMaxCount = 3;
+    [SerializeField] float storedMaxCount = 3;
     [SerializeField] FloatVariable currLevelAlienCount;
     [SerializeField] FloatVariable remainingAliensVar;
     [SerializeField] FloatVariable currlevelScoreVar;
@@ -38,6 +37,7 @@ namespace SPACE.LevelManager
 
 
 
+
     bool isPaused = false;
     bool stopTime = false;
     private void OnEnable()
@@ -45,16 +45,18 @@ namespace SPACE.LevelManager
       if (Time.timeScale == 0)
         Time.timeScale = 1;
 
-
     }
     void Start()
     {
       if (levelAudioSource == null)
       {
         levelAudioSource = new GameObject("new AudioManager").AddComponent<AudioSource>();
+
       }
-      //levelAudioSource = GetComponent<AudioSource>();
-      if (maxAlienCount.Value <= storedMaxCount)
+      Alien[] levelAlienMaxCount = FindObjectsOfType<Alien>();
+      storedMaxCount = levelAlienMaxCount.Length;
+
+      if (maxAlienCount.Value <= storedMaxCount || maxAlienCount.Value > storedMaxCount)
       {
         maxAlienCount.Value = storedMaxCount;
       }
