@@ -12,7 +12,7 @@ namespace SPACE.Sounds
     public FloatVariable volume;
     public AudioClip[] fxClips;
     public AudioClip musicClip;
-    public void PlayFX(int index, AudioSource source)
+    public void PlayShot(int index, AudioSource source)
     {
       source.clip = fxClips[index];
       source.PlayOneShot(source.clip);
@@ -24,13 +24,6 @@ namespace SPACE.Sounds
     }
     public override void Play(AudioSource source)
     {
-      if (fxClips.Length == 0) return;
-      //source.clip = fxClips[0];
-      source.volume = volume.Value;
-      source.Play();
-    }
-    public void PlayMusic(AudioSource source)
-    {
       if (musicClip == null) return;
 
       source.loop = true;
@@ -38,6 +31,7 @@ namespace SPACE.Sounds
       source.volume = volume.Value;
       source.Play();
     }
+  
     public void AdjustVolume(float value)
     {
       if (value > 1)

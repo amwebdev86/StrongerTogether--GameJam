@@ -18,10 +18,7 @@ namespace SPACE.LevelManager
     [SerializeField] AudioData audioData;
     //public FloatVariable playerScoreVar;//from playerdata
     //public FloatVariable remaingAliens;
-    public void StartMusic(AudioSource source){
-      audioData.PlayMusic(source);
-      
-    }
+   
     private void OnEnable()
     {
       maxAlienCount.Value = maxAlienCount.ConstantValue;

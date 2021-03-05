@@ -31,7 +31,7 @@ namespace SPACE.LevelManager
       {
         Debug.Log("Alien entered goal");
         score.Value += 10;
-        audioData.PlayFX(3, source);
+        audioData.PlayShot(3, source);
         Destroy(other.gameObject);
       }
 

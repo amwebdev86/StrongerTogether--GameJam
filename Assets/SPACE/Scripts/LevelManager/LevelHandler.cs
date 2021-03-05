@@ -33,10 +33,7 @@ namespace SPACE.LevelManager
     [Header("----InGame Menus----")]
     [SerializeField] GameObject gameOverPanel;//TODO Change to scene
     [SerializeField] GameObject pausePanel;
-    AudioSource levelAudioSource;
-
-
-
+    //AudioSource levelAudioSource;
 
     bool isPaused = false;
     bool stopTime = false;
@@ -48,11 +45,7 @@ namespace SPACE.LevelManager
     }
     void Start()
     {
-      if (levelAudioSource == null)
-      {
-        levelAudioSource = new GameObject("new AudioManager").AddComponent<AudioSource>();
 
-      }
       Alien[] levelAlienMaxCount = FindObjectsOfType<Alien>();
       storedMaxCount = levelAlienMaxCount.Length;
 
@@ -105,7 +98,7 @@ namespace SPACE.LevelManager
     public void OnJumpSFX()
     {
 
-      levelData.audioManager.PlayClip(5, levelAudioSource);
+     // levelData.audioManager.PlayClip(5, levelAudioSource);
 
     }
     private void PauseTime()
@@ -122,9 +115,9 @@ namespace SPACE.LevelManager
     {
 
       Cursor.lockState = CursorLockMode.Locked;
-      levelAudioSource = FindObjectOfType<AudioSource>();
+    //  levelAudioSource = FindObjectOfType<AudioSource>();
       // levelAudioSource.Stop();
-      levelData.StartMusic(levelAudioSource);
+     // levelData.StartMusic(levelAudioSource);
       currLevelAlienCount.Value = storedMaxCount;
       aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
     }
