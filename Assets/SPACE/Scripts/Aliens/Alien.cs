@@ -14,6 +14,7 @@ namespace SPACE.Aliens
     float alienHorizontalMovement;
     public float alienSpeed = 60f;
     bool alienJump = false;
+    bool isStopped = false;
 
 
     private void Start()
@@ -22,13 +23,16 @@ namespace SPACE.Aliens
       controller = GetComponent<MainController>();
 
     }
-    // private void Update()
-    // {
-    //   movement.isJoined = isJoinded;
-    // }
+    private void Update()
+    {
+      AlienJump();
+      ToggleAlienMovement();
+      Debug.Log(isStopped + " -- stopped");
+    }
+
     private void FixedUpdate()
     {
-      if (isJoinded)
+      if (isJoinded && !isStopped)
       {
         alienHorizontalMovement = Input.GetAxisRaw("Horizontal") * alienSpeed;
 
@@ -72,13 +76,13 @@ namespace SPACE.Aliens
     }
     private void ToggleAlienMovement()
     {
-      if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+      if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
       {
-        alienSpeed = 0;
+        isStopped = true;
       }
       else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
       {
-        alienSpeed = 60;
+        isStopped = false;
       }
     }
     // public AlienData GetAlienData()
