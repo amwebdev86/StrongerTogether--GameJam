@@ -16,40 +16,14 @@ namespace SPACE.Aliens
 
     private void Update()
     {
-      if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-      {
-        AlienSpeed = 0;
-      }
-      else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
-      {
-        AlienSpeed = 60;
-      }
+      ToggleAlienMovement();
       if (isJoined)
       {
-
-        alienHorizontalMovement = Input.GetAxisRaw("Horizontal") * AlienSpeed;
-        if (Input.GetAxis("Vertical") >= 1)
-        {
-          alienJump = true;
-        }
-
+        AlienJump();
 
       }
-      // if (Input.GetKeyDown(stopAlienKey) && isJoined)
-      // {
-      //   if (!isStopped)
-      //   {
-      //     Debug.Log(isStopped);
-      //     isStopped = true;
-      //   }
-      //   else if (isStopped)
-      //   {
-      //     Debug.Log(isStopped);
-      //     isStopped = false;
-      //   }
-      // }
-    }
 
+    }
     private void FixedUpdate()
     {
       if (isJoined)
@@ -60,6 +34,29 @@ namespace SPACE.Aliens
       }
 
     }
+
+    private void AlienJump()
+    {
+      alienHorizontalMovement = Input.GetAxisRaw("Horizontal") * AlienSpeed;
+      if (Input.GetAxis("Vertical") >= 1)
+      {
+        alienJump = true;
+      }
+    }
+
+    private void ToggleAlienMovement()
+    {
+      if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+      {
+        AlienSpeed = 0;
+      }
+      else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+      {
+        AlienSpeed = 60;
+      }
+    }
+
+
 
   }
 }
