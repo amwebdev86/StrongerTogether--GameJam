@@ -27,7 +27,7 @@ namespace SPACE.Aliens
     {
       AlienJump();
       ToggleAlienMovement();
-      Debug.Log(isStopped + " -- stopped");
+      
     }
 
     private void FixedUpdate()
@@ -43,7 +43,6 @@ namespace SPACE.Aliens
     public void AlienFallSequence()
     {
       gameObject.transform.Rotate(new Vector3(0, 0, -90));
-      // player.RemoveFromPlayer(this);
       StartCoroutine(AlienDeathRoutine());
     }
     public IEnumerator AlienDeathRoutine()
@@ -56,7 +55,6 @@ namespace SPACE.Aliens
       yield return new WaitForSeconds(.5f);
       alienRender.color = originalColor;
       yield return new WaitForSeconds(1f);
-      //player.RemoveFromPlayer(alien);
       alienRender.color = Color.red;
       yield return new WaitForSeconds(1);
       Destroy(gameObject);
@@ -85,10 +83,7 @@ namespace SPACE.Aliens
         isStopped = false;
       }
     }
-    // public AlienData GetAlienData()
-    // {
-    //   return alienData;
-    // }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
       if (other.gameObject.CompareTag("Player") && !isJoinded)
