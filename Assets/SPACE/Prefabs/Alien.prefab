@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 3538750061348081152}
   - component: {fileID: 3538750061348081153}
   - component: {fileID: 6933458231609164138}
-  - component: {fileID: 788703395654626891}
   m_Layer: 8
   m_Name: Alien
   m_TagString: Alien
@@ -144,9 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3827f90bd0f9ad3439953ce826bc407e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 3538750061348081152}
-  AlienSpeed: 55
-  isJoined: 0
   alienJumpKey: 119
 --- !u!114 &3538750061348081152
 MonoBehaviour:
@@ -210,18 +206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alienData: {fileID: 11400000, guid: f74b5c068e86a964fb752eeb2e420d0e, type: 2}
---- !u!114 &788703395654626891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3538750061348081178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43cf335ba2c21734a8562f19703f672f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  alienSpeed: 60
 --- !u!1 &3538750062919472499
 GameObject:
   m_ObjectHideFlags: 0

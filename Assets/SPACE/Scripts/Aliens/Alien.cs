@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-
+using SPACE.Controller;
 using UnityEngine;
 
 namespace SPACE.Aliens
@@ -9,16 +9,31 @@ namespace SPACE.Aliens
   {
     AlienMovement movement;
     [SerializeField] AlienData alienData;
+    MainController controller;
     private bool isJoinded;
-  
+    float alienHorizontalMovement;
+    public float alienSpeed = 60f;
+    bool alienJump = false;
+
+
     private void Start()
     {
       movement = GetComponent<AlienMovement>();
+      controller = GetComponent<MainController>();
 
     }
-    private void Update()
+    // private void Update()
+    // {
+    //   movement.isJoined = isJoinded;
+    // }
+    private void FixedUpdate()
     {
-      movement.isJoined = isJoinded;
+      if (isJoinded)
+      {
+        alienHorizontalMovement = Input.GetAxisRaw("Horizontal") * alienSpeed;
+
+        controller.Move(alienHorizontalMovement * Time.fixedDeltaTime, false, alienJump);
+      }
     }
 
     public void AlienFallSequence()
@@ -44,10 +59,32 @@ namespace SPACE.Aliens
       yield return null;
 
     }
-    public AlienData GetAlienData()
+    private void AlienJump()
     {
-      return alienData;
+      if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) && controller.GetIsGrounded())
+      {
+        alienJump = true;
+      }
+      else if (controller.GetIsGrounded())
+      {
+        alienJump = false;
+      }
     }
+    private void ToggleAlienMovement()
+    {
+      if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+      {
+        alienSpeed = 0;
+      }
+      else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+      {
+        alienSpeed = 60;
+      }
+    }
+    // public AlienData GetAlienData()
+    // {
+    //   return alienData;
+    // }
     private void OnCollisionEnter2D(Collision2D other)
     {
       if (other.gameObject.CompareTag("Player") && !isJoinded)
