@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using SPACE.Controller;
+using SPACE.Utils;
 using UnityEngine;
 
 namespace SPACE.Aliens
@@ -9,6 +9,7 @@ namespace SPACE.Aliens
   {
 
     [SerializeField] AlienData alienData;
+    [SerializeField] FloatVariable alienRescueCount;
     MainController controller;
     private bool isJoinded;
     float alienHorizontalMovement;
