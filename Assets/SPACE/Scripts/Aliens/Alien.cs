@@ -7,7 +7,7 @@ namespace SPACE.Aliens
 {
   public class Alien : MonoBehaviour
   {
-    AlienMovement movement;
+
     [SerializeField] AlienData alienData;
     MainController controller;
     private bool isJoinded;
@@ -19,7 +19,7 @@ namespace SPACE.Aliens
 
     private void Start()
     {
-      movement = GetComponent<AlienMovement>();
+
       controller = GetComponent<MainController>();
 
     }
@@ -27,7 +27,7 @@ namespace SPACE.Aliens
     {
       AlienJump();
       ToggleAlienMovement();
-      
+
     }
 
     private void FixedUpdate()
