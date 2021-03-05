@@ -90,6 +90,7 @@ namespace SPACE.Aliens
       if (other.gameObject.CompareTag("Player") && !isJoinded)
       {
         isJoinded = true;
+        alienRescueCount.Value++;
       }
     }
 

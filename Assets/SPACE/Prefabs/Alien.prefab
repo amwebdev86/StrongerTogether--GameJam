@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3538750061348081179}
   - component: {fileID: 3538750061348081183}
   - component: {fileID: 3538750061348081182}
-  - component: {fileID: 3538750061348081181}
   - component: {fileID: 3538750061348081152}
   - component: {fileID: 3538750061348081153}
   - component: {fileID: 6933458231609164138}
@@ -131,19 +130,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.29964167, y: 0.16475302}
   m_EdgeRadius: 0
---- !u!114 &3538750061348081181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3538750061348081178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3827f90bd0f9ad3439953ce826bc407e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alienJumpKey: 119
 --- !u!114 &3538750061348081152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alienData: {fileID: 11400000, guid: f74b5c068e86a964fb752eeb2e420d0e, type: 2}
-  controller: {fileID: 0}
+  alienRescueCount: {fileID: 11400000, guid: d763152086498c543ace781403c2ab1b, type: 2}
   alienSpeed: 60
 --- !u!1 &3538750062919472499
 GameObject:
