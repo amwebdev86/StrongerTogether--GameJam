@@ -437,7 +437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841263678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.8, y: -4.67, z: 0}
+  m_LocalPosition: {x: 7.19, y: -9.77, z: 0}
   m_LocalScale: {x: 6.1506963, y: 4.9488997, z: 1}
   m_Children:
   - {fileID: 210484276}
@@ -543,7 +543,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841263678}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a347fa0deeabf9245b4408c74c84660e, type: 3}
   m_Name: 
@@ -593,7 +593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ef6f90547345f4881cad3dae52b052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDamage: 10
+  enemySpeed: 15
+  enemyMovementRange: 10
+  detectionRadius: 10
 --- !u!1 &854009920
 GameObject:
   m_ObjectHideFlags: 0

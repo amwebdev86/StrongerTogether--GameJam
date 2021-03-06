@@ -4,32 +4,54 @@ using UnityEngine;
 
 namespace SPACE.Enemy
 {
-    public class Enemy : MonoBehaviour
+  public class Enemy : MonoBehaviour
+  {
+
+    private Rigidbody2D enemyRb;
+    private int enemyDamage;
+    [SerializeField] private float enemySpeed;
+    [SerializeField] private float enemyMovementRange = 10;
+
+    private void Start()
     {
-        EnemyHealth health;
-        [SerializeField] int enemyDamage = 10;
-        private void Start()
-        {
-            health = GetComponent<EnemyHealth>();
-        }
-        void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject.tag == "Player")
-            {
-                health.DamageEnemy(1);
 
-            }
-
-        }
-        // private void OnCollisionEnter2D(Collision2D other)
-        // {
-        //     if (other.gameObject.tag == "Player")
-        //     {
-        //         GameManager.Instance.DamagePlayer(enemyDamage);
-        //     }
-        // }
-
-
+      enemyRb = GetComponent<Rigidbody2D>();
     }
+    private void FixedUpdate()
+    {
+
+      EnemyMovement();
+    }
+    private void Update()
+    {
+      FlipEnemySprite();
+    }
+
+    private void FlipEnemySprite()
+    {
+      if (enemyRb.velocity.x > 0)
+      {
+        GetComponent<SpriteRenderer>().flipX = true;
+      }
+      else if (enemyRb.velocity.x < 0)
+      {
+        GetComponent<SpriteRenderer>().flipX = false;
+      }
+    }
+
+    private void EnemyMovement()
+    {
+      enemyRb.velocity = new Vector2(GameObject.Find("Player").transform.position.x * enemySpeed * Time.fixedDeltaTime, 0);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+      if (other.gameObject.CompareTag("Player"))
+      {
+        Destroy(gameObject);
+      }
+    }
+
+  }
 
 }
