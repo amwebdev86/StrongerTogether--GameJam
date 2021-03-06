@@ -129,6 +129,7 @@ namespace SPACE.LevelManager
       else
       {
         pausePanel.SetActive(active);
+        Cursor.lockState = CursorLockMode.Locked;
         //Time.timeScale = 1;
         return false;
       }
