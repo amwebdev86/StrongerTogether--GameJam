@@ -8,13 +8,13 @@ namespace SPACE.LevelManager
 {
   public class LevelGoal : MonoBehaviour
   {
-    [SerializeField] FloatReference goalMaxAmount;
+    [SerializeField] FloatReference levelMaxAlienCount;
     [SerializeField] FloatReference rescuedAliens;
-    [SerializeField] FloatReference playerHealth;
     [SerializeField] FloatVariable score;
     [SerializeField] AudioData audioData;
     [SerializeField] AudioSource source;
     [SerializeField] FloatReference volume;
+    
     private void OnEnable()
     {
       source.volume = volume.Value;
@@ -23,11 +23,12 @@ namespace SPACE.LevelManager
     private void Start()
     {
       source.volume = volume.Value;
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-      if (other.gameObject.tag == "Alien")
+      if (other.CompareTag("Alien"))
       {
         Debug.Log("Alien entered goal");
         score.Value += 10;
