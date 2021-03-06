@@ -6,6 +6,7 @@ using TMPro;
 using SPACE.Players;
 using SPACE.Utils;
 using SPACE.Aliens;
+using UnityEngine.Events;
 
 namespace SPACE.LevelManager
 {
@@ -14,15 +15,17 @@ namespace SPACE.LevelManager
 
     [Header("----Character Data----")]
     [SerializeField] private FloatReference playerHealth;
+    [SerializeField] private FloatReference playerMaxHealth;
     [SerializeField] private FloatReference alienRescuedCount;
 
     [Header("----Level Data----")]
-    //[SerializeField] Level levelData;
-    [SerializeField] FloatReference levelMaxAlienCount;
-    [SerializeField] FloatVariable maxAlienCount;
-    [SerializeField] float storedMaxCount = 3;
+    //[SerializeField] FloatVariable levelMaxAlienCount;
+    //[SerializeField] FloatReference levelMaxAlienCount;
+    //[SerializeField] FloatVariable maxAlienCount;
+    // [SerializeField] float storedMaxCount = 3;
+    //public UnityEvent m_OnAlienPickUp;
     [SerializeField] FloatVariable currLevelAlienCount;
-    [SerializeField] FloatVariable remainingAliensVar;
+    //[SerializeField] FloatVariable remainingAliensVar;
     [SerializeField] FloatVariable currlevelScoreVar;
 
 
@@ -33,7 +36,7 @@ namespace SPACE.LevelManager
     [SerializeField] TMP_Text aliensRemainingText;
     [SerializeField] TMP_Text scoreText;
     [Header("----InGame Menus----")]
-    [SerializeField] GameObject gameOverPanel;//TODO Change to scene
+    [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject pausePanel;
     //AudioSource levelAudioSource;
 
@@ -48,15 +51,15 @@ namespace SPACE.LevelManager
     void Start()
     {
 
-      Alien[] levelAlienMaxCount = FindObjectsOfType<Alien>();
-      storedMaxCount = levelAlienMaxCount.Length;
+      //Alien[] levelAlienMaxCount = FindObjectsOfType<Alien>();
+      // storedMaxCount = levelAlienMaxCount.Length;
+      currLevelAlienCount.Value = FindObjectsOfType<Alien>().Length;
 
-      if (maxAlienCount.Value <= storedMaxCount || maxAlienCount.Value > storedMaxCount)
-      {
-        maxAlienCount.Value = storedMaxCount;
-      }
-      if (currlevelScoreVar.Value > 0)
-        currlevelScoreVar.Value = 0;
+      // if (maxAlienCount.Value <= storedMaxCount || maxAlienCount.Value > storedMaxCount)
+      // {
+      //   maxAlienCount.Value = storedMaxCount;
+      // }
+      if (currlevelScoreVar.Value > 0) currlevelScoreVar.Value = 0;
       InitLevelHandler();
       InitHealthBar();
 
@@ -126,7 +129,7 @@ namespace SPACE.LevelManager
       //  levelAudioSource = FindObjectOfType<AudioSource>();
       // levelAudioSource.Stop();
       // levelData.StartMusic(levelAudioSource);
-      currLevelAlienCount.Value = storedMaxCount;
+      // currLevelAlienCount.Value = storedMaxCount;
       aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
     }
 
@@ -181,10 +184,13 @@ namespace SPACE.LevelManager
     void UpdateHUDText()
     {
       playerAlienCount.text = alienRescuedCount.Value.ToString();
-      // currLevelAlienCount.Value = levelData.maxAlienCount.Value - alienRescuedCount.Value;
-      currLevelAlienCount.Value = levelMaxAlienCount.Value - alienRescuedCount.Value;
+      // currLevelAlienCount.Value = currLevelAlienCount.Value - alienRescuedCount.Value;
       aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
       scoreText.text = $"Score: {currlevelScoreVar.Value}";
+    }
+    public void RemainingAlienCount()
+    {
+      currLevelAlienCount.Value--;
     }
     public void DisplayGameOver() => gameOverPanel.SetActive(true);
 
