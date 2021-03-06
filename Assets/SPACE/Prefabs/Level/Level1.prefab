@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 148656489563453586}
   - component: {fileID: 148656489563453587}
   - component: {fileID: 7189103093583387553}
+  - component: {fileID: 6799481079079514640}
   m_Layer: 0
   m_Name: LevelGoal
   m_TagString: Untagged
@@ -168,6 +169,33 @@ MonoBehaviour:
     UseConstant: 1
     ConstantValue: 0
     Variable: {fileID: 0}
+--- !u!114 &6799481079079514640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148656489563453596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bd6b75339c6724ab37f6b89dbe126a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventSO: {fileID: 11400000, guid: c9de63df16b91a342ac781af40a32284, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1124068964529647428
 GameObject:
   m_ObjectHideFlags: 0

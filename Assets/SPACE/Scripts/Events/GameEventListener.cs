@@ -5,7 +5,7 @@ namespace SPACE.Events
 {
   public class GameEventListener : MonoBehaviour
   {
-    public GameEventSO EventSO;
+    public GameEventSO EventSO;// The game event instance to register to
     public UnityEvent Response;
 
     /// <summary>

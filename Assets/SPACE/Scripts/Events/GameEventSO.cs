@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SPACE.Events
 {
-  [CreateAssetMenu(fileName = "GameEventsSO", menuName = "AMGame/Events/GameEventsSO", order = 0)]
+  [CreateAssetMenu(fileName = "GameEventsSO", menuName = "GalacticBond/Events/GameEventsSO", order = 0)]
   public class GameEventSO : ScriptableObject
   {
     List<GameEventListener> listeners = new List<GameEventListener>();

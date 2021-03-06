@@ -17,7 +17,7 @@ MonoBehaviour:
     ConstantValue: 1
     Variable: {fileID: 0}
   playerHealthMax:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 100
     Variable: {fileID: 0}
   playerHealthCurrent:

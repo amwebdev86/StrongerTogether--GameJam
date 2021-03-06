@@ -13,10 +13,12 @@ namespace SPACE.LevelManager
   {
 
     [Header("----Character Data----")]
-    [SerializeField] PlayerData player;
+    [SerializeField] private FloatReference playerHealth;
+    [SerializeField] private FloatReference alienRescuedCount;
 
     [Header("----Level Data----")]
-    [SerializeField] Level levelData;
+    //[SerializeField] Level levelData;
+    [SerializeField] FloatReference levelMaxAlienCount;
     [SerializeField] FloatVariable maxAlienCount;
     [SerializeField] float storedMaxCount = 3;
     [SerializeField] FloatVariable currLevelAlienCount;
@@ -57,32 +59,21 @@ namespace SPACE.LevelManager
         currlevelScoreVar.Value = 0;
       InitLevelHandler();
       InitHealthBar();
-      // levelData.StartMusic(levelAudioSource);
+
 
     }
     private void Update()
     {
-      if (Input.GetKeyDown(KeyCode.Escape))
-      {
-        if (Cursor.lockState == CursorLockMode.Locked)
-          Cursor.lockState = CursorLockMode.None;
-        else
-          Cursor.lockState = CursorLockMode.Locked;
-      }
+      // if (Input.GetKeyDown(KeyCode.Escape))
+      // {
+      //   if (Cursor.lockState == CursorLockMode.Locked)
+      //     Cursor.lockState = CursorLockMode.None;
+      //   else
+      //     Cursor.lockState = CursorLockMode.Locked;
+      // }
       if (Input.GetKeyDown(KeyCode.P))
       {
-        if (isPaused)
-        {
-          isPaused = false;
-          ResumeTime();
-
-        }
-        else
-        {
-          isPaused = true;
-          PauseTime();
-
-        }
+        TogglePause();
       }
 
 
@@ -94,11 +85,28 @@ namespace SPACE.LevelManager
       UpdateHUDText();
 
     }
+
+    private void TogglePause()
+    {
+      if (isPaused)
+      {
+        isPaused = false;
+        ResumeTime();
+
+      }
+      else
+      {
+        isPaused = true;
+        PauseTime();
+
+      }
+    }
+
     //TODO Add SFX . Remove this Event and add in event SO ...
     public void OnJumpSFX()
     {
 
-     // levelData.audioManager.PlayClip(5, levelAudioSource);
+      // levelData.audioManager.PlayClip(5, levelAudioSource);
 
     }
     private void PauseTime()
@@ -115,9 +123,9 @@ namespace SPACE.LevelManager
     {
 
       Cursor.lockState = CursorLockMode.Locked;
-    //  levelAudioSource = FindObjectOfType<AudioSource>();
+      //  levelAudioSource = FindObjectOfType<AudioSource>();
       // levelAudioSource.Stop();
-     // levelData.StartMusic(levelAudioSource);
+      // levelData.StartMusic(levelAudioSource);
       currLevelAlienCount.Value = storedMaxCount;
       aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
     }
@@ -147,14 +155,14 @@ namespace SPACE.LevelManager
     void InitHealthBar()
     {
 
-      healthBar.fillAmount = player.playerHealthCurrent.Value / player.playerHealthMax.Value;
+      healthBar.fillAmount = playerHealth.Value / 100;
       healthBar.color = Color.green;
 
     }
 
     void UpdateHealthBar()
     {
-      healthBar.fillAmount = player.playerHealthCurrent.Value / player.playerHealthMax.Value;
+      healthBar.fillAmount = playerHealth.Value / 100;
 
       if (healthBar.fillAmount >= .75)
       {
@@ -172,8 +180,9 @@ namespace SPACE.LevelManager
 
     void UpdateHUDText()
     {
-      playerAlienCount.text = player.rescuedCount.Value.ToString();
-      currLevelAlienCount.Value = levelData.maxAlienCount.Value - player.rescuedCount.Value;
+      playerAlienCount.text = alienRescuedCount.Value.ToString();
+      // currLevelAlienCount.Value = levelData.maxAlienCount.Value - alienRescuedCount.Value;
+      currLevelAlienCount.Value = levelMaxAlienCount.Value - alienRescuedCount.Value;
       aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
       scoreText.text = $"Score: {currlevelScoreVar.Value}";
     }
