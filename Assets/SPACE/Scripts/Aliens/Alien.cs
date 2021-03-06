@@ -2,6 +2,7 @@
 using SPACE.Controller;
 using SPACE.Utils;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SPACE.Aliens
 {
@@ -10,6 +11,7 @@ namespace SPACE.Aliens
 
     [SerializeField] AlienData alienData;
     [SerializeField] FloatVariable alienRescueCount;
+    [SerializeField] UnityEvent onJoinEvent;
     MainController controller;
     private bool isJoinded;
     float alienHorizontalMovement;
@@ -91,6 +93,7 @@ namespace SPACE.Aliens
       {
         isJoinded = true;
         alienRescueCount.Value++;
+        onJoinEvent.Invoke();
       }
     }
 
