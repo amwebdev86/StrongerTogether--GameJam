@@ -32,9 +32,12 @@ namespace SPACE.LevelManager
     [Header("----InGame Menus----")]
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject pausePanel;
+    [SerializeField] GameObject scoreScreen;
+    [SerializeField] TMP_Text scoreScreenText;
 
     bool isPaused = false;
     bool stopTime = false;
+    bool gameWon = false;
     private void OnEnable()
     {
       if (Time.timeScale == 0)
@@ -67,7 +70,11 @@ namespace SPACE.LevelManager
 
       stopTime = TogglePause(isPaused);
 
-
+      if (gameWon)
+      {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+      }
 
       UpdateHealthBar();
       UpdateHUDText();
@@ -96,6 +103,14 @@ namespace SPACE.LevelManager
 
       // levelData.audioManager.PlayClip(5, levelAudioSource);
 
+    }
+    public void WinGame()
+    {
+      gameWon = true;
+      float playerEndingHealth = playerHealth.Value / playerMaxHealth.Value;
+      currlevelScoreVar.Value *= playerEndingHealth;
+      scoreScreen.SetActive(true);
+      scoreScreenText.text = currlevelScoreVar.Value.ToString();
     }
     private void PauseTime()
     {
