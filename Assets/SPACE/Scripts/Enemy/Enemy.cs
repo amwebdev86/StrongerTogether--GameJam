@@ -8,9 +8,7 @@ namespace SPACE.Enemy
   {
 
     private Rigidbody2D enemyRb;
-    private int enemyDamage;
     [SerializeField] private float enemySpeed;
-    [SerializeField] private float enemyMovementRange = 10;
 
     private void Start()
     {
