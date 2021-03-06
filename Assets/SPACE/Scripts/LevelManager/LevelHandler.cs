@@ -44,7 +44,7 @@ namespace SPACE.LevelManager
     void Start()
     {
 
-
+      Cursor.visible = false;
       currLevelAlienCount.Value = FindObjectsOfType<Alien>().Length;
       if (currlevelScoreVar.Value > 0) currlevelScoreVar.Value = 0;
       InitLevelHandler();
@@ -121,6 +121,7 @@ namespace SPACE.LevelManager
 
       if (active)
       {
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         pausePanel.SetActive(active);
         //Time.timeScale = 0;
@@ -130,6 +131,7 @@ namespace SPACE.LevelManager
       {
         pausePanel.SetActive(active);
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         //Time.timeScale = 1;
         return false;
       }
