@@ -19,13 +19,7 @@ namespace SPACE.LevelManager
     [SerializeField] private FloatReference alienRescuedCount;
 
     [Header("----Level Data----")]
-    //[SerializeField] FloatVariable levelMaxAlienCount;
-    //[SerializeField] FloatReference levelMaxAlienCount;
-    //[SerializeField] FloatVariable maxAlienCount;
-    // [SerializeField] float storedMaxCount = 3;
-    //public UnityEvent m_OnAlienPickUp;
     [SerializeField] FloatVariable currLevelAlienCount;
-    //[SerializeField] FloatVariable remainingAliensVar;
     [SerializeField] FloatVariable currlevelScoreVar;
 
 
@@ -38,7 +32,6 @@ namespace SPACE.LevelManager
     [Header("----InGame Menus----")]
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject pausePanel;
-    //AudioSource levelAudioSource;
 
     bool isPaused = false;
     bool stopTime = false;
@@ -51,19 +44,11 @@ namespace SPACE.LevelManager
     void Start()
     {
 
-      //Alien[] levelAlienMaxCount = FindObjectsOfType<Alien>();
-      // storedMaxCount = levelAlienMaxCount.Length;
-      currLevelAlienCount.Value = FindObjectsOfType<Alien>().Length;
 
-      // if (maxAlienCount.Value <= storedMaxCount || maxAlienCount.Value > storedMaxCount)
-      // {
-      //   maxAlienCount.Value = storedMaxCount;
-      // }
+      currLevelAlienCount.Value = FindObjectsOfType<Alien>().Length;
       if (currlevelScoreVar.Value > 0) currlevelScoreVar.Value = 0;
       InitLevelHandler();
       InitHealthBar();
-
-
     }
     private void Update()
     {
@@ -126,10 +111,7 @@ namespace SPACE.LevelManager
     {
 
       Cursor.lockState = CursorLockMode.Locked;
-      //  levelAudioSource = FindObjectOfType<AudioSource>();
-      // levelAudioSource.Stop();
-      // levelData.StartMusic(levelAudioSource);
-      // currLevelAlienCount.Value = storedMaxCount;
+
       aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
     }
 
@@ -184,7 +166,6 @@ namespace SPACE.LevelManager
     void UpdateHUDText()
     {
       playerAlienCount.text = alienRescuedCount.Value.ToString();
-      // currLevelAlienCount.Value = currLevelAlienCount.Value - alienRescuedCount.Value;
       aliensRemainingText.text = "Remainig: " + currLevelAlienCount.Value.ToString();
       scoreText.text = $"Score: {currlevelScoreVar.Value}";
     }
