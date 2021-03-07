@@ -1520,6 +1520,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3538750061348081182, guid: c9f39607c719fd644940008e25dc37eb,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: bfdc49b2123e09e4ab406b02ef289727, type: 2}
     - target: {fileID: 6933458231609164138, guid: c9f39607c719fd644940008e25dc37eb,
         type: 3}
       propertyPath: onJoinEvent.m_PersistentCalls.m_Calls.Array.size
@@ -5059,11 +5064,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3528139192892125314, guid: c9f39607c719fd644940008e25dc37eb,
-        type: 3}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1859386818}
     - target: {fileID: 3538750061348081178, guid: c9f39607c719fd644940008e25dc37eb,
         type: 3}
       propertyPath: m_Name
@@ -5124,12 +5124,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6933458231609164138, guid: c9f39607c719fd644940008e25dc37eb,
-        type: 3}
-      propertyPath: onJoinEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 2115b7f453ad9554d82ba76e0351f53a,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9f39607c719fd644940008e25dc37eb, type: 3}
 --- !u!1 &6935419782605697961

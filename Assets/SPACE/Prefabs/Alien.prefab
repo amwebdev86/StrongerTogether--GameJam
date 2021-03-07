@@ -97,7 +97,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 3538750061348081178}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: bfdc49b2123e09e4ab406b02ef289727, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -113,7 +113,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3538750061348081178}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: bfdc49b2123e09e4ab406b02ef289727, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
   alienData: {fileID: 11400000, guid: f74b5c068e86a964fb752eeb2e420d0e, type: 2}
   alienRescueCount: {fileID: 11400000, guid: d763152086498c543ace781403c2ab1b, type: 2}
   onJoinEvent: {fileID: 11400000, guid: 2115b7f453ad9554d82ba76e0351f53a, type: 2}
-  alienSpeed: 60
+  alienSpeed: 40
 --- !u!1 &3538750062919472499
 GameObject:
   m_ObjectHideFlags: 0

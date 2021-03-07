@@ -71,7 +71,7 @@ namespace SPACE.Aliens
       {
         alienJump = true;
       }
-      else if (controller.GetIsGrounded())
+      else if (!controller.GetIsGrounded())
       {
         alienJump = false;
       }
