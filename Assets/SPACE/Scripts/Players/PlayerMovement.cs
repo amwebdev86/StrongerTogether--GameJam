@@ -49,7 +49,7 @@ namespace SPACE.Players
       else if (Input.GetAxis("Vertical") == 0)
       {
         isCrouching = false;
-        Debug.Log("Not Crouching");
+        //Debug.Log("Not Crouching");
         playerCrouchSpeed.Value = 1f;
 
       }
