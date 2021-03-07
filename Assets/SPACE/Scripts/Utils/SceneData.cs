@@ -21,22 +21,7 @@ namespace SPACE.Utils
       {
         //loads the scene
         AsyncOperation operation = SceneManager.LoadSceneAsync($"Level{levelIndex}");
-        //AsyncOperation operationPart2 = SceneManager.LoadSceneAsync($"Gameplay {levelIndex}", LoadSceneMode.Additive);
         Debug.Log($"Level {levelIndex} Loading....");
-
-        // //pause before going to scene to load needed managers
-        // operation.allowSceneActivation = false;
-        // // operationPart2.allowSceneActivation = false;
-
-        // if (operation.isDone)
-        // {
-        //   operation.allowSceneActivation = true;
-        //   //operationPart2.allowSceneActivation = true;
-        // }
-        // else
-        // {
-        //   Debug.LogError("Unable to load level");
-        // }
 
       }
       else
@@ -48,6 +33,7 @@ namespace SPACE.Utils
     public void NextLevel()
     {
       currentLevelIndex++;
+      Debug.Log($"Attempting to load next level: {currentLevelIndex}");
       LoadLevelAsync(currentLevelIndex);
     }
     public void Resume()
@@ -66,6 +52,11 @@ namespace SPACE.Utils
     public void LoadMainMenu()
     {
       SceneManager.LoadSceneAsync(menus[(int)MenuType.MainMenu].sceneName);
+
+    }
+    public void LoadCredits()
+    {
+      SceneManager.LoadSceneAsync(menus[(int)MenuType.Credits].sceneName);
 
     }
     public void LoadPauseMenu()

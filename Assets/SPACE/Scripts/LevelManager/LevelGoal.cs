@@ -53,7 +53,7 @@ namespace SPACE.LevelManager
         if (rescuedAliens.Value == 0 && currentAliensLeft.Value == 0)
         {
           winEvent.Raise();
-          Destroy(other.gameObject);
+          //Destroy(other.gameObject);
         }
       }
 
