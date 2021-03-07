@@ -31,6 +31,10 @@ namespace SPACE.Aliens
     {
       AlienJump();
       ToggleAlienMovement();
+      if (transform.position.y < -20)
+      {
+        AlienFallSequence();
+      }
 
     }
 
@@ -47,19 +51,23 @@ namespace SPACE.Aliens
     public void AlienFallSequence()
     {
       gameObject.transform.Rotate(new Vector3(0, 0, -90));
-      StartCoroutine(AlienDeathRoutine());
+      alienRescueCount.Value--;
+      Destroy(gameObject);
+
+      //StartCoroutine(AlienDeathRoutine());
     }
     public IEnumerator AlienDeathRoutine()
     {
 
-      SpriteRenderer alienRender = GetComponent<SpriteRenderer>();
-      Color originalColor = alienRender.color;
-      yield return new WaitForSeconds(.5f);
-      alienRender.color = Color.red;
-      yield return new WaitForSeconds(.5f);
-      alienRender.color = originalColor;
-      yield return new WaitForSeconds(1f);
-      alienRender.color = Color.red;
+      // SpriteRenderer alienRender = GetComponent<SpriteRenderer>();
+      // Color originalColor = alienRender.color;
+      // yield return new WaitForSeconds(.5f);
+      // alienRender.color = Color.red;
+      // yield return new WaitForSeconds(.5f);
+      // alienRender.color = originalColor;
+      // yield return new WaitForSeconds(1f);
+      // alienRender.color = Color.red;
+      alienRescueCount.Value--;
       yield return new WaitForSeconds(1);
       Destroy(gameObject);
       yield return null;

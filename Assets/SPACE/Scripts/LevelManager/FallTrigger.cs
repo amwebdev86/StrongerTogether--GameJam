@@ -9,19 +9,19 @@ namespace SPACE.LevelManager
 {
   public class FallTrigger : MonoBehaviour
   {
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-      if (other.gameObject.tag == "Player")
+      if (other.CompareTag("Player"))
       {
         Player player = other.gameObject.GetComponent<Player>();
         player.PlayerFallSequence();
       }
-      else if (other.gameObject.tag == "Alien")
-      {
-        Alien alien = other.gameObject.GetComponent<Alien>();
-        alien.AlienFallSequence();
+      // else if (other.CompareTag("Alien"))
+      // {
+      //   Alien alien = other.gameObject.GetComponent<Alien>();
+      //   alien.AlienFallSequence();
 
-      }
+      // }
     }
   }
 
