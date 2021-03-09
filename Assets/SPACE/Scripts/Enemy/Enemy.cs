@@ -12,7 +12,7 @@ namespace SPACE.Enemy
 
 
     [SerializeField] bool isFacingRight;
-    [SerializeField] bool isMovingRight = true;
+    // [SerializeField] bool isMovingRight = true;
     int unitsToMove = 15;
     Vector3 velocity;
     float endPos, startPos;
@@ -52,35 +52,7 @@ namespace SPACE.Enemy
 
     private void EnemyMovement()
     {
-      // Vector2 lookDir = GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
-      // Debug.Log(lookDir);
-      // enemyRb.AddForce();
-      //enemyRb.velocity = new Vector2(GameObject.Find("Player").transform.position.x * enemySpeed * Time.fixedDeltaTime, 0);
-      //transform.Translate(new Vector3(GameObject.FindGameObjectWithTag("Player").transform.position.x, 0, 0), Space.World);
-      // if (isMovingRight)
-      // {
-      //   enemyRb.AddForce(Vector2.right * enemySpeed * Time.fixedDeltaTime);
-      //   if (!isFacingRight)
-      //   {
-      //     FlipEnemySprite();
-      //   }
-      // }
-      // if (transform.position.x >= endPos)
-      // {
-      //   isMovingRight = false;
-      // }
-      // if (!isMovingRight)
-      // {
-      //   enemyRb.AddForce(-Vector2.right * enemySpeed * Time.fixedDeltaTime);
-      //   if (isFacingRight)
-      //   {
-      //     FlipEnemySprite();
-      //   }
-      // }
-      // if (transform.position.x <= startPos)
-      // {
-      //   isMovingRight = true;
-      // }
+      
       float distance = Vector2.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position);
       Vector3 targetVelocity = new Vector2(0 * 10f, enemyRb.velocity.y);
 

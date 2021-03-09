@@ -12,17 +12,12 @@ namespace SPACE.Players
     [SerializeField] Transform spawnPos;
     [SerializeField] PlayerData playerData;
     [SerializeField] FloatVariable playerHealthCurrent;
-
-
-
-    [SerializeField] FloatVariable playerScore;
     [SerializeField] FloatVariable rescuedCount;
 
 
     public bool DamagePlayer(float amount)
     {
       playerHealthCurrent.Value -= amount;
-      Debug.Log("Damaged player");
       if (playerHealthCurrent.Value <= 0)
       {
 
@@ -51,7 +46,7 @@ namespace SPACE.Players
     {
       if (other.gameObject.tag == "Enemy")
       {
-       
+
         Debug.Log("Hit the enemy");
         DamagePlayer(10);
       }

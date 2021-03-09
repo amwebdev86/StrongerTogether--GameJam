@@ -38,6 +38,7 @@ namespace SPACE.LevelManager
     bool isPaused = false;
     bool stopTime = false;
     bool gameWon = false;
+    bool isGameOver = false;
     private void OnEnable()
     {
       if (Time.timeScale == 0)
@@ -62,6 +63,10 @@ namespace SPACE.LevelManager
       //   else
       //     Cursor.lockState = CursorLockMode.Locked;
       // }
+      if (currLevelAlienCount.Value == 0 && alienRescuedCount.Value == 0)
+      {
+        DisplayGameOver();
+      }
       if (Input.GetKeyDown(KeyCode.P))
       {
         TogglePause();
@@ -70,7 +75,7 @@ namespace SPACE.LevelManager
 
       stopTime = TogglePause(isPaused);
 
-      if (gameWon)
+      if (gameWon || isGameOver)
       {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
@@ -191,7 +196,11 @@ namespace SPACE.LevelManager
     {
       currLevelAlienCount.Value--;
     }
-    public void DisplayGameOver() => gameOverPanel.SetActive(true);
+    public void DisplayGameOver()
+    {
+      isGameOver = true;
+      gameOverPanel.SetActive(true);
+    }
 
   }
 }
