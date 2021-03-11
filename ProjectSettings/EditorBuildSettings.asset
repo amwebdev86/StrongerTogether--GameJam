@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SPACE/Scenes/Level2.unity
     guid: b2680c1c2d224b54b8ffe7dacf80dee8
-  - enabled: 1
+  - enabled: 0
     path: Assets/SPACE/Scenes/OptionsMenu.unity
     guid: 34052a82e50b6714988869641d672dbc
   - enabled: 1
