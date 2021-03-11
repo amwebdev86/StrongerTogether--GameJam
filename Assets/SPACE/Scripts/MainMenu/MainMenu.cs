@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using SPACE.Sounds;
-using SPACE.Utils;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,38 +14,31 @@ namespace SPACE.Menus
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject loadingInterface;
     [SerializeField] Image loadScreenProgressBar;
-    [SerializeField] Animator menuAnimator;
-    [SerializeField] GameObject optionsMenu;
+    //[SerializeField] GameObject optionsMenu;
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
-    [SerializeField] Slider volumeSlider;
+    //AudioSource audioSource;
+    [SerializeField] AudioData audioData;
 
+    private void Start()
+    {
+      // audioSource = FindObjectOfType<AudioSource>();
+      // audioData.Play(audioSource);
+      // DontDestroyOnLoad(audioSource.gameObject);
 
+    }
 
     public void StartGame()
     {
+
       HideMenu();
+
       ShowLoadingScreen();
       scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1"));
       StartCoroutine(LoadingScreen());
-    }
-    public void HideOptionsMenu()
-    {
-      menuAnimator.SetBool("MenuActive", true);
-      optionsMenu.SetActive(false);
+
 
     }
 
-    public void ShowOptionsMenu()
-    {
-      StartCoroutine("OptionsMenuRoutine");
-    }
-    IEnumerator OptionsMenuRoutine()
-    {
-      menuAnimator.SetBool("MenuActive", false);
-
-      yield return new WaitForSeconds(0.5f);
-      optionsMenu.SetActive(true);
-    }
     private IEnumerator LoadingScreen()
     {
       float totalProgress = 0;
