@@ -270,12 +270,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1287200156 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1739461751442234178, guid: 860f7c156430b5c4d8411ad690fc383d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1333161112}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1333161112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352,10 +346,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1391582303, guid: f8d095c71c5a59f438703eea72fed3a7, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 1287200156}
     - target: {fileID: 6277753671014988180, guid: f8d095c71c5a59f438703eea72fed3a7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -471,6 +461,5 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    m_RemovedComponents:
-    - {fileID: 349447886, guid: f8d095c71c5a59f438703eea72fed3a7, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d095c71c5a59f438703eea72fed3a7, type: 3}
