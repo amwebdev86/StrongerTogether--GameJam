@@ -14,30 +14,43 @@ namespace SPACE.Menus
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject loadingInterface;
     [SerializeField] Image loadScreenProgressBar;
-    //[SerializeField] GameObject optionsMenu;
+    [SerializeField] GameObject optionsMenu;
+    Animator animator;
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
-    //AudioSource audioSource;
-    [SerializeField] AudioData audioData;
-
-    private void Start()
+    private void OnEnable()
     {
-      // audioSource = FindObjectOfType<AudioSource>();
-      // audioData.Play(audioSource);
-      // DontDestroyOnLoad(audioSource.gameObject);
-
+      animator = GetComponent<Animator>();
+      animator.SetBool("MenuActive", true);
     }
 
     public void StartGame()
     {
-
+      // animator = GetComponent<Animator>();
+      // animator.SetBool("MenuActive", true);
       HideMenu();
-
       ShowLoadingScreen();
       scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1"));
       StartCoroutine(LoadingScreen());
-
-
     }
+    public void ToggleOptionsMenu()
+    {
+      if (optionsMenu.activeInHierarchy == false)
+      {
+        optionsMenu.SetActive(true);
+        animator.SetBool("MenuActive", false);
+      }
+      else
+      {
+        animator.SetBool("MenuActive", true);
+        optionsMenu.SetActive(false);
+      }
+    }
+    public void QuitGame()
+    {
+      Application.Quit();
+    }
+
+
 
     private IEnumerator LoadingScreen()
     {
@@ -68,10 +81,8 @@ namespace SPACE.Menus
       menuCanvas.SetActive(false);
     }
 
-    public void QuitGame()
-    {
-      Application.Quit();
-    }
+
+
     private void OnDestroy()
     {
       StopAllCoroutines();
